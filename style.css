@@ -577,7 +577,7 @@ text-decoration: none;
 /* MATERIALS SECTION */
 #materials {
     position: absolute;
-    top: 490%;
+    top: 480%;
     left: 50%;
     transform: translate(-50%, -30%);
   padding: 60px 20px;
@@ -765,4 +765,5 @@ text-decoration: none;
     background-attachment: fixed;
     min-height: 100vh;
     padding-bottom: 1700px;}
+
 
