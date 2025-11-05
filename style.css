@@ -245,12 +245,11 @@ ul li a:hover::after{
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-    padding-bottom: 5550px;
 }
 /* MATERIALS SECTION */
 #materials {
     position: absolute;
-    top: 350%;
+    top: 500%;
     left: 50%;
     transform: translate(-50%, -30%);
   padding: 60px 20px;
@@ -766,3 +765,4 @@ text-decoration: none;
     min-height: 100vh;
 
     padding-bottom: 1700px;}
+
