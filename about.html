@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>CLE</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="icon" href="images/favicon.png" type="image/png" sizes="512x512">
+         <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="sub-main">
+    <div class="navbar">
+      <div class="icon">
+          <h2 class="logo"></h2>
+      </div>
+
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="materials.html">MATERIALS</a></li>
+            <li><a href="secret.html">SECRET</a></li>
+        </ul>
+    </div>
+    </div>
+        <div class="About">
+            <h9 data-aos="fade" data-aos-delay="200" ><h1><span style="color: red;">About </span><span style="color: yellow;">Us</span></h1>
+        <p1 class="par1">
+  <p>
+    The idea for our project began when we realized that most commercial CNC machines are
+    very expensive, making them hard to access for students, small workshops, or hobbyists.
+    Our goal is to show that with the right knowledge and teamwork, it’s possible to
+    build a fully functional CNC machine at a much lower cost — using simple, locally
+    available components.</p><p>By creating our own CNC machine, we aim to promote hands-on engineering, creativity,
+    and the spirit of innovation. This project demonstrates that complex technology
+    doesn’t always require expensive equipment — just the right approach and determination.</p></p1>
+        </h9></div>
+</div>
+<div class="info">
+    <h8 data-aos="fade" data-aos-delay="200"><h1><span style="color: red;">Project </span><span style="color: yellow;">Overview</span></h1>
+  <p>
+    The CLE Machine is a computer-controlled laser engraving system designed
+    for precision and low cost. It combines mechanical design, control
+    electronics, and software to create a fully functional CNC system that can
+    engrave patterns, text, or shapes on various materials.</p><p>
+    The machine uses stepper motors for accurate movement, a laser diode for
+    marking surfaces, and an Arduino-based controller that interprets G-code
+    instructions. Its lightweight frame and modular structure make it easy to
+    assemble, modify, and repair.
+  </p><a href="materials.html" class="hero1">To Know About The Materials Click Here!</a></h8>
+</div>
+ <div class="team-section">
+    <h9  data-aos="fade-up" data-aos-delay="100"><h1><span style="color: red;">Our </span><span style="color: yellow;">Team</span></h1>
+      <div class="team">
+        <div class="member">
+            <img src="images/yousef.png">
+          <h3>Yousif Saad</h3>
+          <p>The team leader - Will handle the programing side of the project and getting the parts for the assembly.</p>
+        </div>
+        <div class="member">
+            <img src="images/neshat.png">
+          <h3>Ahmed Neshat</h3>
+          <p>Member – Will handle the structural design and the assembly.</p>
+        </div>
+        <div class="member">
+            <img src="images/mahdi.png">
+          <h3>Ahmed Mahdi</h3>
+          <p>Member – Will handle the artistic side and the assembly.</p>
+        </div>
+        <div class="member">
+            <img src="images/talib.png">
+            <h3>Ahmed Talib</h3>
+            <p>Member - Will handle the website design and the assembly.</p>
+        </div>
+      </div>
+      <div class="advisor">
+        <h2><span style="color: red">Project </span><span style="color: yellow">Advisor</span></h2>
+          <img src="images/dr.jpg">
+        <p><b>Dr. Haithem Kareem</b> – Will oversee and guide the project technically and ensured safety standards.</p>
+      </div>
+    </h9></div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,  // animation speed in ms
+    once: false,     // false = reanimate when scrolling back up
+    mirror: false,   // whether elements animate out while scrolling past
+  });
+</script>
+<script>
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '☰';
+    document.querySelector('.navbar').appendChild(menuToggle);
+    
+    const navList = document.querySelector('.navbar ul');
+    
+    menuToggle.addEventListener('click', function() {
+        navList.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.navbar ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navList.classList.remove('active');
+        });
+    });
+});
+</script>
+    </body>
+</html>

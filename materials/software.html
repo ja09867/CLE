@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software - Detailed Technical Overview</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .details-section {
+      padding: 80px 8%;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .details-section h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: #00b3ff;
+      margin-bottom: 30px;
+    }
+    .details-section h2 {
+      color: #00b3ff;
+      margin-top: 40px;
+      font-size: 1.6rem;
+    }
+    .details-section p, ul li {
+      font-size: 1.05rem;
+      color: #ddd;
+    }
+    ul { padding-left: 20px; margin-bottom: 20px; }
+    ul li { margin-bottom: 8px; color: #ccc; }
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background: #00b3ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+  <section class="details-section" data-aos="fade-up">
+    <h1>Software</h1>
+
+    <h2>Introduction</h2>
+    <p>
+      Software is the backbone of any automated machine. For a laser engraver or CNC system, software interprets designs, generates instructions, and controls the hardware precisely.
+      Without software, even the most advanced electronics would be unable to perform meaningful operations.
+    </p>
+
+    <h2>Main Software Components</h2>
+    <ul>
+      <li><strong>Controller Software:</strong> Sends commands to the MKS board via USB, SD card, or Wi-Fi. Examples: Pronterface, OctoPrint.</li>
+      <li><strong>Slicer Software:</strong> Converts 2D or 3D design files into G-code. Examples: Cura, LaserGRBL.</li>
+      <li><strong>Firmware:</strong> Embedded software on the MKS board that interprets G-code instructions. Examples: Marlin, GRBL.</li>
+      <li><strong>Monitoring & Visualization Tools:</strong> Provide real-time observation of machine status, temperature, position, and progress.</li>
+    </ul>
+
+    <h2>Working Principle</h2>
+    <p>
+      The process works in several stages:
+    </p>
+    <ul>
+      <li>The user creates or imports a design (vector or raster image, 3D model).</li>
+      <li>The slicer converts the design into <strong>G-code</strong>, which is a series of movement and operation instructions.</li>
+      <li>The controller software sends G-code line by line to the MKS board.</li>
+      <li>The firmware interprets the commands and drives the motors, laser, and other peripherals accordingly.</li>
+      <li>Real-time monitoring ensures the process is correct, and adjustments can be made if necessary.</li>
+    </ul>
+
+    <h2>Key Features of the Software</h2>
+    <ul>
+      <li>Precision motion control via G-code</li>
+      <li>Laser intensity and PWM adjustment</li>
+      <li>Step resolution and microstepping configuration</li>
+      <li>Temperature monitoring for heated beds (3D printing) or electronics</li>
+      <li>Safety controls: emergency stop, limit switches</li>
+      <li>Customizable settings for speed, acceleration, and offsets</li>
+    </ul>
+
+    <h2>Applications</h2>
+    <ul>
+      <li>Laser engraving and cutting</li>
+      <li>3D printing</li>
+      <li>CNC milling</li>
+      <li>Automation and robotic tasks</li>
+      <li>Scientific experimentation and prototyping</li>
+    </ul>
+
+    <h2>Advantages</h2>
+    <ul>
+      <li>Precise and repeatable machine operation</li>
+      <li>Ability to process complex designs</li>
+      <li>Real-time adjustments without stopping the machine</li>
+      <li>Integration with multiple hardware components and sensors</li>
+    </ul>
+      <h2>Limitations</h2>
+    <ul>
+      <li>Software misconfiguration can lead to errors, skipped steps, or machine damage</li>
+      <li>Compatibility issues between firmware and control software</li>
+      <li>Learning curve for advanced settings like PID, microstepping, and acceleration</li>
+      <li>Relies on stable communication between PC/software and MKS board</li>
+    </ul>
+
+    <h2>Best Practices</h2>
+    <ul>
+      <li>Always test with low-power settings before full operation</li>
+      <li>Keep firmware updated for bug fixes and features</li>
+      <li>Backup configuration files to avoid losing settings</li>
+      <li>Monitor logs for errors or skipped commands</li>
+      <li>Calibrate machine axes periodically for accuracy</li>
+    </ul>
+
+    <h2>Safety Considerations</h2>
+    <ul>
+      <li>Ensure emergency stop is accessible</li>
+      <li>Verify limit switches and sensors are functional</li>
+      <li>Do not leave the machine unattended during operation</li>
+      <li>Follow laser and electrical safety standards</li>
+    </ul>
+
+    <a href="../materials.html" class="back-btn">← Back to Materials</a>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+  </script>
+</body>
+</html>

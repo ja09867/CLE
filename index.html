@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>CLE</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="icon" href="images/favicon.png" type="image/png" sizes="512x512">
+     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="main">
+    <div class="navbar">
+      <div class="icon">
+          <h2 class="logo"></h2>
+      </div>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="materials.html">MATERIALS</a></li>
+            <li><a href="secret.html">SECRET</a></li>
+        </ul>
+    </div>
+  <!--<div class="search">
+      <input class="srch" type="search" name="" placeholder="Type to search">
+       <a href="#"> <button class="btn">search</button> </a>
+  </div>-->
+    </div>
+    <div class="content">
+        <h1 data-aos="fade-up"><span style="color: red;">Laser </span><span style="color: yellow;">Engraving</span><span style="color: blue;"> Machine</span></h1>
+        <p data-aos="fade-up" class="par">Is A Laser Engraving Machine That Works To Engrave Information Into Surfaces This Website Will Show You How It Works And How You Can Build One Yourself While Also Giving Some Additional Information One The Way </b></p>
+        <a data-aos="fade-up" href="about.html" class="hero">Click Here To Know More About Us!</a></div>
+    </div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '☰';
+    document.querySelector('.navbar').appendChild(menuToggle);
+    
+    const navList = document.querySelector('.navbar ul');
+    
+    menuToggle.addEventListener('click', function() {
+        navList.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.navbar ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navList.classList.remove('active');
+        });
+    });
+});
+</script>
+</body>
+</html>
