@@ -1579,7 +1579,7 @@ text-decoration: none;
 }
 #materials {
     position: absolute;
-    top: 480%;
+    top: 440%;
     left: 50%;
     transform: translate(-50%, -30%);
   padding: 60px 20px;
@@ -1848,7 +1848,7 @@ text-decoration: none;
 }
 #materials {
     position: absolute;
-    top: 480%;
+    top: 440%;
     left: 50%;
     transform: translate(-50%, -30%);
   padding: 60px 20px;
@@ -2275,3 +2275,4 @@ text-decoration: none;
 text-decoration: none;
 
     }}
+
