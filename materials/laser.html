@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laser Module - Detailed Technical Overview</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .details-section {
+      padding: 80px 8%;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .details-section h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: #00b3ff;
+      margin-bottom: 30px;
+    }
+    .details-section h2 {
+      color: #00b3ff;
+      margin-top: 40px;
+      font-size: 1.6rem;
+    }
+    .details-section p, ul li {
+      font-size: 1.05rem;
+      color: #ddd;
+    }
+    ul { padding-left: 20px; margin-bottom: 20px; }
+    ul li { margin-bottom: 8px; color: #ccc; }
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background: #00b3ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+  <section class="details-section" data-aos="fade-up">
+    <h1>Laser Module</h1>
+
+    <h2>Introduction</h2>
+    <p>
+      A laser module is a precision optical device that emits a highly focused beam of light.
+      Laser stands for <strong>Light Amplification by Stimulated Emission of Radiation</strong>.
+      Unlike ordinary light, a laser beam is <strong>coherent, monochromatic, directional, and highly energetic</strong>.
+      Laser modules are commonly used in engraving, cutting, measurement, scanning, communication, and scientific applications.
+    </p>
+<img src="../images/laserimage0.jpg" class="inline-image">
+    <h2>Types of Laser Modules</h2>
+    <ul>
+      <li><strong>Diode Lasers:</strong> Compact, low-power modules (1–5W) used in engraving and marking machines.</li>
+      <li><strong>CO2 Lasers:</strong> Gas lasers (10–150W) used for cutting wood, acrylic, and fabrics.</li>
+      <li><strong>Fiber Lasers:</strong> High-power, compact solid-state lasers used for metal marking.</li>
+      <li><strong>DPSS (Diode-Pumped Solid-State):</strong> Produces green or blue laser light for precision applications.</li>
+    </ul>
+
+    <h2>Working Principle</h2>
+    <p>
+      Laser modules operate on the principle of <strong>stimulated emission</strong>. Inside the module:
+    </p>
+    <ul>
+      <li>The laser diode emits photons when electrons recombine with holes in the semiconductor material.</li>
+      <li>Mirrors inside the cavity reflect photons, stimulating more photon emissions in phase, creating a coherent beam.</li>
+      <li>A collimating lens shapes the beam into a narrow, focused line that can be precisely controlled.</li>
+    </ul>
+<img src="../images/laserimage1.jpg" class="inline-image">
+
+    <h2>Electrical Components</h2>
+    <ul>
+      <li><strong>Laser Diode:</strong> Core element producing light.</li>
+      <li><strong>Driver Circuit:</strong> Regulates voltage/current for stable laser operation, protects against overcurrent, and allows PWM/TTL control.</li>
+      <li><strong>Heatsink & Cooling Fan:</strong> Dissipates heat to maintain diode efficiency and lifespan.</li>
+      <li><strong>Collimating Lens:</strong> Focuses the laser to a tight point.</li>
+      <li><strong>Protective Housing:</strong> Metal enclosure for safety and durability.</li>
+    </ul>
+<img src="../images/laserimage2.jpg" class="inline-image">
+
+    <h2>Optical Characteristics</h2>
+    <ul>
+      <li>Wavelength: 405–450 nm for blue lasers, 520–532 nm for green, 650 nm for red.</li>
+      <li>Beam Divergence: 0.5–2 mrad (smaller is tighter beam).</li>
+      <li>Spot Size: Depends on lens and distance, usually 0.1–1 mm.</li>
+      <li>Power Output: 1–5W for engraving modules; up to 150W for industrial CO2 lasers.</li>
+    </ul>
+    <img src="../laserimage4.jpg" class="inline-image">
+<h2>Applications</h2>
+    <ul>
+      <li>Laser engraving on wood, acrylic, leather, and plastics.</li>
+      <li>Cutting thin sheets of wood, acrylic, cardboard, or soft metals.</li>
+      <li>Precision marking on metals and circuit boards.</li>
+      <li>Measurement systems, optical sensors, and laser alignment tools.</li>
+      <li>Scientific experiments, holography, and optical communication.</li>
+    </ul>
+<img src="../images/laserimage3.jpg" class="inline-image">
+
+    <h2>Advantages</h2>
+    <ul>
+      <li>High precision and repeatability.</li>
+      <li>Non-contact processing reduces material deformation.</li>
+      <li>Fast operation compared to manual cutting/engraving.</li>
+      <li>Works with various materials, from wood to metal.</li>
+      <li>Long lifespan if properly cooled and powered.</li>
+    </ul>
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>Laser safety is critical — can cause eye/skin damage.</li>
+      <li>High-power modules require good heat dissipation.</li>
+      <li>Limited cutting depth depending on power and material.</li>
+      <li>Material reflectivity can affect performance (especially metals for diode lasers).</li>
+    </ul>
+
+    <h2>Connection with MKS Board</h2>
+    <p>
+      Laser modules connect to the MKS board typically via a <strong>12V power output</strong> and a <strong>PWM/TTL control signal</strong>.
+      - The 12V line powers the diode and driver circuit.
+      - The PWM signal from the MKS board controls laser intensity, allowing precise engraving patterns.
+      Proper wiring, current limiting, and cooling are essential to avoid damage.
+    </p>
+
+    <h2>Safety Precautions</h2>
+    <ul>
+      <li>Always wear laser safety goggles suitable for your laser’s wavelength.</li>
+      <li>Never look directly at the beam or its reflection.</li>
+      <li>Keep the module securely mounted and avoid loose wires.</li>
+      <li>Ensure proper ventilation — fumes from engraving materials can be harmful.</li>
+      <li>Disconnect power before adjusting lenses or wiring.</li>
+      <li>Follow manufacturer current and voltage ratings strictly.</li>
+    </ul>
+<img src="../images/laserimage5.jpg" class="inline-image">
+
+    <h2>Maintenance Tips</h2>
+    <ul>
+      <li>Regularly clean the collimating lens to avoid beam distortion.</li>
+      <li>Check cooling fans for dust and proper operation.</li>
+      <li>Verify driver circuit connections for stability.</li>
+      <li>Monitor diode temperature; avoid running continuously at max power without proper cooling.</li>
+    </ul>
+
+    <a href="../materials.html" class="back-btn">← Back to Materials</a>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+  </script>
+</body>
+</html>

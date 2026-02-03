@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Limit Switch - Detailed Technical Overview</title>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .details-section {
+      padding: 80px 8%;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .details-section h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: #00b3ff;
+      margin-bottom: 30px;
+    }
+    .details-section h2 {
+      color: #00b3ff;
+      margin-top: 40px;
+      font-size: 1.6rem;
+    }
+    .details-section p, ul li {
+      font-size: 1.05rem;
+      color: #ddd;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background: #00b3ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .back-btn:hover {
+      background: #008fd4;
+      transform: translateY(-3px);
+    }
+    .inline-image {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="details-section" data-aos="fade-up">
+
+  <h1>Limit Switch</h1>
+
+  <h2>Introduction</h2>
+  <p>
+    A limit switch is an electromechanical device used to detect the physical
+    position or movement limit of a machine part. In CNC and laser engraving
+    machines, limit switches are essential for safety, accuracy, and automated
+    homing. They allow the controller to know when an axis has reached its
+    maximum or minimum position.
+  </p>
+
+  <img src="../images/limitswitch0.jpg" class="inline-image">
+
+  <h2>Types of Limit Switches</h2>
+  <ul>
+    <li><strong>Mechanical Lever Switch:</strong> Uses a metal arm or roller that is pressed when the axis reaches its end.</li>
+    <li><strong>Micro Switch:</strong> Compact switch with high reliability and fast response.</li>
+    <li><strong>Optical Limit Switch:</strong> Uses infrared light to detect movement without physical contact.</li>
+    <li><strong>Hall Effect Switch:</strong> Detects magnetic fields for contactless sensing.</li>
+  </ul>
+
+  <h2>Working Principle</h2>
+  <p>
+    Limit switches work by changing their electrical state when they are
+    physically triggered by a moving part of the machine:
+  </p>
+  <ul>
+    <li>When the axis moves, it presses the switch lever or sensor.</li>
+    <li>The internal contacts open or close, sending a signal to the controller.</li>
+    <li>The controller immediately stops movement or sets the axis position.</li>
+  </ul>
+
+  <img src="../images/limitswitch1.jpg" class="inline-image">
+
+  <h2>Electrical Components</h2>
+  <ul>
+    <li><strong>Common (COM):</strong> Shared connection point.</li>
+    <li><strong>Normally Open (NO):</strong> Circuit closes only when the switch is pressed.</li>
+    <li><strong>Normally Closed (NC):</strong> Circuit opens when the switch is pressed.</li>
+    <li><strong>Housing:</strong> Plastic or metal casing for protection.</li>
+    <li><strong>Actuator:</strong> Lever, roller, or button that gets pressed.</li>
+  </ul>
+
+  <img src="../images/limitswitch2.jpg" class="inline-image">
+
+  <h2>Why Limit Switches Are Important</h2>
+  <ul>
+    <li>Prevents motors from over-traveling and damaging the frame.</li>
+    <li>Allows automatic homing of X, Y, and Z axes.</li>
+    <li>Improves repeatability and positioning accuracy.</li>
+    <li>Provides an emergency stop reference point.</li>
+  </ul>
+
+  <h2>Connection with MKS Board</h2>
+  <p>
+    Limit switches are connected to the MKS controller board using signal and
+    ground pins:
+  </p>
+  <ul>
+    <li>The <strong>Signal</strong> pin detects switch activation.</li>
+    <li>The <strong>Ground</strong> pin completes the circuit.</li>
+    <li>Most setups use <strong>Normally Closed (NC)</strong> wiring for safety.</li>
+    <li>Firmware detects the trigger and stops axis movement instantly.</li>
+  </ul>
+
+  <img src="../images/limitswitch3.jpg" class="inline-image">
+
+  <h2>Applications</h2>
+  <ul>
+    <li>CNC machine homing systems.</li>
+    <li>Laser engraver axis limits.</li>
+    <li>3D printers and robotic arms.</li>
+    <li>Industrial automation and safety systems.</li>
+  </ul>
+
+  <h2>Advantages</h2>
+  <ul>
+    <li>Simple and reliable operation.</li>
+    <li>Low cost and easy installation.</li>
+    <li>Improves machine safety.</li>
+    <li>Compatible with most CNC controllers.</li>
+  </ul>
+
+  <h2>Limitations</h2>
+  <ul>
+    <li>Mechanical wear over time.</li>
+    <li>Requires precise mounting alignment.</li>
+    <li>Physical contact types may need maintenance.</li>
+  </ul>
+
+  <h2>Safety & Maintenance</h2>
+  <ul>
+    <li>Secure mounting to avoid false triggers.</li>
+    <li>Check wiring connections regularly.</li>
+    <li>Keep switches clean from dust and debris.</li>
+    <li>Test homing function after installation.</li>
+  </ul>
+
+  <img src="../images/limitswitch4.jpg" class="inline-image">
+
+  <a href="../materials.html" class="back-btn">← Back to Materials</a>
+
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800 });
+</script>
+
+</body>
+</html>

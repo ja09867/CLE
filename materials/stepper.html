@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stepper Motor - Detailed Technical Overview</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .details-section {
+      padding: 80px 8%;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .details-section h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: #00b3ff;
+      margin-bottom: 30px;
+    }
+    .details-section h2 {
+      color: #00b3ff;
+      margin-top: 40px;
+      font-size: 1.6rem;
+    }
+    .details-section p, ul li {
+      font-size: 1.05rem;
+      color: #ddd;
+    }
+    ul { padding-left: 20px; margin-bottom: 20px; }
+    ul li { margin-bottom: 8px; color: #ccc; }
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background: #00b3ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+  <section class="details-section" data-aos="fade-up">
+    <h1>Stepper Motor</h1>
+
+    <h2>Introduction</h2>
+    <p>
+      A <strong>stepper motor</strong> is an electromechanical device that converts electrical pulses into discrete mechanical movements.
+      Unlike conventional DC motors, stepper motors move in <strong>precise steps</strong>, allowing exact control of position and speed without feedback in many cases.
+      They are widely used in CNC machines, 3D printers, robotics, and automation systems for high-precision tasks.
+    </p>
+
+    <h2>Types of Stepper Motors</h2>
+    <ul>
+      <li><strong>Bipolar Stepper Motors:</strong> Two coils, require H-bridge drivers, offer higher torque and better efficiency.</li>
+      <li><strong>Unipolar Stepper Motors:</strong> Usually have center-tapped coils, simpler drivers, slightly lower torque.</li>
+      <li><strong>Hybrid Stepper Motors:</strong> Combine features of permanent magnet and variable reluctance motors for higher precision.</li>
+      <li><strong>Linear Stepper Motors:</strong> Convert rotational motion to linear motion directly.</li>
+    </ul>
+
+    <h2>Working Principle</h2>
+    <p>
+      Stepper motors operate using a sequence of electrical pulses applied to their coils. Each pulse moves the rotor a fixed angle, called the <strong>step angle</strong>.
+      By controlling the number and frequency of pulses, you can control <strong>position, speed, and direction</strong> precisely.
+    </p>
+    <ul>
+      <li>Full-step mode: moves one complete step per pulse.</li>
+      <li>Half-step mode: alternates between full and half steps for smoother motion.</li>
+      <li>Microstepping: divides each step into smaller increments for higher resolution and reduced vibration.</li>
+    </ul>
+
+    <h2>Main Components</h2>
+    <ul>
+      <li><strong>Rotor:</strong> Rotating part, often contains permanent magnets or teeth for magnetic interaction.</li>
+      <li><strong>Stator:</strong> Stationary coils energized in sequence to move the rotor.</li>
+      <li><strong>Shaft:</strong> Connects rotor to mechanical system.</li>
+      <li><strong>Bearings:</strong> Reduce friction and support smooth rotation.</li>
+      <li><strong>Housing:</strong> Metal frame that protects motor and helps dissipate heat.</li>
+    </ul>
+
+    <h2>Electrical Characteristics</h2>
+    <ul>
+      <li>Step Angle: 1.8° (200 steps per revolution) is common; can range 0.9°–7.5°.</li>
+      <li>Rated Voltage: 2–12V typically, depends on the motor.</li>
+      <li>Rated Current: 0.5–2A per phase.</li>
+      <li>Holding Torque: Torque when the motor is energized and stationary.</li>
+      <li>Phase Configuration: Bipolar (2 wires per coil) or Unipolar (center tap).</li>
+    </ul>
+<h2>Applications</h2>
+    <ul>
+      <li>3D printers for X, Y, Z axis movement</li>
+      <li>CNC machines and laser engravers</li>
+      <li>Camera sliders and robotic arms</li>
+      <li>Automated valves, textile machinery, and conveyor systems</li>
+    </ul>
+
+    <h2>Advantages</h2>
+    <ul>
+      <li>Precise positioning without feedback (open-loop)</li>
+      <li>High torque at low speeds</li>
+      <li>Reliable and simple control using pulses</li>
+      <li>Durable with long service life</li>
+    </ul>
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>Resonance at certain speeds can cause vibration and noise.</li>
+      <li>Limited high-speed torque compared to servo motors.</li>
+      <li>Requires proper current setting to avoid overheating.</li>
+      <li>Microstepping adds smoothness but reduces torque slightly.</li>
+    </ul>
+
+    <h2>Connection with MKS Board</h2>
+    <p>
+      Stepper motors connect to stepper driver modules, which are then connected to the MKS board. The MKS board sends <strong>STEP</strong> and <strong>DIR</strong> pulses:
+    </p>
+    <ul>
+      <li><strong>STEP Pin:</strong> Each pulse moves the motor one step (or microstep).</li>
+      <li><strong>DIR Pin:</strong> Determines rotation direction.</li>
+      <li><strong>Enable Pin:</strong> Turns the driver output on/off.</li>
+      <li>Current limits must be set on the driver according to motor specifications to prevent overheating.</li>
+    </ul>
+    <p>
+      Proper wiring ensures smooth motion without missed steps or vibrations.
+    </p>
+
+    <h2>Maintenance Tips</h2>
+    <ul>
+      <li>Keep the motor and driver cool; check heat sinks and fans.</li>
+      <li>Inspect wiring for loose connections or shorts.</li>
+      <li>Clean mechanical couplings and shafts for smooth operation.</li>
+      <li>Check for unusual noises or skipped steps — may indicate resonance or overcurrent.</li>
+    </ul>
+
+    <a href="../materials.html" class="back-btn">← Back to Materials</a>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+  </script>
+</body>
+</html>
