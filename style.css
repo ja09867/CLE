@@ -1579,7 +1579,7 @@ text-decoration: none;
 }
 #materials {
     position: absolute;
-    top: 500%;
+    top: 480%;
     left: 50%;
     transform: translate(-50%, -30%);
   padding: 60px 20px;
@@ -1848,7 +1848,7 @@ text-decoration: none;
 }
 #materials {
     position: absolute;
-    top: 500%;
+    top: 480%;
     left: 50%;
     transform: translate(-50%, -30%);
   padding: 60px 20px;
@@ -2273,4 +2273,5 @@ text-decoration: none;
   font-size: 16px;
   color: #f5f5f5;
 text-decoration: none;
+
     }}
