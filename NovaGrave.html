@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CLE - NovaGrave</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="novagrave.css">
-      <link rel="icon" href="images/favicon.png" type="image/png" sizes="512x512">
-     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CLE – Laser Control</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="novagrave.css">
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="512x512">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- NAVBAR (UNCHANGED) -->
+  <!-- NAVBAR -->
   <div class="navbar">
     <div class="icon">
       <h2 class="logo"></h2>
@@ -21,144 +22,287 @@
         <li><a href="index.html">HOME</a></li>
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="materials.html">MATERIALS</a></li>
-        <li><a href="NovaGrave.html">NOVAGRAVE</a></li>
+        <li><a href="NovaGrave.html">CLE Laser Control</a></li>
       </ul>
     </div>
   </div>
 
-  <!-- ================= NOVAGRAVE PAGE ================= -->
+  <!-- ================= CLE LASER CONTROL PAGE ================= -->
   <main class="novagrave">
 
     <!-- HERO -->
-    <section class="nova-hero">
-      <h1><span style="color: red;">Nova</span><span style="color: yellow;">Grave</span></h1>
-      <p>
-        A unified control platform for laser engraving and CNC workflows.
+    <section class="nova-hero cle-hero">
+      <div class="hero-badge" data-aos="fade-down">NEXT GENERATION SOFTWARE</div>
+      <h1 data-aos="fade-up" data-aos-delay="100">
+        <span style="color: red;">CLE</span> <span style="color: yellow;">Laser Control</span>
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        The most complete open-source laser engraver control platform ever built —
+        engineered for professionals, designed for everyone, powered by .NET Framework 4.8.
       </p>
-    </section>
-
-    <!-- SOLVES -->
-    <section class="nova-glass">
-      <h2>What <span style="color: red;">Nova</span><span style="color: yellow;">Grave</span> Solves</h2>
-
-      <div class="nova-solves">
-        <div>Unified design, control, and configuration</div>
-        <div>No switching between multiple applications</div>
-        <div>Centralized machine & material settings</div>
-        <div>Simplified workflow from start to finish</div>
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+        <a href="https://www.mediafire.com/file/09ii1ud1mpatliu/CLE_Laser_Control.rar/file" class="btn green" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon">⊞</span> Download for Windows
+        </a>
+        <a href="https://www.mediafire.com/file/a1fwi7uqnteei34/CLE-Laser-Control-Linux.zip/file" class="btn blue" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon">🐧</span> Download for Linux
+        </a>
+        <a href="https://www.mediafire.com/file/w7yrp4rriwx91h1/CLE-master.rar/file" class="btn gray" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon">{ }</span> Download Source Code
+        </a>
       </div>
     </section>
 
+    <!-- TRAILER -->
+    <section class="nova-glass cle-trailer" data-aos="fade-up">
+      <h2><span style="color: red;">See It </span><span style="color: yellow;">In Action</span></h2>
+      <div class="trailer-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/CEbWoC7sDvk"
+          title="CLE Laser Control Trailer"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          class="trailer-video"
+        ></iframe>
+      </div>
+    </section>
 
+    <!-- WHAT CLE SOLVES -->
+    <section class="nova-glass" data-aos="fade-up">
+      <h2>What <span style="color: red;">CLE</span> <span style="color: yellow;">Solves</span></h2>
+      <div class="nova-solves">
+        <div data-aos="zoom-in" data-aos-delay="0">
+          <div class="solve-icon">⚡</div>
+          No switching between apps
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="60">
+          <div class="solve-icon">🌐</div>
+          Full Arabic language support
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="120">
+          <div class="solve-icon">🖥️</div>
+          Works on Windows and Linux
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="180">
+          <div class="solve-icon">🛠️</div>
+          Professional tools built in
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="240">
+          <div class="solve-icon">📋</div>
+          Smart material presets
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300">
+          <div class="solve-icon">📡</div>
+          Real-time GCode preview
+        </div>
+      </div>
+    </section>
 
-    <!-- KEY FEATURES (SCREENSHOTS ONLY) -->
-    <section class="nova-glass">
+    <!-- KEY FEATURES -->
+    <section class="nova-glass" data-aos="fade-up">
       <h2><span style="color: red;">Key </span><span style="color: yellow;">Features</span></h2>
-
       <div class="nova-features">
 
-        <div class="feature-card">
-          <img src="images/main-interface.png" class="expandable" alt="Main Interface">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+          <img src="images/feature-main.jpg" class="expandable" alt="Main Interface">
           <span><span style="color: red;">Main </span><span style="color: yellow;">Interface</span></span>
         </div>
 
-        <div class="feature-card">
-          <img src="images/settings.png" class="expandable" alt="Settings">
-          <span><span style="color: red;">Settings</span></span>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="60">
+          <img src="images/feature-photo-editor.jpg" class="expandable" alt="Photo Editor">
+          <span><span style="color: red;">Photo </span><span style="color: yellow;">Editor</span></span>
         </div>
 
-        <div class="feature-card">
-          <img src="images/laser-control.png" class="expandable" alt="Laser Control">
-          <span><span style="color: red;">Laser </span><span style="color: yellow;">Control</span></span>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="120">
+          <img src="images/feature-design-canvas.jpg" class="expandable" alt="Design Canvas">
+          <span><span style="color: red;">Design </span><span style="color: yellow;">Canvas</span></span>
         </div>
 
-        <div class="feature-card">
-          <img src="images/info.png" class="expandable" alt="Info">
-          <span><span style="color: red;">Info</span></span>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+          <img src="images/feature-wood-preview.jpg" class="expandable" alt="Wood Preview Simulation">
+          <span><span style="color: red;">Wood Preview </span><span style="color: yellow;">Simulation</span></span>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="240">
+          <img src="images/feature-layer-manager.jpg" class="expandable" alt="Layer Manager">
+          <span><span style="color: red;">Layer </span><span style="color: yellow;">Manager</span></span>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/feature-path-optimizer.jpg" class="expandable" alt="Path Optimizer">
+          <span><span style="color: red;">Path </span><span style="color: yellow;">Optimizer</span></span>
         </div>
 
       </div>
     </section>
 
-    <!-- TECHNOLOGY -->
-    <section class="nova-glass">
+    <!-- WHY CLE IS BETTER — COMPARISON TABLE -->
+    <section class="nova-glass" data-aos="fade-up">
+      <h2><span style="color: red;">Why CLE Is </span><span style="color: yellow;">Better</span></h2>
+      <div class="cle-table-wrapper">
+        <table class="cle-compare">
+          <thead>
+            <tr>
+              <th class="col-feature">Feature</th>
+              <th class="col-cle">
+                <span style="color: red;">CLE</span> <span style="color: yellow;">Laser Control</span>
+              </th>
+              <th>LaserGRBL</th>
+              <th>LightBurn</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Arabic Language Support</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+              <td class="cle-no">✘</td>
+            </tr>
+            <tr>
+              <td>Linux Support</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+              <td class="cle-yes">✔</td>
+            </tr>
+            <tr>
+              <td>Photo Editor Built In</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+              <td class="cle-no">✘</td>
+            </tr>
+            <tr>
+              <td>Design Canvas Built In</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+              <td class="cle-no">✘</td>
+            </tr>
+            <tr>
+              <td>Wood Engraving Preview</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+              <td class="cle-no">✘</td>
+            </tr>
+            <tr>
+              <td>Free &amp; Open Source</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+            </tr>
+            <tr>
+              <td>Layer Manager</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+              <td class="cle-no">✘</td>
+            </tr>
+            <tr>
+              <td>Path Optimizer</td>
+              <td class="col-cle cle-yes">✔</td>
+              <td class="cle-no">✘</td>
+              <td class="cle-no">✘</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY STACK -->
+    <section class="nova-glass" data-aos="fade-up">
       <h2><span style="color: red;">Technology </span><span style="color: yellow;">Stack</span></h2>
-
       <div class="nova-tech">
-        <span>Python 3.11+</span>
-        <span>Tkinter</span>
-        <span>Pillow</span>
+        <span>.NET Framework 4.8</span>
+        <span>WinForms</span>
+        <span>GDI+</span>
+        <span>OpenGL</span>
         <span>Serial Communication</span>
-        <span>Multi-threading</span>
-        <span>JSON Configuration</span>
-        <span>Windows API</span>
+        <span>WiFi Support</span>
+        <span>GCode Engine</span>
+        <span>Wine for Linux</span>
       </div>
     </section>
-    
-      <!-- ACTIONS -->
-  <section class="nova-actions">
-  <a 
-    href="https://www.mediafire.com/file/71ajpqr0rzaufg6/NovaGrave_Complete_Edition.rar/file"
-    class="btn green"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Download Application
-  </a>
 
-  <a 
-    href="https://www.mediafire.com/file/e2s6ya67yhr4pjh/NovaGrave_Source_Code.rar/file"
-    class="btn blue"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Download Source Code
-  </a>
-</section>
+    <!-- SYSTEM REQUIREMENTS -->
+    <section class="nova-glass" data-aos="fade-up">
+      <h2><span style="color: red;">System </span><span style="color: yellow;">Requirements</span></h2>
+      <div class="cle-req-columns">
 
-      
-    <!-- REQUIREMENTS -->
-   <section class="nova-glass">
-  <h2><span style="color: red;">System </span><span style="color: yellow;">Requirements</span></h2>
+        <div class="req-col">
+          <div class="req-col-header windows-header">
+            <span class="req-os-icon">⊞</span> Windows
+          </div>
+          <div class="nova-req-grid">
+            <div>
+              <strong>Operating System</strong>
+              <span>Windows 10 / 11 (64-bit)</span>
+            </div>
+            <div>
+              <strong>Memory</strong>
+              <span>4GB RAM minimum</span>
+            </div>
+            <div>
+              <strong>Storage</strong>
+              <span>500MB available space</span>
+            </div>
+            <div>
+              <strong>Connectivity</strong>
+              <span>USB port for laser machine</span>
+            </div>
+          </div>
+        </div>
 
-  <div class="nova-req-grid">
-    <div>
-      <strong>Operating System</strong>
-      <span>Windows 10 / 11 (64-bit)</span>
-    </div>
+        <div class="req-col">
+          <div class="req-col-header linux-header">
+            <span class="req-os-icon">🐧</span> Linux
+          </div>
+          <div class="nova-req-grid">
+            <div>
+              <strong>Operating System</strong>
+              <span>Ubuntu 20.04 or newer</span>
+            </div>
+            <div>
+              <strong>Memory</strong>
+              <span>4GB RAM minimum</span>
+            </div>
+            <div>
+              <strong>Storage</strong>
+              <span>2GB available space</span>
+            </div>
+            <div>
+              <strong>Wine</strong>
+              <span>Installed automatically by installer</span>
+            </div>
+          </div>
+        </div>
 
-    <div>
-      <strong>Memory</strong>
-      <span>4GB minimum (8GB recommended)</span>
-    </div>
+      </div>
+    </section>
 
-    <div>
-      <strong>Storage</strong>
-      <span>500MB available space</span>
-    </div>
-
-    <div>
-      <strong>Display</strong>
-      <span>1366×768 minimum resolution</span>
-    </div>
-
-    <div>
-      <strong>Connectivity</strong>
-      <span>USB port for laser machine</span>
-    </div>
-  </div>
-</section>
-
+    <!-- DOWNLOAD SECTION -->
+    <section class="nova-glass cle-download-section" data-aos="fade-up">
+      <h2><span style="color: red;">Download </span><span style="color: yellow;">CLE Laser Control</span></h2>
+      <p class="download-subtitle">Free. Open Source. Ready to engrave.</p>
+      <div class="nova-actions cle-download-btns">
+        <a href="https://www.mediafire.com/file/09ii1ud1mpatliu/CLE_Laser_Control.rar/file" class="btn green btn-large" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon">⊞</span> Download for Windows
+        </a>
+        <a href="https://www.mediafire.com/file/a1fwi7uqnteei34/CLE-Laser-Control-Linux.zip/file" class="btn blue btn-large" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon">🐧</span> Download for Linux
+        </a>
+        <a href="https://www.mediafire.com/file/w7yrp4rriwx91h1/CLE-master.rar/file" class="btn gray btn-large" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon">{ }</span> Download Source Code
+        </a>
+      </div>
+    </section>
 
   </main>
 
   <!-- IMAGE MODAL -->
   <div id="imgModal" class="img-modal">
     <span class="img-close">&times;</span>
-    <img id="imgModalContent">
+    <img id="imgModalContent" alt="Feature Preview">
   </div>
 
-  <!-- IMAGE EXPAND SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("imgModalContent");
@@ -176,33 +320,33 @@
       if (e.target === modal) modal.style.display = "none";
     };
   </script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-<script>
-// Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.createElement('div');
-    menuToggle.className = 'menu-toggle';
-    menuToggle.innerHTML = '☰';
-    document.querySelector('.navbar').appendChild(menuToggle);
-    
-    // CHANGE THIS LINE: target .menu instead of .navbar ul
-    const navMenu = document.querySelector('.menu');
-    
-    menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-    });
-    
-    // Close menu when clicking on links
-    const navLinks = document.querySelectorAll('.menu ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-        });
-    });
-});
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 700 });
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.createElement('div');
+      menuToggle.className = 'menu-toggle';
+      menuToggle.innerHTML = '☰';
+      document.querySelector('.navbar').appendChild(menuToggle);
+
+      const navMenu = document.querySelector('.menu');
+
+      menuToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+      });
+
+      const navLinks = document.querySelectorAll('.menu ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
