@@ -48,94 +48,96 @@
     }
     .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
   </style>
+  <link rel="stylesheet" href="../lang.css">
 </head>
 <body>
   <section class="details-section" data-aos="fade-up">
-    <h1>Software</h1>
+    <h1 data-i18n="sw_h1">Software</h1>
 
-    <h2>Introduction</h2>
-    <p>
+    <h2 data-i18n="sw_h2_intro">Introduction</h2>
+    <p data-i18n="sw_p_intro">
       Software is the backbone of any automated machine. For a laser engraver or CNC system, software interprets designs, generates instructions, and controls the hardware precisely.
       Without software, even the most advanced electronics would be unable to perform meaningful operations.
     </p>
 
-    <h2>Main Software Components</h2>
+    <h2 data-i18n="sw_h2_comp">Main Software Components</h2>
     <ul>
-      <li><strong>Controller Software:</strong> Sends commands to the MKS board via USB, SD card, or Wi-Fi. Examples: Pronterface, OctoPrint.</li>
-      <li><strong>Slicer Software:</strong> Converts 2D or 3D design files into G-code. Examples: Cura, LaserGRBL.</li>
-      <li><strong>Firmware:</strong> Embedded software on the MKS board that interprets G-code instructions. Examples: Marlin, GRBL.</li>
-      <li><strong>Monitoring & Visualization Tools:</strong> Provide real-time observation of machine status, temperature, position, and progress.</li>
+      <li data-i18n-html="sw_li_ctrl"><strong>Controller Software:</strong> Sends commands to the MKS board via USB, SD card, or Wi-Fi. Examples: Pronterface, OctoPrint.</li>
+      <li data-i18n-html="sw_li_slicer"><strong>Slicer Software:</strong> Converts 2D or 3D design files into G-code. Examples: Cura, LaserGRBL.</li>
+      <li data-i18n-html="sw_li_fw"><strong>Firmware:</strong> Embedded software on the MKS board that interprets G-code instructions. Examples: Marlin, GRBL.</li>
+      <li data-i18n-html="sw_li_mon"><strong>Monitoring & Visualization Tools:</strong> Provide real-time observation of machine status, temperature, position, and progress.</li>
     </ul>
 
-    <h2>Working Principle</h2>
-    <p>
+    <h2 data-i18n="sw_h2_work">Working Principle</h2>
+    <p data-i18n="sw_p_stages">
       The process works in several stages:
     </p>
     <ul>
-      <li>The user creates or imports a design (vector or raster image, 3D model).</li>
-      <li>The slicer converts the design into <strong>G-code</strong>, which is a series of movement and operation instructions.</li>
-      <li>The controller software sends G-code line by line to the MKS board.</li>
-      <li>The firmware interprets the commands and drives the motors, laser, and other peripherals accordingly.</li>
-      <li>Real-time monitoring ensures the process is correct, and adjustments can be made if necessary.</li>
+      <li data-i18n="sw_li_w1">The user creates or imports a design (vector or raster image, 3D model).</li>
+      <li data-i18n-html="sw_li_w2">The slicer converts the design into <strong>G-code</strong>, which is a series of movement and operation instructions.</li>
+      <li data-i18n="sw_li_w3">The controller software sends G-code line by line to the MKS board.</li>
+      <li data-i18n="sw_li_w4">The firmware interprets the commands and drives the motors, laser, and other peripherals accordingly.</li>
+      <li data-i18n="sw_li_w5">Real-time monitoring ensures the process is correct, and adjustments can be made if necessary.</li>
     </ul>
 
-    <h2>Key Features of the Software</h2>
+    <h2 data-i18n="sw_h2_feat">Key Features of the Software</h2>
     <ul>
-      <li>Precision motion control via G-code</li>
-      <li>Laser intensity and PWM adjustment</li>
-      <li>Step resolution and microstepping configuration</li>
-      <li>Temperature monitoring for heated beds (3D printing) or electronics</li>
-      <li>Safety controls: emergency stop, limit switches</li>
-      <li>Customizable settings for speed, acceleration, and offsets</li>
+      <li data-i18n="sw_li_f1">Precision motion control via G-code</li>
+      <li data-i18n="sw_li_f2">Laser intensity and PWM adjustment</li>
+      <li data-i18n="sw_li_f3">Step resolution and microstepping configuration</li>
+      <li data-i18n="sw_li_f4">Temperature monitoring for heated beds (3D printing) or electronics</li>
+      <li data-i18n="sw_li_f5">Safety controls: emergency stop, limit switches</li>
+      <li data-i18n="sw_li_f6">Customizable settings for speed, acceleration, and offsets</li>
     </ul>
 
-    <h2>Applications</h2>
+    <h2 data-i18n="sw_h2_apps">Applications</h2>
     <ul>
-      <li>Laser engraving and cutting</li>
-      <li>3D printing</li>
-      <li>CNC milling</li>
-      <li>Automation and robotic tasks</li>
-      <li>Scientific experimentation and prototyping</li>
+      <li data-i18n="sw_li_a1">Laser engraving and cutting</li>
+      <li data-i18n="sw_li_a2">3D printing</li>
+      <li data-i18n="sw_li_a3">CNC milling</li>
+      <li data-i18n="sw_li_a4">Automation and robotic tasks</li>
+      <li data-i18n="sw_li_a5">Scientific experimentation and prototyping</li>
     </ul>
 
-    <h2>Advantages</h2>
+    <h2 data-i18n="sw_h2_adv">Advantages</h2>
     <ul>
-      <li>Precise and repeatable machine operation</li>
-      <li>Ability to process complex designs</li>
-      <li>Real-time adjustments without stopping the machine</li>
-      <li>Integration with multiple hardware components and sensors</li>
+      <li data-i18n="sw_li_adv1">Precise and repeatable machine operation</li>
+      <li data-i18n="sw_li_adv2">Ability to process complex designs</li>
+      <li data-i18n="sw_li_adv3">Real-time adjustments without stopping the machine</li>
+      <li data-i18n="sw_li_adv4">Integration with multiple hardware components and sensors</li>
     </ul>
-      <h2>Limitations</h2>
+      <h2 data-i18n="sw_h2_lim">Limitations</h2>
     <ul>
-      <li>Software misconfiguration can lead to errors, skipped steps, or machine damage</li>
-      <li>Compatibility issues between firmware and control software</li>
-      <li>Learning curve for advanced settings like PID, microstepping, and acceleration</li>
-      <li>Relies on stable communication between PC/software and MKS board</li>
-    </ul>
-
-    <h2>Best Practices</h2>
-    <ul>
-      <li>Always test with low-power settings before full operation</li>
-      <li>Keep firmware updated for bug fixes and features</li>
-      <li>Backup configuration files to avoid losing settings</li>
-      <li>Monitor logs for errors or skipped commands</li>
-      <li>Calibrate machine axes periodically for accuracy</li>
+      <li data-i18n="sw_li_lim1">Software misconfiguration can lead to errors, skipped steps, or machine damage</li>
+      <li data-i18n="sw_li_lim2">Compatibility issues between firmware and control software</li>
+      <li data-i18n="sw_li_lim3">Learning curve for advanced settings like PID, microstepping, and acceleration</li>
+      <li data-i18n="sw_li_lim4">Relies on stable communication between PC/software and MKS board</li>
     </ul>
 
-    <h2>Safety Considerations</h2>
+    <h2 data-i18n="sw_h2_best">Best Practices</h2>
     <ul>
-      <li>Ensure emergency stop is accessible</li>
-      <li>Verify limit switches and sensors are functional</li>
-      <li>Do not leave the machine unattended during operation</li>
-      <li>Follow laser and electrical safety standards</li>
+      <li data-i18n="sw_li_b1">Always test with low-power settings before full operation</li>
+      <li data-i18n="sw_li_b2">Keep firmware updated for bug fixes and features</li>
+      <li data-i18n="sw_li_b3">Backup configuration files to avoid losing settings</li>
+      <li data-i18n="sw_li_b4">Monitor logs for errors or skipped commands</li>
+      <li data-i18n="sw_li_b5">Calibrate machine axes periodically for accuracy</li>
     </ul>
 
-    <a href="../materials.html" class="back-btn">← Back to Materials</a>
+    <h2 data-i18n="sw_h2_safe">Safety Considerations</h2>
+    <ul>
+      <li data-i18n="sw_li_s1">Ensure emergency stop is accessible</li>
+      <li data-i18n="sw_li_s2">Verify limit switches and sensors are functional</li>
+      <li data-i18n="sw_li_s3">Do not leave the machine unattended during operation</li>
+      <li data-i18n="sw_li_s4">Follow laser and electrical safety standards</li>
+    </ul>
+
+    <a href="../materials.html" class="back-btn" data-i18n="back_to_materials">← Back to Materials</a>
   </section>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800 });
   </script>
+  <script src="../lang.js"></script>
 </body>
 </html>

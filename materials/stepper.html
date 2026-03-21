@@ -48,106 +48,110 @@
     }
     .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
   </style>
+  <link rel="stylesheet" href="../lang.css">
 </head>
 <body>
   <section class="details-section" data-aos="fade-up">
-    <h1>Stepper Motor</h1>
+    <h1 data-i18n="step_h1">Stepper Motor</h1>
 
-    <h2>Introduction</h2>
-    <p>
+    <h2 data-i18n="step_h2_intro">Introduction</h2>
+    <p data-i18n-html="step_p_intro">
       A <strong>stepper motor</strong> is an electromechanical device that converts electrical pulses into discrete mechanical movements.
       Unlike conventional DC motors, stepper motors move in <strong>precise steps</strong>, allowing exact control of position and speed without feedback in many cases.
       They are widely used in CNC machines, 3D printers, robotics, and automation systems for high-precision tasks.
     </p>
 
-    <h2>Types of Stepper Motors</h2>
+    <h2 data-i18n="step_h2_types">Types of Stepper Motors</h2>
     <ul>
-      <li><strong>Bipolar Stepper Motors:</strong> Two coils, require H-bridge drivers, offer higher torque and better efficiency.</li>
-      <li><strong>Unipolar Stepper Motors:</strong> Usually have center-tapped coils, simpler drivers, slightly lower torque.</li>
-      <li><strong>Hybrid Stepper Motors:</strong> Combine features of permanent magnet and variable reluctance motors for higher precision.</li>
-      <li><strong>Linear Stepper Motors:</strong> Convert rotational motion to linear motion directly.</li>
+      <li data-i18n-html="step_li_bipolar"><strong>Bipolar Stepper Motors:</strong> Two coils, require H-bridge drivers, offer higher torque and better efficiency.</li>
+      <li data-i18n-html="step_li_unipolar"><strong>Unipolar Stepper Motors:</strong> Usually have center-tapped coils, simpler drivers, slightly lower torque.</li>
+      <li data-i18n-html="step_li_hybrid"><strong>Hybrid Stepper Motors:</strong> Combine features of permanent magnet and variable reluctance motors for higher precision.</li>
+      <li data-i18n-html="step_li_linear"><strong>Linear Stepper Motors:</strong> Convert rotational motion to linear motion directly.</li>
     </ul>
 
-    <h2>Working Principle</h2>
+    <h2 data-i18n="step_h2_work">Working Principle</h2>
     <p>
+</p>
+    <p data-i18n-html="step_p_work">
       Stepper motors operate using a sequence of electrical pulses applied to their coils. Each pulse moves the rotor a fixed angle, called the <strong>step angle</strong>.
       By controlling the number and frequency of pulses, you can control <strong>position, speed, and direction</strong> precisely.
     </p>
     <ul>
-      <li>Full-step mode: moves one complete step per pulse.</li>
-      <li>Half-step mode: alternates between full and half steps for smoother motion.</li>
-      <li>Microstepping: divides each step into smaller increments for higher resolution and reduced vibration.</li>
+      <li data-i18n="step_li_full">Full-step mode: moves one complete step per pulse.</li>
+      <li data-i18n="step_li_half">Half-step mode: alternates between full and half steps for smoother motion.</li>
+      <li data-i18n="step_li_micro">Microstepping: divides each step into smaller increments for higher resolution and reduced vibration.</li>
     </ul>
 
-    <h2>Main Components</h2>
+    <h2 data-i18n="step_h2_comp">Main Components</h2>
     <ul>
-      <li><strong>Rotor:</strong> Rotating part, often contains permanent magnets or teeth for magnetic interaction.</li>
-      <li><strong>Stator:</strong> Stationary coils energized in sequence to move the rotor.</li>
-      <li><strong>Shaft:</strong> Connects rotor to mechanical system.</li>
-      <li><strong>Bearings:</strong> Reduce friction and support smooth rotation.</li>
-      <li><strong>Housing:</strong> Metal frame that protects motor and helps dissipate heat.</li>
+      <li data-i18n-html="step_li_rotor"><strong>Rotor:</strong> Rotating part, often contains permanent magnets or teeth for magnetic interaction.</li>
+      <li data-i18n-html="step_li_stator"><strong>Stator:</strong> Stationary coils energized in sequence to move the rotor.</li>
+      <li data-i18n-html="step_li_shaft"><strong>Shaft:</strong> Connects rotor to mechanical system.</li>
+      <li data-i18n-html="step_li_bearing"><strong>Bearings:</strong> Reduce friction and support smooth rotation.</li>
+      <li data-i18n-html="step_li_housing"><strong>Housing:</strong> Metal frame that protects motor and helps dissipate heat.</li>
     </ul>
 
-    <h2>Electrical Characteristics</h2>
+    <h2 data-i18n="step_h2_elec">Electrical Characteristics</h2>
     <ul>
-      <li>Step Angle: 1.8° (200 steps per revolution) is common; can range 0.9°–7.5°.</li>
-      <li>Rated Voltage: 2–12V typically, depends on the motor.</li>
-      <li>Rated Current: 0.5–2A per phase.</li>
-      <li>Holding Torque: Torque when the motor is energized and stationary.</li>
-      <li>Phase Configuration: Bipolar (2 wires per coil) or Unipolar (center tap).</li>
+      <li data-i18n="step_li_e1">Step Angle: 1.8° (200 steps per revolution) is common; can range 0.9°–7.5°.</li>
+      <li data-i18n="step_li_e2">Rated Voltage: 2–12V typically, depends on the motor.</li>
+      <li data-i18n="step_li_e3">Rated Current: 0.5–2A per phase.</li>
+      <li data-i18n="step_li_e4">Holding Torque: Torque when the motor is energized and stationary.</li>
+      <li data-i18n="step_li_e5">Phase Configuration: Bipolar (2 wires per coil) or Unipolar (center tap).</li>
     </ul>
-<h2>Applications</h2>
+<h2 data-i18n="step_h2_apps">Applications</h2>
     <ul>
-      <li>3D printers for X, Y, Z axis movement</li>
-      <li>CNC machines and laser engravers</li>
-      <li>Camera sliders and robotic arms</li>
-      <li>Automated valves, textile machinery, and conveyor systems</li>
-    </ul>
-
-    <h2>Advantages</h2>
-    <ul>
-      <li>Precise positioning without feedback (open-loop)</li>
-      <li>High torque at low speeds</li>
-      <li>Reliable and simple control using pulses</li>
-      <li>Durable with long service life</li>
+      <li data-i18n="step_li_a1">3D printers for X, Y, Z axis movement</li>
+      <li data-i18n="step_li_a2">CNC machines and laser engravers</li>
+      <li data-i18n="step_li_a3">Camera sliders and robotic arms</li>
+      <li data-i18n="step_li_a4">Automated valves, textile machinery, and conveyor systems</li>
     </ul>
 
-    <h2>Limitations</h2>
+    <h2 data-i18n="step_h2_adv">Advantages</h2>
     <ul>
-      <li>Resonance at certain speeds can cause vibration and noise.</li>
-      <li>Limited high-speed torque compared to servo motors.</li>
-      <li>Requires proper current setting to avoid overheating.</li>
-      <li>Microstepping adds smoothness but reduces torque slightly.</li>
+      <li data-i18n="step_li_adv1">Precise positioning without feedback (open-loop)</li>
+      <li data-i18n="step_li_adv2">High torque at low speeds</li>
+      <li data-i18n="step_li_adv3">Reliable and simple control using pulses</li>
+      <li data-i18n="step_li_adv4">Durable with long service life</li>
     </ul>
 
-    <h2>Connection with MKS Board</h2>
-    <p>
+    <h2 data-i18n="step_h2_lim">Limitations</h2>
+    <ul>
+      <li data-i18n="step_li_lim1">Resonance at certain speeds can cause vibration and noise.</li>
+      <li data-i18n="step_li_lim2">Limited high-speed torque compared to servo motors.</li>
+      <li data-i18n="step_li_lim3">Requires proper current setting to avoid overheating.</li>
+      <li data-i18n="step_li_lim4">Microstepping adds smoothness but reduces torque slightly.</li>
+    </ul>
+
+    <h2 data-i18n="step_h2_conn">Connection with MKS Board</h2>
+    <p data-i18n-html="step_p_conn">
       Stepper motors connect to stepper driver modules, which are then connected to the MKS board. The MKS board sends <strong>STEP</strong> and <strong>DIR</strong> pulses:
     </p>
     <ul>
-      <li><strong>STEP Pin:</strong> Each pulse moves the motor one step (or microstep).</li>
-      <li><strong>DIR Pin:</strong> Determines rotation direction.</li>
-      <li><strong>Enable Pin:</strong> Turns the driver output on/off.</li>
-      <li>Current limits must be set on the driver according to motor specifications to prevent overheating.</li>
+      <li data-i18n-html="step_li_c1"><strong>STEP Pin:</strong> Each pulse moves the motor one step (or microstep).</li>
+      <li data-i18n-html="step_li_c2"><strong>DIR Pin:</strong> Determines rotation direction.</li>
+      <li data-i18n-html="step_li_c3"><strong>Enable Pin:</strong> Turns the driver output on/off.</li>
+      <li data-i18n="step_li_c4">Current limits must be set on the driver according to motor specifications to prevent overheating.</li>
     </ul>
-    <p>
+    <p data-i18n="step_p_wire">
       Proper wiring ensures smooth motion without missed steps or vibrations.
     </p>
 
-    <h2>Maintenance Tips</h2>
+    <h2 data-i18n="step_h2_maint">Maintenance Tips</h2>
     <ul>
-      <li>Keep the motor and driver cool; check heat sinks and fans.</li>
-      <li>Inspect wiring for loose connections or shorts.</li>
-      <li>Clean mechanical couplings and shafts for smooth operation.</li>
-      <li>Check for unusual noises or skipped steps — may indicate resonance or overcurrent.</li>
+      <li data-i18n="step_li_m1">Keep the motor and driver cool; check heat sinks and fans.</li>
+      <li data-i18n="step_li_m2">Inspect wiring for loose connections or shorts.</li>
+      <li data-i18n="step_li_m3">Clean mechanical couplings and shafts for smooth operation.</li>
+      <li data-i18n="step_li_m4">Check for unusual noises or skipped steps — may indicate resonance or overcurrent.</li>
     </ul>
 
-    <a href="../materials.html" class="back-btn">← Back to Materials</a>
+    <a href="../materials.html" class="back-btn" data-i18n="back_to_materials">← Back to Materials</a>
   </section>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800 });
   </script>
+  <script src="../lang.js"></script>
 </body>
 </html>

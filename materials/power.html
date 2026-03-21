@@ -48,108 +48,110 @@
     }
     .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
   </style>
+  <link rel="stylesheet" href="../lang.css">
 </head>
 <body>
   <section class="details-section" data-aos="fade-up">
-    <h1>Power Supply</h1>
+    <h1 data-i18n="pow_h1">Power Supply</h1>
 
-    <h2>Introduction</h2>
-    <p>
+    <h2 data-i18n="pow_h2_intro">Introduction</h2>
+    <p data-i18n="pow_p_intro">
       The power supply is a critical component that provides stable and reliable electrical energy to all parts of the system.
       For a CNC machine, laser engraver, or 3D printer, it converts AC mains power into regulated DC voltages suitable for the MKS board, stepper motors, and laser module.
       Proper voltage and current are essential to ensure accurate operation and prevent hardware damage.
     </p>
 
-    <h2>Types of Power Supplies</h2>
+    <h2 data-i18n="pow_h2_types">Types of Power Supplies</h2>
     <ul>
-      <li><strong>Linear Power Supplies:</strong> Provide clean DC output using a transformer and regulator; simple but bulky and less efficient.</li>
-      <li><strong>Switching Power Supplies (SMPS):</strong> High-efficiency, compact, and widely used in modern CNC and laser systems.</li>
-      <li><strong>Dedicated Laser Drivers:</strong> Integrated driver and power control for laser modules.</li>
-      <li><strong>Buck Converters:</strong> Step-down DC-DC converters used to supply 5V or other lower voltages from 12V/24V rails.</li>
+      <li data-i18n-html="pow_li_linear"><strong>Linear Power Supplies:</strong> Provide clean DC output using a transformer and regulator; simple but bulky and less efficient.</li>
+      <li data-i18n-html="pow_li_smps"><strong>Switching Power Supplies (SMPS):</strong> High-efficiency, compact, and widely used in modern CNC and laser systems.</li>
+      <li data-i18n-html="pow_li_laser_drv"><strong>Dedicated Laser Drivers:</strong> Integrated driver and power control for laser modules.</li>
+      <li data-i18n-html="pow_li_buck"><strong>Buck Converters:</strong> Step-down DC-DC converters used to supply 5V or other lower voltages from 12V/24V rails.</li>
     </ul>
 
-    <h2>Electrical Characteristics</h2>
+    <h2 data-i18n="pow_h2_elec">Electrical Characteristics</h2>
     <ul>
-      <li><strong>Input Voltage:</strong> Typically 110–240V AC for mains or 12–24V DC for specific modules.</li>
-      <li><strong>Output Voltage:</strong> 12V for MKS board and stepper motors, 5V for controllers or sensors.</li>
-      <li><strong>Current Rating:</strong> Must support all connected components; e.g., 12V 10A for a medium laser/CNC setup.</li>
-      <li><strong>Ripple & Noise:</strong> Lower ripple ensures stable motor and laser operation.</li>
-      <li><strong>Protection Features:</strong> Overcurrent, overvoltage, short-circuit, thermal shutdown.</li>
+      <li data-i18n-html="pow_li_input"><strong>Input Voltage:</strong> Typically 110–240V AC for mains or 12–24V DC for specific modules.</li>
+      <li data-i18n-html="pow_li_output"><strong>Output Voltage:</strong> 12V for MKS board and stepper motors, 5V for controllers or sensors.</li>
+      <li data-i18n-html="pow_li_current"><strong>Current Rating:</strong> Must support all connected components; e.g., 12V 10A for a medium laser/CNC setup.</li>
+      <li data-i18n-html="pow_li_ripple"><strong>Ripple & Noise:</strong> Lower ripple ensures stable motor and laser operation.</li>
+      <li data-i18n-html="pow_li_protect"><strong>Protection Features:</strong> Overcurrent, overvoltage, short-circuit, thermal shutdown.</li>
     </ul>
 
-    <h2>Working Principle</h2>
-    <p>
+    <h2 data-i18n="pow_h2_work">Working Principle</h2>
+    <p data-i18n="pow_p_work">
       The power supply works by converting AC or high-voltage DC into regulated DC outputs:
     </p>
     <ul>
-      <li>AC input is rectified into DC.</li>
-      <li>DC is filtered to remove ripple.</li>
-      <li>Voltage regulation circuits maintain stable output despite load variations.</li>
-      <li>Current limiting prevents excessive draw from motors and lasers.</li>
-      <li>Thermal protection shuts down the supply in case of overheating.</li>
+      <li data-i18n="pow_li_w1">AC input is rectified into DC.</li>
+      <li data-i18n="pow_li_w2">DC is filtered to remove ripple.</li>
+      <li data-i18n="pow_li_w3">Voltage regulation circuits maintain stable output despite load variations.</li>
+      <li data-i18n="pow_li_w4">Current limiting prevents excessive draw from motors and lasers.</li>
+      <li data-i18n="pow_li_w5">Thermal protection shuts down the supply in case of overheating.</li>
     </ul>
 
-    <h2>Applications</h2>
+    <h2 data-i18n="pow_h2_apps">Applications</h2>
     <ul>
-      <li>Powering MKS boards and microcontrollers</li>
-      <li>Driving stepper motors and servos</li>
-      <li>Supplying laser modules with regulated voltage/current</li>
-      <li>Providing stable DC rails for fans, sensors, and other peripherals</li>
-      <li>General-purpose CNC and automation projects</li>
+      <li data-i18n="pow_li_a1">Powering MKS boards and microcontrollers</li>
+      <li data-i18n="pow_li_a2">Driving stepper motors and servos</li>
+      <li data-i18n="pow_li_a3">Supplying laser modules with regulated voltage/current</li>
+      <li data-i18n="pow_li_a4">Providing stable DC rails for fans, sensors, and other peripherals</li>
+      <li data-i18n="pow_li_a5">General-purpose CNC and automation projects</li>
     </ul>
-      <h2>Advantages</h2>
+      <h2 data-i18n="pow_h2_adv">Advantages</h2>
     <ul>
-      <li>Stable and regulated power for reliable machine operation</li>
-      <li>Protects electronics from voltage spikes and overcurrent</li>
-      <li>High efficiency in modern switching power supplies</li>
-      <li>Compact and easy to integrate into enclosures</li>
-    </ul>
-
-    <h2>Limitations</h2>
-    <ul>
-      <li>Linear supplies are bulky and less efficient</li>
-      <li>Switching supplies can introduce high-frequency noise if not properly filtered</li>
-      <li>Overloading can damage the supply and connected components</li>
-      <li>Requires proper ventilation to avoid overheating</li>
+      <li data-i18n="pow_li_adv1">Stable and regulated power for reliable machine operation</li>
+      <li data-i18n="pow_li_adv2">Protects electronics from voltage spikes and overcurrent</li>
+      <li data-i18n="pow_li_adv3">High efficiency in modern switching power supplies</li>
+      <li data-i18n="pow_li_adv4">Compact and easy to integrate into enclosures</li>
     </ul>
 
-    <h2>Connection with MKS Board</h2>
-    <p>
+    <h2 data-i18n="pow_h2_lim">Limitations</h2>
+    <ul>
+      <li data-i18n="pow_li_lim1">Linear supplies are bulky and less efficient</li>
+      <li data-i18n="pow_li_lim2">Switching supplies can introduce high-frequency noise if not properly filtered</li>
+      <li data-i18n="pow_li_lim3">Overloading can damage the supply and connected components</li>
+      <li data-i18n="pow_li_lim4">Requires proper ventilation to avoid overheating</li>
+    </ul>
+
+    <h2 data-i18n="pow_h2_conn">Connection with MKS Board</h2>
+    <p data-i18n="pow_p_conn">
       The MKS board typically connects to the power supply via:
     </p>
     <ul>
-      <li><strong>12V DC input:</strong> Powers the board, stepper drivers, and motors.</li>
-      <li><strong>5V output (optional):</strong> Can power controllers, sensors, or a Raspberry Pi.</li>
-      <li><strong>GND:</strong> Common ground for all components.</li>
-      <li><strong>Optional Buck Converters:</strong> Step-down voltages for modules that require lower voltage, ensuring stable operation.</li>
+      <li data-i18n-html="pow_li_c1"><strong>12V DC input:</strong> Powers the board, stepper drivers, and motors.</li>
+      <li data-i18n-html="pow_li_c2"><strong>5V output (optional):</strong> Can power controllers, sensors, or a Raspberry Pi.</li>
+      <li data-i18n-html="pow_li_c3"><strong>GND:</strong> Common ground for all components.</li>
+      <li data-i18n-html="pow_li_c4"><strong>Optional Buck Converters:</strong> Step-down voltages for modules that require lower voltage, ensuring stable operation.</li>
     </ul>
-    <p>
+    <p data-i18n="pow_p_wire">
       Proper wiring and current rating selection are essential. Never exceed voltage ratings of any connected module.
     </p>
 
-    <h2>Safety Considerations</h2>
+    <h2 data-i18n="pow_h2_safe">Safety Considerations</h2>
     <ul>
-      <li>Ensure correct voltage and polarity before connecting to the board.</li>
-      <li>Keep the supply well-ventilated to prevent overheating.</li>
-      <li>Do not touch live terminals during operation.</li>
-      <li>Fuse protection is recommended to avoid short-circuit damage.</li>
-      <li>Always verify current capacity matches your motor and laser setup.</li>
+      <li data-i18n="pow_li_s1">Ensure correct voltage and polarity before connecting to the board.</li>
+      <li data-i18n="pow_li_s2">Keep the supply well-ventilated to prevent overheating.</li>
+      <li data-i18n="pow_li_s3">Do not touch live terminals during operation.</li>
+      <li data-i18n="pow_li_s4">Fuse protection is recommended to avoid short-circuit damage.</li>
+      <li data-i18n="pow_li_s5">Always verify current capacity matches your motor and laser setup.</li>
     </ul>
 
-    <h2>Maintenance Tips</h2>
+    <h2 data-i18n="pow_h2_maint">Maintenance Tips</h2>
     <ul>
-      <li>Regularly inspect for dust accumulation and clean vents.</li>
-      <li>Check for signs of overheating, unusual noise, or voltage fluctuations.</li>
-      <li>Ensure all connectors are secure and free of corrosion.</li>
-      <li>Replace old or faulty units promptly to prevent damage to other components.</li>
+      <li data-i18n="pow_li_m1">Regularly inspect for dust accumulation and clean vents.</li>
+      <li data-i18n="pow_li_m2">Check for signs of overheating, unusual noise, or voltage fluctuations.</li>
+      <li data-i18n="pow_li_m3">Ensure all connectors are secure and free of corrosion.</li>
+      <li data-i18n="pow_li_m4">Replace old or faulty units promptly to prevent damage to other components.</li>
     </ul>
 
-    <a href="../materials.html" class="back-btn">← Back to Materials</a>
+    <a href="../materials.html" class="back-btn" data-i18n="back_to_materials">← Back to Materials</a>
   </section>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800 });
   </script>
+  <script src="../lang.js"></script>
 </body>
 </html>

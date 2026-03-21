@@ -291,11 +291,12 @@
             }
         }
     </style>
+  <link rel="stylesheet" href="../lang.css">
 </head>
 <body>
 
 <header>
-    <h1>Laser Subsystem – Semiconductor Physics & Precision Control</h1>
+    <h1 data-i18n="las_h1">Laser Subsystem – Semiconductor Physics & Precision Control</h1>
 </header>
 
 <!-- Empty navigation (hidden) -->
@@ -307,7 +308,7 @@
 
 <!-- ============= SECTION 1: FUNDAMENTALS ============= -->
 <section>
-    <h2>1. What Are Laser Diodes? – Fundamentals from ROHM Tech</h2>
+    <h2 data-i18n="las_h2_1">1. What Are Laser Diodes? – Fundamentals from ROHM Tech</h2>
     <div class="svg-placeholder">
         <svg width="100%" height="200" viewBox="0 0 600 200" style="background: #0d1a1f;">
             <!-- P-N Junction Diagram -->
@@ -320,21 +321,21 @@
             <text x="300" y="170" fill="#ffffff" font-family="Poppins" text-anchor="middle">Laser Diode Structure (PN Junction + Resonator)</text>
         </svg>
     </div>
-    <p><strong>Laser = Light Amplification by Stimulated Emission of Radiation.</strong> A laser diode (semiconductor laser) converts electric current into coherent light using a semiconductor p‑n junction. Unlike LEDs, laser light is <strong>coherent</strong>: phase and waveform are aligned. This allows focusing to spot sizes of just a few micrometers.</p>
+    <p data-i18n="las_p_today"><strong>Laser = Light Amplification by Stimulated Emission of Radiation.</strong> A laser diode (semiconductor laser) converts electric current into coherent light using a semiconductor p‑n junction. Unlike LEDs, laser light is <strong>coherent</strong>: phase and waveform are aligned. This allows focusing to spot sizes of just a few micrometers.</p>
     
-    <h3>Key scientific milestones</h3>
+    <h3 data-i18n="las_h3_milestones">Key scientific milestones</h3>
     <ul>
-        <li><strong>1917</strong> – Einstein theorizes <em>stimulated emission</em>.</li>
-        <li><strong>1957</strong> – Gordon Gould coins the acronym LASER.</li>
-        <li><strong>1962</strong> – First coherent emission from GaAs homojunction; visible light achieved same year.</li>
-        <li><strong>1970s</strong> – Double heterostructure enables continuous oscillation at room temperature.</li>
+        <li data-i18n-html="las_li_1917"><strong>1917</strong> – Einstein theorizes <em>stimulated emission</em>.</li>
+        <li data-i18n-html="las_li_1957"><strong>1957</strong> – Gordon Gould coins the acronym LASER.</li>
+        <li data-i18n-html="las_li_1962"><strong>1962</strong> – First coherent emission from GaAs homojunction; visible light achieved same year.</li>
+        <li data-i18n-html="las_li_1970s"><strong>1970s</strong> – Double heterostructure enables continuous oscillation at room temperature.</li>
     </ul>
-    <p>Today’s CNC engravers use blue laser diodes (GaN, ~445 nm) – a direct descendant of this evolution.</p>
+    <p data-i18n="las_p_today_plain">Today’s CNC engravers use blue laser diodes (GaN, ~445 nm) – a direct descendant of this evolution.</p>
 </section>
 
 <!-- ============= SECTION 2: PRINCIPLE – DIRECT VS INDIRECT BANDGAP ============= -->
 <section>
-    <h2>2. Light Emission Principle: Direct vs. Indirect Bandgap</h2>
+    <h2 data-i18n="las_h2_2">2. Light Emission Principle: Direct vs. Indirect Bandgap</h2>
     <div class="svg-placeholder">
         <svg width="100%" height="200" viewBox="0 0 600 200" style="background: #0d1a1f;">
             <!-- Direct Bandgap Diagram -->
@@ -352,25 +353,25 @@
             <text x="420" y="170" fill="#ff6666" font-family="Poppins" text-anchor="middle" font-size="12">Heat (Phonon)</text>
         </svg>
     </div>
-    <p><strong>Why can’t silicon be used for laser diodes?</strong> Silicon (Si) is an <strong>indirect transition semiconductor</strong>. The bottom of the conduction band and the top of the valence band occur at different wavenumbers (k). Electron recombination requires a change in momentum – involving phonons (lattice vibrations) – and energy is released as <strong>heat</strong>, not light. Emission probability is extremely low.</p>
+    <p data-i18n-html="las_p_silicon"><strong>Why can’t silicon be used for laser diodes?</strong> Silicon (Si) is an <strong>indirect transition semiconductor</strong>. The bottom of the conduction band and the top of the valence band occur at different wavenumbers (k). Electron recombination requires a change in momentum – involving phonons (lattice vibrations) – and energy is released as <strong>heat</strong>, not light. Emission probability is extremely low.</p>
     
     <div class="math">
         Indirect transition: Δk ≠ 0 → phonon assisted → low efficiency ❌<br>
         Direct transition: Δk = 0 → photon emitted ✅
     </div>
 
-    <h3>Direct transition semiconductors (light emitters)</h3>
+    <h3 data-i18n="las_h3_direct">Direct transition semiconductors (light emitters)</h3>
     <ul>
-        <li><strong>GaAs/AlGaAs</strong> – infrared / red</li>
-        <li><strong>GaAlP/InGaAlP</strong> – visible red/orange</li>
-        <li><strong>GaN/InGaN</strong> – blue, violet, UV</li>
+        <li data-i18n-html="las_li_gaas"><strong>GaAs/AlGaAs</strong> – infrared / red</li>
+        <li data-i18n-html="las_li_gaalp"><strong>GaAlP/InGaAlP</strong> – visible red/orange</li>
+        <li data-i18n-html="las_li_gan_uv"><strong>GaN/InGaN</strong> – blue, violet, UV</li>
     </ul>
-    <p>These are <strong>III‑V compound semiconductors</strong>. They have high radiative recombination efficiency and form the basis of all laser diodes and LEDs.</p>
+    <p data-i18n-html="las_p_iii_v">These are <strong>III‑V compound semiconductors</strong>. They have high radiative recombination efficiency and form the basis of all laser diodes and LEDs.</p>
 </section>
 
 <!-- ============= SECTION 3: BANDGAP – WAVELENGTH RELATION ============= -->
 <section>
-    <h2>3. Wavelength Engineering: Bandgap & Lattice Constant</h2>
+    <h2 data-i18n="las_h2_3">3. Wavelength Engineering: Bandgap & Lattice Constant</h2>
     <div class="svg-placeholder">
         <svg width="100%" height="200" viewBox="0 0 600 200" style="background: #0d1a1f;">
             <text x="300" y="50" fill="#ffffff" font-family="Poppins" text-anchor="middle">Bandgap vs Wavelength</text>
@@ -379,15 +380,15 @@
             <text x="300" y="170" fill="#7ad3ff" font-family="Poppins" text-anchor="middle">445nm Blue → E<sub>g</sub> ≈ 2.79eV</text>
         </svg>
     </div>
-    <p>The emission wavelength λ is determined by the bandgap energy E<sub>g</sub> of the active layer:</p>
+    <p data-i18n-html="las_p_wavelength">The emission wavelength λ is determined by the bandgap energy E<sub>g</sub> of the active layer:</p>
     <div class="math">
         E<sub>g</sub> = hν = hc/λ<br>
         λ (nm) = 1240 / E<sub>g</sub> (eV)
     </div>
-    <p><strong>Inverse proportionality:</strong> wider bandgap → shorter wavelength. For a 445 nm blue diode: E<sub>g</sub> ≈ 1240/445 ≈ 2.79 eV.</p>
+    <p data-i18n-html="las_p_inverse"><strong>Inverse proportionality:</strong> wider bandgap → shorter wavelength. For a 445 nm blue diode: E<sub>g</sub> ≈ 1240/445 ≈ 2.79 eV.</p>
     
-    <h3>Lattice matching is critical</h3>
-    <p>To grow defect‑free crystals, the lattice constant of the epitaxial layer must match the substrate. Example: GaInP on GaAs substrate (lattice matched) gives ~650 nm red emission. GaN‑based diodes use sapphire or SiC substrates despite mismatch – managed by buffer layers.</p>
+    <h3 data-i18n="las_h3_lattice">Lattice matching is critical</h3>
+    <p data-i18n="las_p_lattice">To grow defect‑free crystals, the lattice constant of the epitaxial layer must match the substrate. Example: GaInP on GaAs substrate (lattice matched) gives ~650 nm red emission. GaN‑based diodes use sapphire or SiC substrates despite mismatch – managed by buffer layers.</p>
     <ul>
         <li><strong>GaAs</strong> – 850 nm, 980 nm, 650 nm (with InGaP/AlGaInP)</li>
         <li><strong>InP</strong> – 1310 nm, 1550 nm (fiber communication)</li>
@@ -397,52 +398,52 @@
 
 <!-- ============= SECTION 4: ELECTRICAL DOMAIN ============= -->
 <section>
-    <h2>4. Electrical Domain: From Current to Coherent Photons</h2>
+    <h2 data-i18n="las_h2_4">4. Electrical Domain: From Current to Coherent Photons</h2>
     <div class="svg-placeholder">
         <svg width="100%" height="150" viewBox="0 0 600 150" style="background: #0d1a1f;">
             <text x="300" y="50" fill="#ffffff" font-family="Poppins" text-anchor="middle">Driver Transfer Function</text>
             <text x="300" y="100" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="18">I<sub>LD</sub> = K · V<sub>PWM</sub> + I<sub>0</sub></text>
         </svg>
     </div>
-    <p>In a laser diode, forward bias lowers the energy barrier. Electrons inject from n‑side, holes from p‑side; they recombine in the active layer. Above threshold, stimulated emission dominates. The driver must supply clean, constant current.</p>
+    <p data-i18n-html="las_p_sec4">In a laser diode, forward bias lowers the energy barrier. Electrons inject from n‑side, holes from p‑side; they recombine in the active layer. Above threshold, stimulated emission dominates. The driver must supply clean, constant current.</p>
     <div class="math">
         I<sub>LD</sub> = K · V<sub>PWM</sub> + I<sub>0</sub> ,  K = 0.5 A/V
     </div>
     <ul>
-        <li>Forward current I<sub>F</sub> = 2.4 A (max)</li>
-        <li>Forward voltage V<sub>F</sub> ≈ 4.8 V @ 2 A</li>
-        <li>Optical efficiency η = P<sub>opt</sub> / (I<sub>F</sub>·V<sub>F</sub>) ≈ 57%</li>
+        <li data-i18n-html="las_li_if">Forward current I<sub>F</sub> = 2.4 A (max)</li>
+        <li data-i18n-html="las_li_vf">Forward voltage V<sub>F</sub> ≈ 4.8 V @ 2 A</li>
+        <li data-i18n-html="las_li_eta">Optical efficiency η = P<sub>opt</sub> / (I<sub>F</sub>·V<sub>F</sub>) ≈ 57%</li>
     </ul>
-    <p>Waste heat (P<sub>heat</sub>) must be sinked – see Section 7.</p>
+    <p data-i18n-html="las_p_heat_note">Waste heat (P<sub>heat</sub>) must be sinked – see Section 7.</p>
 </section>
 
 <!-- ============= SECTION 5: MICROCONTROLLER & GRBL ============= -->
 <section>
-    <h2>5. Microcontroller PWM & GRBL Firmware</h2>
+    <h2 data-i18n="las_h2_5">5. Microcontroller PWM & GRBL Firmware</h2>
     <div class="svg-placeholder">
         <svg width="100%" height="150" viewBox="0 0 600 150" style="background: #0d1a1f;">
             <text x="300" y="50" fill="#ffffff" font-family="Poppins" text-anchor="middle">PWM Mapping</text>
             <text x="300" y="100" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="18">OCR1A = ⌊255 · S / 1000⌉</text>
         </svg>
     </div>
-    <p>GRBL generates 1 kHz PWM (8‑bit). G‑code S‑word maps directly to duty cycle:</p>
+    <p data-i18n="las_p_grbl_pwm">GRBL generates 1 kHz PWM (8‑bit). G‑code S‑word maps directly to duty cycle:</p>
     <div class="math">
         D = S / 1000 ,  OCR1A = ⌊255 · S / 1000⌉
     </div>
     <pre>M3 S800  →  D = 80%  →  OCR1A = 204</pre>
-    <p>With laser mode enabled ($32=1), GRBL applies power‑velocity compensation to maintain energy density.</p>
+    <p data-i18n="las_p_grbl_mode">With laser mode enabled ($32=1), GRBL applies power‑velocity compensation to maintain energy density.</p>
 </section>
 
 <!-- ============= SECTION 6: OPTICAL PATH ============= -->
 <section>
-    <h2>6. Optical Path: Collimation & Spot Size</h2>
+    <h2 data-i18n="las_h2_6">6. Optical Path: Collimation & Spot Size</h2>
     <div class="svg-placeholder">
         <svg width="100%" height="150" viewBox="0 0 600 150" style="background: #0d1a1f;">
             <text x="300" y="50" fill="#ffffff" font-family="Poppins" text-anchor="middle">Diffraction-Limited Spot</text>
             <text x="300" y="100" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="18">d = 2.44 · λ · f / D</text>
         </svg>
     </div>
-    <p>Diffraction‑limited spot diameter: d = 2.44·λ·f / D . For λ = 445 nm, f = 4.5 mm, D = 3 mm → d ≈ 1.63 µm (ideal). Practical spot: 50–80 µm.</p>
+    <p data-i18n="las_p_spot">Diffraction‑limited spot diameter: d = 2.44·λ·f / D . For λ = 445 nm, f = 4.5 mm, D = 3 mm → d ≈ 1.63 µm (ideal). Practical spot: 50–80 µm.</p>
     <div class="math">
         Power density I = P<sub>opt</sub> / (π·(d/2)²) ≈ 255 kW/cm² @ 5 W, 50 µm spot
     </div>
@@ -450,25 +451,25 @@
 
 <!-- ============= SECTION 7: MATERIAL INTERACTION ============= -->
 <section>
-    <h2>7. Material Interaction: Thermal Modeling</h2>
+    <h2 data-i18n="las_h2_7">7. Material Interaction: Thermal Modeling</h2>
     <div class="math">
         ΔT<sub>max</sub> ≈ (2·P·(1-R)) / (κ·d·√(π·α·τ/4))
     </div>
-    <p>Temperature rise for wood (κ≈0.15, α≈1.2e‑7) with τ = 6 ms → ΔT ≈ 780 °C → ignition.</p>
+    <p data-i18n="las_p_thermal">Temperature rise for wood (κ≈0.15, α≈1.2e‑7) with τ = 6 ms → ΔT ≈ 780 °C → ignition.</p>
 </section>
 
 <!-- ============= SECTION 8: THERMAL MANAGEMENT ============= -->
 <section>
-    <h2>8. Thermal Management & Heat Sink Sizing</h2>
+    <h2 data-i18n="las_h2_8">8. Thermal Management & Heat Sink Sizing</h2>
     <div class="math">
         T<sub>j</sub> = T<sub>a</sub> + P<sub>heat</sub>·(R<sub>jc</sub>+R<sub>cs</sub>+R<sub>sa</sub>)
     </div>
-    <p>P<sub>heat</sub> = P<sub>elec</sub> – P<sub>opt</sub> ≈ 4.1 W. Required R<sub>sa</sub> ≤ 10.4 °C/W for T<sub>j</sub> ≤ 80 °C.</p>
+    <p data-i18n-html="las_p_heatsink">P<sub>heat</sub> = P<sub>elec</sub> – P<sub>opt</sub> ≈ 4.1 W. Required R<sub>sa</sub> ≤ 10.4 °C/W for T<sub>j</sub> ≤ 80 °C.</p>
 </section>
 
 <!-- ============= SECTION 9: SIGNAL FLOW ============= -->
 <section>
-    <h2>9. Complete Signal & Information Flow: G-code → Photon</h2>
+    <h2 data-i18n="las_h2_9">9. Complete Signal & Information Flow: G-code → Photon</h2>
     <div class="svg-placeholder">
         <svg width="100%" height="280" viewBox="0 0 700 280" style="background: #0d1a1f;">
             <!-- Software -->
@@ -513,116 +514,117 @@
             <text x="350" y="250" fill="#ffffff" font-family="Poppins" text-anchor="middle" font-size="12">G-code → Photon: Complete Information Chain</text>
         </svg>
     </div>
-    <p>The path from a digital G‑code command to coherent stimulated emission:</p>
+    <p data-i18n="las_p_path">The path from a digital G‑code command to coherent stimulated emission:</p>
     <ol>
-        <li><strong>G‑code:</strong> <code>M3 S&lt;value&gt;</code> defines requested power.</li>
-        <li><strong>GRBL firmware:</strong> Maps S to PWM register (OCR1A) – linear or with $31/$32 correction.</li>
-        <li><strong>PWM wave (5 V TTL):</strong> Enters laser driver (transconductance amp).</li>
-        <li><strong>Driver output:</strong> I<sub>LD</sub> = K·V<sub>PWM</sub> + I<sub>bias</sub>.</li>
-        <li><strong>Laser diode:</strong> Forward bias reduces energy barrier; electrons and holes recombine in the <strong>direct‑bandgap active layer</strong> (e.g., InGaN).</li>
-        <li><strong>Stimulated emission:</strong> Photons trigger further recombination – optical gain.</li>
-        <li><strong>Resonator (cleaved facets):</strong> Mirrors reflect and amplify selected mode.</li>
-        <li><strong>Coherent beam</strong> exits, focused onto material.</li>
+        <li data-i18n-html="las_li_gcode"><strong>G‑code:</strong> <code>M3 S&lt;value&gt;</code> defines requested power.</li>
+        <li data-i18n-html="las_li_fw"><strong>GRBL firmware:</strong> Maps S to PWM register (OCR1A) – linear or with $31/$32 correction.</li>
+        <li data-i18n-html="las_li_pwm"><strong>PWM wave (5 V TTL):</strong> Enters laser driver (transconductance amp).</li>
+        <li data-i18n-html="las_li_driver_out"><strong>Driver output:</strong> I<sub>LD</sub> = K·V<sub>PWM</sub> + I<sub>bias</sub>.</li>
+        <li data-i18n-html="las_li_diode_action"><strong>Laser diode:</strong> Forward bias reduces energy barrier; electrons and holes recombine in the <strong>direct‑bandgap active layer</strong> (e.g., InGaN).</li>
+        <li data-i18n-html="las_li_stim"><strong>Stimulated emission:</strong> Photons trigger further recombination – optical gain.</li>
+        <li data-i18n-html="las_li_resonator"><strong>Resonator (cleaved facets):</strong> Mirrors reflect and amplify selected mode.</li>
+        <li data-i18n-html="las_li_beam"><strong>Coherent beam</strong> exits, focused onto material.</li>
     </ol>
 </section>
 
 <!-- ============= SECTION 10: GRBL LASER MODE ============= -->
 <section>
-    <h2>10. GRBL Laser Mode & Power Correction</h2>
-    <p>With $32=1, GRBL maps spindle speed to laser power and applies:</p>
+    <h2 data-i18n="las_h2_10">10. GRBL Laser Mode & Power Correction</h2>
+    <p data-i18n="las_p_sec10">With $32=1, GRBL maps spindle speed to laser power and applies:</p>
     <div class="math">
         OCR1A = ⌊255 · ( (S – S<sub>min</sub>) / (1000 – S<sub>min</sub>) )⌉<br>
         P = P<sub>req</sub> · (v / v<sub>req</sub>)   (velocity compensation)
     </div>
-    <p>This ensures constant energy per unit length and prevents burning at corners.</p>
+    <p data-i18n="las_p_sec10b">This ensures constant energy per unit length and prevents burning at corners.</p>
 </section>
 
 <!-- ============= SECTION 11: SUMMARY TABLE ============= -->
 <section>
-    <h2>11. Summary: Laser Diode Parameters & Materials</h2>
+    <h2 data-i18n="las_h2_11">11. Summary: Laser Diode Parameters & Materials</h2>
     <table class="table-specs">
         <tr>
-            <th>Parameter / Material</th>
-            <th>Symbol / Equation</th>
-            <th>Typical value (445nm blue)</th>
+            <th data-i18n="las_th_param">Parameter / Material</th>
+            <th data-i18n="las_th_symbol">Symbol / Equation</th>
+            <th data-i18n="las_th_value">Typical value (445nm blue)</th>
         </tr>
         <tr>
-            <td>Active layer compound</td>
-            <td>III‑V direct bandgap</td>
-            <td>InGaN (Gallium Nitride)</td>
+            <td data-i18n="las_td_active">Active layer compound</td>
+            <td data-i18n="las_td_sym1">III‑V direct bandgap</td>
+            <td data-i18n="las_td_v1">InGaN (Gallium Nitride)</td>
         </tr>
         <tr>
-            <td>Bandgap energy</td>
+            <td data-i18n="las_td_bandgap">Bandgap energy</td>
             <td>E<sub>g</sub> = hc/λ</td>
-            <td>2.79 eV</td>
+            <td data-i18n="las_td_v2">2.79 eV</td>
         </tr>
         <tr>
-            <td>Threshold current</td>
+            <td data-i18n="las_td_ith">Threshold current</td>
             <td>I<sub>th</sub></td>
-            <td>250 mA</td>
+            <td data-i18n="las_td_v3">250 mA</td>
         </tr>
         <tr>
-            <td>Operating current</td>
+            <td data-i18n="las_td_iop">Operating current</td>
             <td>I<sub>op</sub></td>
-            <td>1.8 – 2.4 A</td>
+            <td data-i18n="las_td_v4">1.8 – 2.4 A</td>
         </tr>
         <tr>
-            <td>Wavelength</td>
-            <td>λ</td>
-            <td>445 ±10 nm</td>
+            <td data-i18n="las_td_wl">Wavelength</td>
+            <td data-i18n="las_td_v5">λ</td>
+            <td data-i18n="las_td_v6">445 ±10 nm</td>
         </tr>
         <tr>
-            <td>PWM mapping</td>
-            <td>D = S/1000</td>
-            <td>0 – 100%</td>
+            <td data-i18n="las_td_pwm">PWM mapping</td>
+            <td data-i18n="las_td_v7">D = S/1000</td>
+            <td data-i18n="las_td_v8">0 – 100%</td>
         </tr>
         <tr>
-            <td>Power density (focus)</td>
-            <td>I = P/A</td>
-            <td>200 kW/cm²</td>
+            <td data-i18n="las_td_pd">Power density (focus)</td>
+            <td data-i18n="las_td_v9">I = P/A</td>
+            <td data-i18n="las_td_v10">200 kW/cm²</td>
         </tr>
     </table>
 </section>
 
 <!-- ============= LEARN MORE SECTION ============= -->
 <section>
-    <h2>📚 Further Learning Resources</h2>
+    <h2 data-i18n="las_h2_12">📚 Further Learning Resources</h2>
     <div class="resource-links">
-        <h3>🔬 If you want to learn more about diode lasers, check these out:</h3>
+        <h3 data-i18n="las_h3_resources">🔬 If you want to learn more about diode lasers, check these out:</h3>
         <ul>
             <li>
-                <span class="resource-title">1. ROHM TechWeb – Laser Diodes Basic Series (2024)</span>
+                <span class="resource-title" data-i18n="las_res1_title">1. ROHM TechWeb – Laser Diodes Basic Series (2024)</span>
                 <a href="https://techweb.rohm.com/product/opto-electronics/laser-diodes/18793/" target="_blank" class="resource-link">https://techweb.rohm.com/product/opto-electronics/laser-diodes/18793/</a>
-                <div class="resource-desc">Comprehensive 8-part series on laser diode physics, direct vs indirect bandgap, materials (GaN, GaAs, InP), wavelength engineering, and double heterostructures. The primary source used in this document.</div>
+                <div class="resource-desc" data-i18n="las_res1_desc">Comprehensive 8-part series on laser diode physics, direct vs indirect bandgap, materials (GaN, GaAs, InP), wavelength engineering, and double heterostructures. The primary source used in this document.</div>
             </li>
             <li>
-                <span class="resource-title">2. RP Photonics Encyclopedia – Laser Diodes</span>
+                <span class="resource-title" data-i18n="las_res2_title">2. RP Photonics Encyclopedia – Laser Diodes</span>
                 <a href="https://www.rp-photonics.com/laser_diodes.html" target="_blank" class="resource-link">https://www.rp-photonics.com/laser_diodes.html</a>
-                <div class="resource-desc">In-depth encyclopedia entry covering edge-emitters, VCSELs, quantum well lasers, threshold current, slope efficiency, and beam properties. Includes mathematical derivations and design trade-offs.</div>
+                <div class="resource-desc" data-i18n="las_res2_desc">In-depth encyclopedia entry covering edge-emitters, VCSELs, quantum well lasers, threshold current, slope efficiency, and beam properties. Includes mathematical derivations and design trade-offs.</div>
             </li>
             <li>
-                <span class="resource-title">3. Newport Corporation – Laser Diode Technology</span>
+                <span class="resource-title" data-i18n="las_res3_title">3. Newport Corporation – Laser Diode Technology</span>
                 <a href="https://www.newport.com/t/laser-diode-technology" target="_blank" class="resource-link">https://www.newport.com/t/laser-diode-technology</a>
-                <div class="resource-desc">Application note covering L/I/V curves, thermal impedance, wavelength tuning, and packaging. Includes practical guidance on driver selection and ESD protection.</div>
+                <div class="resource-desc" data-i18n="las_res3_desc">Application note covering L/I/V curves, thermal impedance, wavelength tuning, and packaging. Includes practical guidance on driver selection and ESD protection.</div>
             </li>
             <li>
-                <span class="resource-title">4. Laser Focus World – Understanding Laser Diode Characteristics</span>
+                <span class="resource-title" data-i18n="las_res4_title">4. Laser Focus World – Understanding Laser Diode Characteristics</span>
                 <a href="https://www.laserfocusworld.com/lasers-sources/article/16547571/understanding-laser-diode-characteristics" target="_blank" class="resource-link">https://www.laserfocusworld.com/lasers-sources/article/16547571/understanding-laser-diode-characteristics</a>
-                <div class="resource-desc">Industry magazine article explaining kink effects, far-field patterns, reliability testing, and lifetime estimation for high-power laser diodes.</div>
+                <div class="resource-desc" data-i18n="las_res4_desc">Industry magazine article explaining kink effects, far-field patterns, reliability testing, and lifetime estimation for high-power laser diodes.</div>
             </li>
         </ul>
-        <p style="color: #7ad3ff; margin-top: 20px; border-top: 1px solid #00b3ff; padding-top: 15px;">⭐ These resources cover semiconductor physics, driver design, and application engineering – from fundamental theory to practical implementation.</p>
+        <p style="color: #7ad3ff; margin-top: 20px; border-top: 1px solid #00b3ff; padding-top: 15px;" data-i18n="las_res_note">⭐ These resources cover semiconductor physics, driver design, and application engineering – from fundamental theory to practical implementation.</p>
     </div>
 </section>
 
 <!-- ============= BACK TO MATERIALS BUTTON - BOTTOM OF PAGE ============= -->
 <div class="back-to-materials-container">
-    <a href="../materials.html" class="back-btn">Back to Materials</a>
+    <a href="../materials.html" class="back-btn" data-i18n="las_back">Back to Materials</a>
 </div>
 
 <footer>
-    <p>Graduation Project – Laser Subsystem | Semiconductor physics adapted from ROHM TechWeb (2024) | Learn More resources compiled for further study</p>
+    <p data-i18n="las_footer">Graduation Project – Laser Subsystem | Semiconductor physics adapted from ROHM TechWeb (2024) | Learn More resources compiled for further study</p>
 </footer>
 
+  <script src="../lang.js"></script>
 </body>
 </html>

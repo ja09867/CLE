@@ -48,114 +48,116 @@
     }
     .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
   </style>
+  <link rel="stylesheet" href="../lang.css">
 </head>
 <body>
   <section class="details-section" data-aos="fade-up">
-    <h1>Driver Board</h1>
+    <h1 data-i18n="ctrl_h1">Driver Board</h1>
 
-    <h2>Introduction</h2>
-    <p>
+    <h2 data-i18n="ctrl_h2_intro">Introduction</h2>
+    <p data-i18n-html="ctrl_p_intro">
       A <strong>driver board</strong> is an electronic module that controls motors and other actuators in CNC, 3D printers, and laser machines.
       It serves as an interface between the controller (e.g., MKS board) and the high-current devices, allowing precise control of motion without overloading the controller.
     </p>
 
-    <h2>Types of Driver Boards</h2>
+    <h2 data-i18n="ctrl_h2_types">Types of Driver Boards</h2>
     <ul>
-      <li><strong>Stepper Motor Drivers:</strong> Control stepper motors using pulse signals; examples include A4988, TMC2208, TMC2130.</li>
-      <li><strong>Servo Drivers:</strong> Provide PWM signals to control servo motors.</li>
-      <li><strong>Laser Drivers:</strong> Regulate power to laser modules using PWM or analog signals.</li>
-      <li><strong>Motor Shield Boards:</strong> Combine multiple drivers with logic circuits for complex systems.</li>
+      <li data-i18n-html="ctrl_li_stepper"><strong>Stepper Motor Drivers:</strong> Control stepper motors using pulse signals; examples include A4988, TMC2208, TMC2130.</li>
+      <li data-i18n-html="ctrl_li_servo"><strong>Servo Drivers:</strong> Provide PWM signals to control servo motors.</li>
+      <li data-i18n-html="ctrl_li_laser"><strong>Laser Drivers:</strong> Regulate power to laser modules using PWM or analog signals.</li>
+      <li data-i18n-html="ctrl_li_shield"><strong>Motor Shield Boards:</strong> Combine multiple drivers with logic circuits for complex systems.</li>
     </ul>
 
-    <h2>Working Principle</h2>
-    <p>
+    <h2 data-i18n="ctrl_h2_work">Working Principle</h2>
+    <p data-i18n-html="ctrl_p_work">
       Driver boards receive low-power control signals from the MKS board and convert them into higher-current outputs suitable for motors:
     </p>
     <ul>
-      <li><strong>Microstepping:</strong> Divides each full step into smaller increments for smooth motion.</li>
-      <li><strong>Current Limiting:</strong> Prevents motors from overheating.</li>
-      <li><strong>Overvoltage & Thermal Protection:</strong> Protects both the board and the motor.</li>
-      <li><strong>PWM Control:</strong> Adjusts power to modules like lasers or fans precisely.</li>
+      <li data-i18n-html="ctrl_li_w1"><strong>Microstepping:</strong> Divides each full step into smaller increments for smooth motion.</li>
+      <li data-i18n-html="ctrl_li_w2"><strong>Current Limiting:</strong> Prevents motors from overheating.</li>
+      <li data-i18n-html="ctrl_li_w3"><strong>Overvoltage & Thermal Protection:</strong> Protects both the board and the motor.</li>
+      <li data-i18n-html="ctrl_li_w4"><strong>PWM Control:</strong> Adjusts power to modules like lasers or fans precisely.</li>
     </ul>
 
-    <h2>Main Components</h2>
+    <h2 data-i18n="ctrl_h2_comp">Main Components</h2>
     <ul>
-      <li><strong>Control Input Pins:</strong> STEP, DIR, EN, PWM, etc.</li>
-      <li><strong>Power Stage:</strong> MOSFETs or transistors handle high current output.</li>
-      <li><strong>Logic Controller:</strong> Decodes controller signals into motor-driving sequences.</li>
-      <li><strong>Microcontroller/ICs:</strong> Implement microstepping, current sensing, and protection features.</li>
-      <li><strong>Heat Sink & Cooling:</strong> Prevent overheating during prolonged operation.</li>
-      <li><strong>Connectors:</strong> For motors, power, and controller signals.</li>
+      <li data-i18n-html="ctrl_li_c1"><strong>Control Input Pins:</strong> STEP, DIR, EN, PWM, etc.</li>
+      <li data-i18n-html="ctrl_li_c2"><strong>Power Stage:</strong> MOSFETs or transistors handle high current output.</li>
+      <li data-i18n-html="ctrl_li_c3"><strong>Logic Controller:</strong> Decodes controller signals into motor-driving sequences.</li>
+      <li data-i18n-html="ctrl_li_c4"><strong>Microcontroller/ICs:</strong> Implement microstepping, current sensing, and protection features.</li>
+      <li data-i18n-html="ctrl_li_c5"><strong>Heat Sink & Cooling:</strong> Prevent overheating during prolonged operation.</li>
+      <li data-i18n-html="ctrl_li_c6"><strong>Connectors:</strong> For motors, power, and controller signals.</li>
     </ul>
 
-    <h2>Electrical Characteristics</h2>
+    <h2 data-i18n="ctrl_h2_elec">Electrical Characteristics</h2>
     <ul>
-      <li>Input Voltage: Typically 12–24V DC, depending on driver type.</li>
-      <li>Current Output: Configurable per motor, often 0.5–2.5A per phase.</li>
-      <li>Microstepping Resolution: Full, half, 1/8, 1/16, up to 1/256 steps.</li>
-      <li>Protection Features: Overcurrent, thermal shutdown, undervoltage lockout.</li>
+      <li data-i18n="ctrl_li_e1">Input Voltage: Typically 12–24V DC, depending on driver type.</li>
+      <li data-i18n="ctrl_li_e2">Current Output: Configurable per motor, often 0.5–2.5A per phase.</li>
+      <li data-i18n="ctrl_li_e3">Microstepping Resolution: Full, half, 1/8, 1/16, up to 1/256 steps.</li>
+      <li data-i18n="ctrl_li_e4">Protection Features: Overcurrent, thermal shutdown, undervoltage lockout.</li>
     </ul>
-    <h2>Applications</h2>
+    <h2 data-i18n="ctrl_h2_apps">Applications</h2>
     <ul>
-      <li>Controlling stepper motors in CNC, 3D printers, and laser engravers</li>
-      <li>Driving servo motors for robotics or precision motion</li>
-      <li>Regulating laser modules and fans</li>
-      <li>Automation systems requiring precise movement or speed control</li>
-    </ul>
-
-    <h2>Advantages</h2>
-    <ul>
-      <li>Precise control of motor movement</li>
-      <li>Microstepping allows smooth motion</li>
-      <li>Protects motors from overcurrent and overheating</li>
-      <li>Compact and easy to integrate into machines</li>
+      <li data-i18n="ctrl_li_a1">Controlling stepper motors in CNC, 3D printers, and laser engravers</li>
+      <li data-i18n="ctrl_li_a2">Driving servo motors for robotics or precision motion</li>
+      <li data-i18n="ctrl_li_a3">Regulating laser modules and fans</li>
+      <li data-i18n="ctrl_li_a4">Automation systems requiring precise movement or speed control</li>
     </ul>
 
-    <h2>Limitations</h2>
+    <h2 data-i18n="ctrl_h2_adv">Advantages</h2>
     <ul>
-      <li>Requires proper current and voltage configuration</li>
-      <li>High microstepping can reduce torque slightly</li>
-      <li>Heat dissipation is crucial for prolonged operation</li>
-      <li>Not all drivers support all motor types; check compatibility</li>
+      <li data-i18n="ctrl_li_adv1">Precise control of motor movement</li>
+      <li data-i18n="ctrl_li_adv2">Microstepping allows smooth motion</li>
+      <li data-i18n="ctrl_li_adv3">Protects motors from overcurrent and overheating</li>
+      <li data-i18n="ctrl_li_adv4">Compact and easy to integrate into machines</li>
     </ul>
 
-    <h2>Connection with MKS Board</h2>
-    <p>
+    <h2 data-i18n="ctrl_h2_lim">Limitations</h2>
+    <ul>
+      <li data-i18n="ctrl_li_lim1">Requires proper current and voltage configuration</li>
+      <li data-i18n="ctrl_li_lim2">High microstepping can reduce torque slightly</li>
+      <li data-i18n="ctrl_li_lim3">Heat dissipation is crucial for prolonged operation</li>
+      <li data-i18n="ctrl_li_lim4">Not all drivers support all motor types; check compatibility</li>
+    </ul>
+
+    <h2 data-i18n="ctrl_h2_conn">Connection with MKS Board</h2>
+    <p data-i18n="ctrl_p_conn">
       Driver boards connect to the MKS board via control pins:
     </p>
     <ul>
-      <li><strong>STEP:</strong> Pulse signal for stepping the motor</li>
-      <li><strong>DIR:</strong> Sets rotation direction</li>
-      <li><strong>EN (Enable):</strong> Activates or disables the driver output</li>
-      <li><strong>Vmot & GND:</strong> Power supply inputs for motor operation</li>
-      <li><strong>PWM/TTL:</strong> Optional for controlling lasers or fans</li>
+      <li data-i18n-html="ctrl_li_c_step"><strong>STEP:</strong> Pulse signal for stepping the motor</li>
+      <li data-i18n-html="ctrl_li_c_dir"><strong>DIR:</strong> Sets rotation direction</li>
+      <li data-i18n-html="ctrl_li_c_en"><strong>EN (Enable):</strong> Activates or disables the driver output</li>
+      <li data-i18n-html="ctrl_li_c_vmot"><strong>Vmot & GND:</strong> Power supply inputs for motor operation</li>
+      <li data-i18n-html="ctrl_li_c_pwm"><strong>PWM/TTL:</strong> Optional for controlling lasers or fans</li>
     </ul>
-    <p>
+    <p data-i18n="ctrl_p_conn2">
       Correct wiring ensures smooth, precise motion. Drivers should be configured for current limits matching motor specifications.
     </p>
 
-    <h2>Maintenance Tips</h2>
+    <h2 data-i18n="ctrl_h2_maint">Maintenance Tips</h2>
     <ul>
-      <li>Ensure drivers are properly cooled; check heat sinks and airflow.</li>
-      <li>Inspect wiring and connectors for loose connections.</li>
-      <li>Verify current settings regularly to avoid motor overheating.</li>
-      <li>Check for abnormal noises, skipped steps, or overheating as signs of misconfiguration.</li>
+      <li data-i18n="ctrl_li_m1">Ensure drivers are properly cooled; check heat sinks and airflow.</li>
+      <li data-i18n="ctrl_li_m2">Inspect wiring and connectors for loose connections.</li>
+      <li data-i18n="ctrl_li_m3">Verify current settings regularly to avoid motor overheating.</li>
+      <li data-i18n="ctrl_li_m4">Check for abnormal noises, skipped steps, or overheating as signs of misconfiguration.</li>
     </ul>
 
-    <h2>Safety Precautions</h2>
+    <h2 data-i18n="ctrl_h2_safe">Safety Precautions</h2>
     <ul>
-      <li>Always turn off power before making wiring changes.</li>
-      <li>Never exceed rated voltage or current for the driver or motor.</li>
-      <li>Keep the board away from conductive surfaces to avoid shorts.</li>
-      <li>Ensure proper grounding and ventilation.</li>
+      <li data-i18n="ctrl_li_s1">Always turn off power before making wiring changes.</li>
+      <li data-i18n="ctrl_li_s2">Never exceed rated voltage or current for the driver or motor.</li>
+      <li data-i18n="ctrl_li_s3">Keep the board away from conductive surfaces to avoid shorts.</li>
+      <li data-i18n="ctrl_li_s4">Ensure proper grounding and ventilation.</li>
     </ul>
 
-    <a href="../materials.html" class="back-btn">← Back to Materials</a>
+    <a href="../materials.html" class="back-btn" data-i18n="back_to_materials">← Back to Materials</a>
   </section>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800 });
   </script>
+  <script src="../lang.js"></script>
 </body>
 </html>

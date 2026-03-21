@@ -66,16 +66,17 @@
       border-radius: 10px;
     }
   </style>
+  <link rel="stylesheet" href="../lang.css">
 </head>
 
 <body>
 
 <section class="details-section" data-aos="fade-up">
 
-  <h1>Limit Switch</h1>
+  <h1 data-i18n="swt_h1">Limit Switch</h1>
 
-  <h2>Introduction</h2>
-  <p>
+  <h2 data-i18n="swt_h2_intro">Introduction</h2>
+  <p data-i18n="swt_p_intro">
     A limit switch is an electromechanical device used to detect the physical
     position or movement limit of a machine part. In CNC and laser engraving
     machines, limit switches are essential for safety, accuracy, and automated
@@ -85,94 +86,94 @@
 
   <img src="../images/limitswitch0.jpg" class="inline-image">
 
-  <h2>Types of Limit Switches</h2>
+  <h2 data-i18n="swt_h2_types">Types of Limit Switches</h2>
   <ul>
-    <li><strong>Mechanical Lever Switch:</strong> Uses a metal arm or roller that is pressed when the axis reaches its end.</li>
-    <li><strong>Micro Switch:</strong> Compact switch with high reliability and fast response.</li>
-    <li><strong>Optical Limit Switch:</strong> Uses infrared light to detect movement without physical contact.</li>
-    <li><strong>Hall Effect Switch:</strong> Detects magnetic fields for contactless sensing.</li>
+    <li data-i18n-html="swt_li_lever"><strong>Mechanical Lever Switch:</strong> Uses a metal arm or roller that is pressed when the axis reaches its end.</li>
+    <li data-i18n-html="swt_li_micro"><strong>Micro Switch:</strong> Compact switch with high reliability and fast response.</li>
+    <li data-i18n-html="swt_li_optical"><strong>Optical Limit Switch:</strong> Uses infrared light to detect movement without physical contact.</li>
+    <li data-i18n-html="swt_li_hall"><strong>Hall Effect Switch:</strong> Detects magnetic fields for contactless sensing.</li>
   </ul>
 
-  <h2>Working Principle</h2>
-  <p>
+  <h2 data-i18n="swt_h2_work">Working Principle</h2>
+  <p data-i18n="swt_p_work">
     Limit switches work by changing their electrical state when they are
     physically triggered by a moving part of the machine:
   </p>
   <ul>
-    <li>When the axis moves, it presses the switch lever or sensor.</li>
-    <li>The internal contacts open or close, sending a signal to the controller.</li>
-    <li>The controller immediately stops movement or sets the axis position.</li>
+    <li data-i18n="swt_li_w1">When the axis moves, it presses the switch lever or sensor.</li>
+    <li data-i18n="swt_li_w2">The internal contacts open or close, sending a signal to the controller.</li>
+    <li data-i18n="swt_li_w3">The controller immediately stops movement or sets the axis position.</li>
   </ul>
 
   <img src="../images/limitswitch1.jpg" class="inline-image">
 
-  <h2>Electrical Components</h2>
+  <h2 data-i18n="swt_h2_elec">Electrical Components</h2>
   <ul>
-    <li><strong>Common (COM):</strong> Shared connection point.</li>
-    <li><strong>Normally Open (NO):</strong> Circuit closes only when the switch is pressed.</li>
-    <li><strong>Normally Closed (NC):</strong> Circuit opens when the switch is pressed.</li>
-    <li><strong>Housing:</strong> Plastic or metal casing for protection.</li>
-    <li><strong>Actuator:</strong> Lever, roller, or button that gets pressed.</li>
+    <li data-i18n-html="swt_li_e1"><strong>Common (COM):</strong> Shared connection point.</li>
+    <li data-i18n-html="swt_li_e2"><strong>Normally Open (NO):</strong> Circuit closes only when the switch is pressed.</li>
+    <li data-i18n-html="swt_li_e3"><strong>Normally Closed (NC):</strong> Circuit opens when the switch is pressed.</li>
+    <li data-i18n-html="swt_li_e4"><strong>Housing:</strong> Plastic or metal casing for protection.</li>
+    <li data-i18n-html="swt_li_e5"><strong>Actuator:</strong> Lever, roller, or button that gets pressed.</li>
   </ul>
 
   <img src="../images/limitswitch2.jpg" class="inline-image">
 
-  <h2>Why Limit Switches Are Important</h2>
+  <h2 data-i18n="swt_h2_why">Why Limit Switches Are Important</h2>
   <ul>
-    <li>Prevents motors from over-traveling and damaging the frame.</li>
-    <li>Allows automatic homing of X, Y, and Z axes.</li>
-    <li>Improves repeatability and positioning accuracy.</li>
-    <li>Provides an emergency stop reference point.</li>
+    <li data-i18n="swt_li_why1">Prevents motors from over-traveling and damaging the frame.</li>
+    <li data-i18n="swt_li_why2">Allows automatic homing of X, Y, and Z axes.</li>
+    <li data-i18n="swt_li_why3">Improves repeatability and positioning accuracy.</li>
+    <li data-i18n="swt_li_why4">Provides an emergency stop reference point.</li>
   </ul>
 
-  <h2>Connection with MKS Board</h2>
-  <p>
+  <h2 data-i18n="swt_h2_conn">Connection with MKS Board</h2>
+  <p data-i18n="swt_p_conn">
     Limit switches are connected to the MKS controller board using signal and
     ground pins:
   </p>
   <ul>
-    <li>The <strong>Signal</strong> pin detects switch activation.</li>
-    <li>The <strong>Ground</strong> pin completes the circuit.</li>
-    <li>Most setups use <strong>Normally Closed (NC)</strong> wiring for safety.</li>
-    <li>Firmware detects the trigger and stops axis movement instantly.</li>
+    <li data-i18n-html="swt_li_c1">The <strong>Signal</strong> pin detects switch activation.</li>
+    <li data-i18n-html="swt_li_c2">The <strong>Ground</strong> pin completes the circuit.</li>
+    <li data-i18n-html="swt_li_c3">Most setups use <strong>Normally Closed (NC)</strong> wiring for safety.</li>
+    <li data-i18n="swt_li_c4">Firmware detects the trigger and stops axis movement instantly.</li>
   </ul>
 
   <img src="../images/limitswitch3.jpg" class="inline-image">
 
-  <h2>Applications</h2>
+  <h2 data-i18n="swt_h2_apps">Applications</h2>
   <ul>
-    <li>CNC machine homing systems.</li>
-    <li>Laser engraver axis limits.</li>
-    <li>3D printers and robotic arms.</li>
-    <li>Industrial automation and safety systems.</li>
+    <li data-i18n="swt_li_a1">CNC machine homing systems.</li>
+    <li data-i18n="swt_li_a2">Laser engraver axis limits.</li>
+    <li data-i18n="swt_li_a3">3D printers and robotic arms.</li>
+    <li data-i18n="swt_li_a4">Industrial automation and safety systems.</li>
   </ul>
 
-  <h2>Advantages</h2>
+  <h2 data-i18n="swt_h2_adv">Advantages</h2>
   <ul>
-    <li>Simple and reliable operation.</li>
-    <li>Low cost and easy installation.</li>
-    <li>Improves machine safety.</li>
-    <li>Compatible with most CNC controllers.</li>
+    <li data-i18n="swt_li_adv1">Simple and reliable operation.</li>
+    <li data-i18n="swt_li_adv2">Low cost and easy installation.</li>
+    <li data-i18n="swt_li_adv3">Improves machine safety.</li>
+    <li data-i18n="swt_li_adv4">Compatible with most CNC controllers.</li>
   </ul>
 
-  <h2>Limitations</h2>
+  <h2 data-i18n="swt_h2_lim">Limitations</h2>
   <ul>
-    <li>Mechanical wear over time.</li>
-    <li>Requires precise mounting alignment.</li>
-    <li>Physical contact types may need maintenance.</li>
+    <li data-i18n="swt_li_lim1">Mechanical wear over time.</li>
+    <li data-i18n="swt_li_lim2">Requires precise mounting alignment.</li>
+    <li data-i18n="swt_li_lim3">Physical contact types may need maintenance.</li>
   </ul>
 
-  <h2>Safety & Maintenance</h2>
+  <h2 data-i18n="swt_h2_safemaint">Safety & Maintenance</h2>
   <ul>
-    <li>Secure mounting to avoid false triggers.</li>
-    <li>Check wiring connections regularly.</li>
-    <li>Keep switches clean from dust and debris.</li>
-    <li>Test homing function after installation.</li>
+    <li data-i18n="swt_li_s1">Secure mounting to avoid false triggers.</li>
+    <li data-i18n="swt_li_s2">Check wiring connections regularly.</li>
+    <li data-i18n="swt_li_s3">Keep switches clean from dust and debris.</li>
+    <li data-i18n="swt_li_s4">Test homing function after installation.</li>
   </ul>
 
   <img src="../images/limitswitch4.jpg" class="inline-image">
 
-  <a href="../materials.html" class="back-btn">← Back to Materials</a>
+  <a href="../materials.html" class="back-btn" data-i18n="back_to_materials">← Back to Materials</a>
 
 </section>
 
@@ -181,5 +182,6 @@
   AOS.init({ duration: 800 });
 </script>
 
+  <script src="../lang.js"></script>
 </body>
 </html>
