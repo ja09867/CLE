@@ -524,16 +524,7 @@
       ar: 'يحوّل السلايسر التصميم إلى <strong>G-code</strong>، وهو سلسلة من تعليمات الحركة والعمليات.',
       ku: 'سلایسەرەکە دیزاینەکە دەگۆڕێت بۆ <strong>G-code</strong>، کە زنجیرەیەکی ڕێنماییەکانی جووڵە و کارکردنە.',
     },
-
-    /* ── NovaGrave.html section headings ── */
-    ng_h2_trailer:  { en: 'See It <span style="color: red;">In</span> <span style="color: yellow;">Action</span>', ar: 'شاهده <span style="color: red;">في</span> <span style="color: yellow;">العمل</span>', ku: 'ببینه <span style="color: red;">لە</span> <span style="color: yellow;">کارکردن</span>' },
-    ng_h2_solves:   { en: 'What <span style="color: red;">CLE</span> <span style="color: yellow;">Solves</span>', ar: 'ما الذي يحله <span style="color: red;">CLE</span>', ku: 'چی <span style="color: red;">CLE</span> <span style="color: yellow;">چارەسەر دەکات</span>' },
-    ng_h2_features: { en: '<span style="color: red;">Key </span><span style="color: yellow;">Features</span>', ar: '<span style="color: red;">المميزات </span><span style="color: yellow;">الرئيسية</span>', ku: '<span style="color: red;">تایبەتمەندییە </span><span style="color: yellow;">سەرەکییەکان</span>' },
-    ng_h2_better:   { en: '<span style="color: red;">Why CLE Is </span><span style="color: yellow;">Better</span>', ar: '<span style="color: red;">لماذا CLE </span><span style="color: yellow;">أفضل</span>', ku: '<span style="color: red;">بۆچی CLE </span><span style="color: yellow;">باشتره</span>' },
-    ng_h2_tech:     { en: '<span style="color: red;">Technology </span><span style="color: yellow;">Stack</span>', ar: '<span style="color: red;">التقنيات </span><span style="color: yellow;">المستخدمة</span>', ku: '<span style="color: red;">تەکنەلۆجیا </span><span style="color: yellow;">بەکارهاتووەکان</span>' },
-    ng_h2_sysreq:   { en: '<span style="color: red;">System </span><span style="color: yellow;">Requirements</span>', ar: '<span style="color: red;">متطلبات </span><span style="color: yellow;">النظام</span>', ku: '<span style="color: red;">پێداویستییەکانی </span><span style="color: yellow;">سیستەم</span>' },
-    ng_h2_download: { en: '<span style="color: red;">Download </span><span style="color: yellow;">CLE Laser Control</span>', ar: '<span style="color: red;">تحميل </span><span style="color: yellow;">CLE Laser Control</span>', ku: '<span style="color: red;">داگرتنی </span><span style="color: yellow;">CLE Laser Control</span>' },
-
+    back_to_materials: { en: '← Back to Materials', ar: '← العودة إلى المواد', ku: '← گەڕانەوە بۆ ماددەکان' },
     las_p_silicon: {
       en: '<strong>Why can\'t silicon be used for laser diodes?</strong> Silicon (Si) is an <strong>indirect transition semiconductor</strong>. The bottom of the conduction band and the top of the valence band occur at different wavenumbers (k). Electron recombination requires a change in momentum – involving phonons (lattice vibrations) – and energy is released as <strong>heat</strong>, not light. Emission probability is extremely low.',
       ar: '<strong>لماذا لا يمكن استخدام السيليكون في ثنائيات الليزر؟</strong> السيليكون (Si) <strong>شبه موصل ذو انتقال غير مباشر</strong>. يقع قاع نطاق التوصيل وقمة نطاق التكافؤ عند أعداد موجية مختلفة (k). تتطلب إعادة تركيب الإلكترون تغييراً في الزخم وتُطلق الطاقة على شكل <strong>حرارة</strong> لا ضوء.',
@@ -1150,7 +1141,6 @@
        DETAIL PAGES — plain keys (data-i18n)
     ═══════════════════════════════════════════ */
 
-    back_to_materials: { en: '← Back to Materials', ar: '← العودة إلى المواد', ku: '← گەڕانەوە بۆ ماددەکان' },
 
     /* — Shared section headings — */
     pow_h1:       { en: 'Power Supply',                ar: 'مصدر الطاقة',                    ku: 'سەرچاوەی وزە' },
@@ -1373,26 +1363,6 @@
     las_h2_4: { en: '4. Electrical Domain: From Current to Coherent Photons', ar: '4. المجال الكهربائي: من التيار إلى الفوتونات المتماسكة', ku: '4. دۆمەینی کارەبایی: لە جریان تا فۆتۆنی کۆهیرینت' },
     las_h2_5: { en: '5. Microcontroller PWM & GRBL Firmware', ar: '5. PWM للمتحكم الدقيق وبرنامج GRBL الثابت', ku: '5. PWM-ی مایکرۆکۆنترۆڵەر و فێرمویێری GRBL' },
     las_h2_6: { en: '6. Optical Path: Collimation & Spot Size', ar: '6. المسار الضوئي: التجميع والحجم البقعي', ku: '6. ڕێگای ئۆپتیکی: کۆلیماسیۆن و قەبارەی خاڵ' },
-
-    /* ── NovaGrave.html table & requirements ── */
-    ng_th_feature:      { en: 'Feature',          ar: 'الميزة',              ku: 'تایبەتمەندی' },
-    ng_th_lasergrbl:    { en: 'LaserGRBL',         ar: 'LaserGRBL',           ku: 'LaserGRBL' },
-    ng_th_lightburn:    { en: 'LightBurn',          ar: 'LightBurn',           ku: 'LightBurn' },
-    ng_req_windows:     { en: 'Windows',            ar: 'ويندوز',              ku: 'ویندۆز' },
-    ng_req_linux:       { en: 'Linux',              ar: 'لينوكس',              ku: 'لینوکس' },
-    ng_req_os:          { en: 'Operating System',   ar: 'نظام التشغيل',        ku: 'سیستەمی کارکردن' },
-    ng_req_mem:         { en: 'Memory',             ar: 'الذاكرة',             ku: 'بیرگە' },
-    ng_req_storage:     { en: 'Storage',            ar: 'التخزين',             ku: 'خەزن' },
-    ng_req_conn:        { en: 'Connectivity',       ar: 'التوصيل',             ku: 'پەیوەندی' },
-    ng_req_wine:        { en: 'Wine',               ar: 'Wine',                ku: 'Wine' },
-    ng_req_win_os:      { en: 'Windows 10 / 11 (64-bit)',         ar: 'ويندوز 10 / 11 (64 بت)',            ku: 'ویندۆز 10 / 11 (64-بیت)' },
-    ng_req_mem_val:     { en: '4GB RAM minimum',                  ar: '4 جيجابايت رام كحد أدنى',           ku: '4GB RAM کەمترین' },
-    ng_req_win_storage: { en: '500MB available space',            ar: '500 ميجابايت مساحة متاحة',          ku: '500MB شوێنی بەردەست' },
-    ng_req_conn_val:    { en: 'USB port for laser machine',       ar: 'منفذ USB لجهاز الليزر',             ku: 'دەرگای USB بۆ ئامێری لەیزەر' },
-    ng_req_linux_os:    { en: 'Ubuntu 20.04 or newer',            ar: 'أوبونتو 20.04 أو أحدث',             ku: 'Ubuntu 20.04 یان نوێتر' },
-    ng_req_linux_storage:{ en: '2GB available space',             ar: '2 جيجابايت مساحة متاحة',            ku: '2GB شوێنی بەردەست' },
-    ng_req_wine_val:    { en: 'Installed automatically by installer', ar: 'يُثبَّت تلقائياً بواسطة المثبّت', ku: 'بەخۆی لەلایەن ئینستالەرەوە دادەمەزرێت' },
-
     las_h2_7: { en: '7. Material Interaction: Thermal Modeling', ar: '7. التفاعل مع المواد: النمذجة الحرارية', ku: '7. کارلێکی ماددە: مۆدێڵسازی گەرمایی' },
     las_h2_8: { en: '8. Thermal Management & Heat Sink Sizing', ar: '8. إدارة الحرارة وتحديد حجم مبدد الحرارة', ku: '8. بەڕێوەبردنی گەرما و ئەندازەکردنی هیتسینک' },
     las_h2_9: { en: '9. Complete Signal & Information Flow: G-code → Photon', ar: '9. تدفق الإشارة والمعلومات الكامل: G-code → فوتون', ku: '9. جەریانی ئیشارە و زانیاری تەواو: G-code → فۆتۆن' },
