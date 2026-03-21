@@ -13,6 +13,26 @@
       ar: '<span style="color:red;">آلة </span><span style="color:yellow;">الحفر</span><span style="color:blue;"> بالليزر</span>',
       ku: '<span style="color:red;">ئامێری </span><span style="color:yellow;">حەکپێکردنی</span><span style="color:blue;"> لەیزەر</span>',
     },
+    about_title: {
+      en: '<span style="color:red;">About </span><span style="color:yellow;">Us</span>',
+      ar: '<span style="color:red;">من </span><span style="color:yellow;">نحن</span>',
+      ku: '<span style="color:red;">دەربارەی </span><span style="color:yellow;">ئێمە</span>',
+    },
+    overview_title: {
+      en: '<span style="color:red;">Project </span><span style="color:yellow;">Overview</span>',
+      ar: '<span style="color:red;">نظرة عامة </span><span style="color:yellow;">على المشروع</span>',
+      ku: '<span style="color:red;">پوختەی </span><span style="color:yellow;">پرۆژە</span>',
+    },
+    team_title: {
+      en: '<span style="color:red;">Our </span><span style="color:yellow;">Team</span>',
+      ar: '<span style="color:red;">فريق</span><span style="color:yellow;">نا</span>',
+      ku: '<span style="color:red;">تیمە</span><span style="color:yellow;">کەمان</span>',
+    },
+    advisor_title: {
+      en: '<span style="color:red;">Project </span><span style="color:yellow;">Advisor</span>',
+      ar: '<span style="color:red;">مستشار </span><span style="color:yellow;">المشروع</span>',
+      ku: '<span style="color:red;">ڕاوێژکاری </span><span style="color:yellow;">پرۆژە</span>',
+    },
   };
 
   /* Keys with data-i18n use textContent (plain text only) */
@@ -29,7 +49,6 @@
     },
     hero_btn:  { en: "Click Here To Know More About Us!", ar: "اضغط هنا لمعرفة المزيد عنا!", ku: "ئێرە کلیک بکە بۆ زانیاری زیاتر!" },
 
-    about_title: { en: "About Us",        ar: "من نحن",                    ku: "دەربارەی ئێمە" },
     about_p1: {
       en: "The idea for our project began when we realized that most commercial CNC machines are very expensive, making them hard to access for students, small workshops, or hobbyists. Our goal is to show that with the right knowledge and teamwork, it's possible to build a fully functional CNC machine at a much lower cost — using simple, locally available components.",
       ar: "بدأت فكرة مشروعنا حين أدركنا أن معظم آلات CNC التجارية باهظة الثمن، مما يجعل الوصول إليها صعباً للطلاب والورش الصغيرة والهواة. هدفنا إثبات أنه بالمعرفة الصحيحة والعمل الجماعي، يمكن بناء آلة CNC كاملة بتكلفة أقل بكثير باستخدام مكونات بسيطة متوفرة محلياً.",
@@ -40,7 +59,6 @@
       ar: "من خلال بناء آلة CNC الخاصة بنا، نهدف إلى تعزيز الهندسة العملية والإبداع وروح الابتكار. يُثبت هذا المشروع أن التكنولوجيا المعقدة لا تتطلب دائماً معدات باهظة الثمن.",
       ku: "بە دروستکردنی ئامێری CNC خۆمان، ئامانجمان پرۆموتکردنی ئەندازیاری دەستکارانە و داهێنانییە. ئەم پرۆژەیە دەیپیشاندات کە تەکنەلۆژیای ئاڵۆز هەمیشە پێویستی بە ئامێری گرانبەها نییە.",
     },
-    overview_title: { en: "Project Overview", ar: "نظرة عامة على المشروع", ku: "پوختەی پرۆژە" },
     overview_p1: {
       en: "The CLE Machine is a computer-controlled laser engraving system designed for precision and low cost. It combines mechanical design, control electronics, and software to create a fully functional CNC system that can engrave patterns, text, or shapes on various materials.",
       ar: "آلة CLE هي نظام حفر ليزري يتحكم فيه الحاسوب، مصمم للدقة وانخفاض التكلفة. تجمع بين التصميم الميكانيكي والإلكترونيات وبرامج التحكم لإنشاء نظام CNC متكامل.",
@@ -52,9 +70,6 @@
       ku: "ئامێرەکە موتەری ستیپەر بەکاردێنێت بۆ جووڵەی تیز، لەیزەر دایۆد بۆ نیشانەکردنی ڕووکەشەکان، و کۆنترۆڵکەرێکی بنەچەی Arduino.",
     },
     materials_btn: { en: "To Know About The Materials Click Here!", ar: "اضغط هنا لمعرفة المزيد عن المواد!", ku: "ئێرە کلیک بکە بۆ زانیاری دەربارەی کەرەستەکان!" },
-    team_title:    { en: "Our Team",       ar: "فريقنا",             ku: "تیمەکەمان" },
-    advisor_title: { en: "Project Advisor",ar: "مستشار المشروع",     ku: "ڕاوێژکاری پرۆژە" },
-
     member1_name: { en: "Yousif Saad",  ar: "يوسف سعد",   ku: "یوسف سەعد" },
     member1_role: {
       en: "The team leader - Will handle the programing side of the project and getting the parts for the assembly.",
