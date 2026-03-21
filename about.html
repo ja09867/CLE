@@ -16,79 +16,81 @@
       </div>
       <div class="menu">
         <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="materials.html">MATERIALS</a></li>
-            <li><a href="NovaGrave.html">CLE Laser Control</a></li>
+            <li><a href="index.html" data-i18n="nav_home">HOME</a></li>
+            <li><a href="about.html" data-i18n="nav_about">ABOUT</a></li>
+            <li><a href="materials.html" data-i18n="nav_materials">MATERIALS</a></li>
+            <li><a href="NovaGrave.html" data-i18n="nav_software">CLE Laser Control</a></li>
         </ul>
       </div>
     </div>
     </div>
         <div class="About">
-            <h8 data-aos="fade" data-aos-delay="100"> <h1 ><span style="color: red;">About </span><span style="color: yellow;">Us</span></h1>
+            <h8 data-aos="fade" data-aos-delay="100"> <h1 ><span style="color: red;" data-i18n="about_title">About </span><span style="color: yellow;">Us</span></h1>
         <div class="par1" style="text-align: center;">
-  <p style="text-align: center;">
+  <p style="text-align: center;" data-i18n="about_p1">
     The idea for our project began when we realized that most commercial CNC machines are
     very expensive, making them hard to access for students, small workshops, or hobbyists.
     Our goal is to show that with the right knowledge and teamwork, it's possible to
     build a fully functional CNC machine at a much lower cost — using simple, locally
-    available components.</p><p style="text-align: center;">By creating our own CNC machine, we aim to promote hands-on engineering, creativity,
+    available components.</p><p style="text-align: center;" data-i18n="about_p2">By creating our own CNC machine, we aim to promote hands-on engineering, creativity,
     and the spirit of innovation. This project demonstrates that complex technology
     doesn't always require expensive equipment — just the right approach and determination.</p></div></h8>
         </div>
 <div class="info">
     <h9 data-aos="fade" data-aos-delay="100">
-    <h1 data-aos="fade" data-aos-delay="100"><span style="color: red;">Project </span><span style="color: yellow;">Overview</span></h1>
+    <h1 data-aos="fade" data-aos-delay="100"><span style="color: red;" data-i18n="overview_title">Project </span><span style="color: yellow;">Overview</span></h1>
     <div style="text-align: center;">
-  <p style="text-align: center;">
+  <p style="text-align: center;" data-i18n="overview_p1">
     The CLE Machine is a computer-controlled laser engraving system designed
     for precision and low cost. It combines mechanical design, control
     electronics, and software to create a fully functional CNC system that can
-    engrave patterns, text, or shapes on various materials.</p><p style="text-align: center;">
+    engrave patterns, text, or shapes on various materials.</p><p style="text-align: center;" data-i18n="overview_p2">
     The machine uses stepper motors for accurate movement, a laser diode for
     marking surfaces, and an Arduino-based controller that interprets G-code
     instructions. Its lightweight frame and modular structure make it easy to
     assemble, modify, and repair.
-        </p></div><a href="materials.html" class="hero1">To Know About The Materials Click Here!</a></h9>
+        </p></div><a href="materials.html" class="hero1" data-i18n="materials_btn">To Know About The Materials Click Here!</a></h9>
 </div>
  <div class="team-section">
-    <h1 ><span style="color: red;">Our </span><span style="color: yellow;">Team</span></h1>
+    <h1 ><span style="color: red;" data-i18n="team_title">Our </span><span style="color: yellow;">Team</span></h1>
       <div class="team">
         <div class="member">
             <img src="images/yousef.png">
-          <h3>Yousif Saad</h3>
-          <p>The team leader - Will handle the programing side of the project and getting the parts for the assembly.</p>
+          <h3 data-i18n="member1_name">Yousif Saad</h3>
+          <p data-i18n="member1_role">The team leader - Will handle the programing side of the project and getting the parts for the assembly.</p>
         </div>
         <div class="member">
             <img src="images/neshat.jpg">
-          <h3>Ahmed Neshat</h3>
-          <p>Member – Will handle the structural design and the assembly.</p>
+          <h3 data-i18n="member2_name">Ahmed Neshat</h3>
+          <p data-i18n="member2_role">Member – Will handle the structural design and the assembly.</p>
         </div>
         <div class="member">
             <img src="images/mahdi.png">
-          <h3>Ahmed Mahdi</h3>
-          <p>Member – Will handle the artistic side and the assembly.</p>
+          <h3 data-i18n="member3_name">Ahmed Mahdi</h3>
+          <p data-i18n="member3_role">Member – Will handle the artistic side and the assembly.</p>
         </div>
         <div class="member">
             <img src="images/talib.png">
-            <h3>Ahmed Talib</h3>
-            <p>Member - Will handle the website design and the assembly.</p>
+            <h3 data-i18n="member4_name">Ahmed Talib</h3>
+            <p data-i18n="member4_role">Member - Will handle the website design and the assembly.</p>
         </div>
       </div>
       <div class="advisor">
-        <h2><span style="color: red">Project </span><span style="color: yellow">Advisor</span></h2>
+        <h2><span style="color: red" data-i18n="advisor_title">Project </span><span style="color: yellow">Advisor</span></h2>
           <img src="images/dr.jpg">
-        <p><b>Dr. Haithem Kareem</b> – Will oversee and guide the project technically and ensured safety standards.</p>
+        <p data-i18n="advisor_desc"><b>Dr. Haithem Kareem</b> – Will oversee and guide the project technically and ensured safety standards.</p>
       </div>
     </div>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1000,  // animation speed in ms
-    once: false,     // false = reanimate when scrolling back up
-    mirror: false,   // whether elements animate out while scrolling past
+    duration: 1000,
+    once: false,
+    mirror: false,
   });
 </script>
+<link rel="stylesheet" href="lang.css">
+<script src="lang.js"></script>
 <script>
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {

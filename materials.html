@@ -7,7 +7,6 @@
     <link rel="icon" href="images/favicon.png" type="image/png" sizes="512x512">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
-        /* ===== OVERRIDE ALL OLD MATERIALS CSS ===== */
         .sub-main-1 .material-item,
         .sub-main-1 .sub-items,
         .sub-main-1 .sub-item,
@@ -16,7 +15,6 @@
             display: none !important;
         }
 
-        /* ===== FIX POSITIONING ===== */
         #materials {
             position: relative !important;
             top: 0 !important;
@@ -33,7 +31,6 @@
             min-height: auto !important;
         }
 
-        /* ===== SECTION HEADERS ===== */
         .budget-section {
             margin-top: 60px;
             margin-bottom: 40px;
@@ -63,7 +60,6 @@
             margin-right: 15px;
         }
 
-        /* ===== BUDGET BADGES ===== */
         .budget-badge {
             display: inline-block;
             padding: 5px 15px;
@@ -73,22 +69,11 @@
             margin-left: 15px;
         }
 
-        .budget-badge.budget {
-            background: #4CAF50;
-            color: white;
-        }
+        .budget-badge.budget { background: #4CAF50; color: white; }
+        .budget-badge.mid    { background: #FF9800; color: white; }
+        .budget-badge.high   { background: #f44336; color: white; }
+        .budget-badge.our    { background: linear-gradient(90deg, #00b4ff, #ffcc66); color: black; }
 
-        .budget-badge.mid {
-            background: #FF9800;
-            color: white;
-        }
-
-        .budget-badge.high {
-            background: #f44336;
-            color: white;
-        }
-
-        /* ===== BUILD CARDS ===== */
         .build-card {
             background: rgba(20, 20, 30, 0.95);
             backdrop-filter: blur(10px);
@@ -97,6 +82,12 @@
             margin-bottom: 50px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Special glow for Our Build card */
+        .build-card.our-build {
+            border: 2px solid #ffcc66;
+            box-shadow: 0 10px 40px rgba(255,204,102,0.25), 0 0 0 1px rgba(0,180,255,0.15);
         }
 
         .build-header {
@@ -108,6 +99,10 @@
             margin-bottom: 25px;
             flex-wrap: wrap;
             gap: 15px;
+        }
+
+        .build-card.our-build .build-header {
+            border-bottom: 2px solid #00b4ff;
         }
 
         .build-header h3 {
@@ -131,7 +126,7 @@
 
         .build-image {
             width: 100%;
-            height: 300px;
+            height: 250px;
             background: linear-gradient(145deg, #1a1a2e, #16213e);
             border-radius: 15px;
             margin-bottom: 25px;
@@ -177,6 +172,11 @@
             font-weight: bold;
         }
 
+        .our-build .build-table th {
+            background: rgba(0, 180, 255, 0.15);
+            color: #00b4ff;
+        }
+
         .build-table td {
             padding: 15px 12px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -189,25 +189,10 @@
             width: 12%;
         }
 
-        .build-table td:nth-child(2) {
-            width: 25%;
-        }
-
-        .build-table td:nth-child(3) {
-            width: 10%;
-            color: #ffcc66;
-            font-weight: bold;
-        }
-
-        .build-table td:nth-child(4) {
-            width: 38%;
-            color: #ddd;
-            font-size: 0.95rem;
-        }
-
-        .build-table td:nth-child(5) {
-            width: 15%;
-        }
+        .build-table td:nth-child(2) { width: 25%; }
+        .build-table td:nth-child(3) { width: 10%; color: #ffcc66; font-weight: bold; }
+        .build-table td:nth-child(4) { width: 38%; color: #ddd; font-size: 0.95rem; }
+        .build-table td:nth-child(5) { width: 15%; }
 
         .build-table .component-img {
             width: 60px;
@@ -245,7 +230,6 @@
             font-weight: bold;
         }
 
-        /* ===== VOLTAGE WARNINGS ===== */
         .warning-box {
             background: rgba(255, 100, 100, 0.15);
             border-left: 5px solid #ff4444;
@@ -255,9 +239,7 @@
             margin: 20px 0 10px 0;
         }
 
-        .warning-box strong {
-            color: #ff8888;
-        }
+        .warning-box strong { color: #ff8888; }
 
         .tip-box {
             background: rgba(255, 204, 102, 0.15);
@@ -278,106 +260,80 @@
             color: #ddd;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* Changed component highlight for Our Build */
+        .changed {
+            background: rgba(255, 204, 102, 0.07);
+            border-left: 3px solid #ffcc66;
+        }
+
+        .changed-badge {
+            display: inline-block;
+            background: rgba(255,204,102,0.2);
+            color: #ffcc66;
+            font-size: 10px;
+            padding: 1px 6px;
+            border-radius: 10px;
+            margin-left: 6px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
         @media (max-width: 992px) {
-            .build-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .build-table td {
-                display: block;
-                width: 100% !important;
-                padding: 10px;
-            }
-
-            .build-table tr {
-                display: block;
-                margin-bottom: 20px;
-                border-bottom: 2px solid rgba(255,204,102,0.3);
-            }
-
-            .build-table td:first-child {
-                width: 100%;
-            }
-
-            .build-table td:nth-child(2) {
-                width: 100%;
-            }
-
-            .build-table td:nth-child(3) {
-                width: 100%;
-            }
-
-            .build-table td:nth-child(4) {
-                width: 100%;
-            }
-
-            .build-table td:nth-child(5) {
-                width: 100%;
-            }
+            .build-header { flex-direction: column; align-items: flex-start; }
+            .build-table td { display: block; width: 100% !important; padding: 10px; }
+            .build-table tr { display: block; margin-bottom: 20px; border-bottom: 2px solid rgba(255,204,102,0.3); }
         }
 
         @media (max-width: 768px) {
-            .build-card {
-                padding: 20px 15px;
-            }
-            
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
+            .build-card { padding: 20px 15px; }
+            .section-header h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 <div class="sub-main-1">
     <div class="navbar">
-        <div class="icon">
-            <h2 class="logo"></h2>
-        </div>
+        <div class="icon"><h2 class="logo"></h2></div>
         <div class="menu">
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="materials.html">MATERIALS</a></li>
-                <li><a href="NovaGrave.html">CLE Laser Control</a></li>
+                <li><a href="index.html" data-i18n="nav_home">HOME</a></li>
+                <li><a href="about.html" data-i18n="nav_about">ABOUT</a></li>
+                <li><a href="materials.html" data-i18n="nav_materials">MATERIALS</a></li>
+                <li><a href="NovaGrave.html" data-i18n="nav_software">CLE Laser Control</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- MATERIALS SECTION -->
     <section id="materials">
         <h1 style="font-size: 3rem; margin-bottom: 20px; text-align: center;">
-            <span style="color: red;">CNC Laser</span> 
+            <span style="color: red;">CNC Laser</span>
             <span style="color: yellow;">Engraver</span>
         </h1>
         <p style="color: #ccc; text-align: center; font-size: 1.2rem; margin-bottom: 60px;">
             🎯 Complete builds organized by budget — from entry-level to professional
         </p>
 
-        <!-- ===== CRITICAL VOLTAGE WARNING ===== -->
         <div class="warning-box" style="margin-bottom: 40px;">
             <strong>⚠️ ARDUINO VOLTAGE WARNING — READ THIS:</strong> Arduino Uno accepts 7-12V on DC jack or 5V via USB.<br>
             <strong>DO NOT</strong> power Arduino through the CNC Shield's 12-36V input — it will bypass the regulator and DESTROY your board!<br>
             <span style="color: #ffcc66;">✅ SOLUTION: Use a dedicated 5V PSU OR add a buck converter to step down 12V/24V to 5V.</span>
         </div>
 
-        <!-- ===== BUDGET BUILDS ===== -->
+        <!-- ===== OUR CURRENT BUILD ===== -->
         <div class="budget-section">
-            <div class="section-header" data-aos="fade-up">
-                <h2><span class="budget-icon">💰</span> BUDGET BUILDS <span class="budget-badge budget">$100-200</span></h2>
-                <p>Perfect for beginners, hobbyists, and learning the basics</p>
+            <div class="section-header" data-aos="fade-up" style="background: linear-gradient(90deg, rgba(0,180,255,0.15), rgba(255,204,102,0.15), rgba(0,180,255,0.15)); border-color: rgba(0,180,255,0.4);">
+                <h2 style="color: #00b4ff;">⭐ OUR CURRENT BUILD <span class="budget-badge our">CLE PROJECT</span></h2>
+                <p>The exact components used in our CNC Laser Engraver graduation project</p>
             </div>
 
-            <!-- BUILD 1: BUDGET STARTER KIT -->
-            <div class="build-card" data-aos="fade-up">
+            <div class="build-card our-build" data-aos="fade-up">
                 <div class="build-header">
-                    <h3>💰 BUILD 1: BUDGET STARTER KIT <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge budget">BUDGET</span></h3>
-                    <span class="build-total">~$120-135</span>
+                    <h3>⭐ OUR BUILD: CLE GRADUATION PROJECT <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge our">CLE PROJECT</span></h3>
+                    <span class="build-total" style="background: linear-gradient(90deg,#00b4ff,#ffcc66); color: black;">Al-Mansour University</span>
                 </div>
-                <div class="build-image">
-                    <div class="build-image-placeholder">Budget Starter Kit</div>
-                    <img src="images/build1.jpg" alt="Budget Starter Kit" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                <div class="build-image" style="border-color: #00b4ff;">
+                    <div class="build-image-placeholder" style="color: #00b4ff;">CLE Laser Engraver — Our Build</div>
+                    <img src="images/ourbuild.jpg" alt="Our CLE Build" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
                     <tr>
@@ -389,6 +345,83 @@
                     </tr>
                     <tr>
                         <td>🎛️ Controller</td>
+                        <td><a href="https://www.amazon.com/Firehoo-Makerbase-Offline-Controller-Engraving/dp/B0DY3YRHK7" target="_blank">MKS DLC32 V2</a> + TS35-R LCD Touch Screen</td>
+                        <td>$62.19</td>
+                        <td><span style="color:#00ff00;">✅ DEDICATED LASER CONTROLLER!</span> 32-bit ESP32, WiFi, GRBL firmware, offline TFT touchscreen interface.</td>
+                        <td><img src="images/MKS.png" alt="MKS DLC32" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+                    <tr class="changed">
+                        <td>⚙️ Drivers</td>
+                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">A4988 (×3) with Heatsinks</a> <span class="changed-badge">★ OUR CHOICE</span></td>
+                        <td>$11.99</td>
+                        <td>Basic but reliable stepper drivers integrated with the MKS DLC32 board to control the NEMA 17 motors.</td>
+                        <td><img src="images/A4988.png" alt="A4988" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+
+                    <tr class="changed">
+                        <td>🔄 Motors</td>
+                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">Usongshine NEMA 17 — 17HS4401S (×3)</a> <span class="changed-badge">★ OUR CHOICE</span></td>
+                        <td>$35.99</td>
+                        <td>1.5A rated current, 1.8° step angle. Precise X and Y axis movement for the engraver gantry.</td>
+                        <td><img src="images/STEPPERMOTOR17.png" alt="NEMA 17" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+                    <tr class="changed">
+                        <td>🔋 Power</td>
+                        <td><a href="https://www.amazon.com/Switching-Supply-Adapter-Lighting-Driver/dp/B0GG491H8K" target="_blank">12V 20A Switching PSU</a> <span class="changed-badge">★ OUR CHOICE</span></td>
+                        <td>$18.99</td>
+                        <td>High-amperage 12V supply. Stable power distribution to MKS DLC32, all three motors, and laser module simultaneously.</td>
+                        <td><img src="images/12VPSU.png" alt="12V 20A PSU" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+                    <tr class="changed">
+                        <td>🔫 Laser</td>
+                        <td><a href="https://www.amazon.com/LASER-TREE-Engraver-5000mW%EF%BC%885W%EF%BC%89-Optical/dp/B0DX1K5HNL" target="_blank">Laser Tree 5W (5000mW true optical)</a> <span class="changed-badge">★ OUR CHOICE</span></td>
+                        <td>$39.99</td>
+                        <td>Diode laser with metal air assist kit. Engraves wood and cardboard at feed rates up to 3500 mm/min. PWM controlled via MKS.</td>
+                        <td><img src="images/LASER5W.png" alt="Laser Tree 5W" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+                    <tr class="changed">
+                        <td>🛤️ Frame</td>
+                        <td><a href="https://www.amazon.com/SeekLiny-Aluminum-Extrusion-400mm-Industrial/dp/B0CN6N8TG3" target="_blank">2040 T-Slot Aluminum Extrusion — 1800mm</a> + <a href="https://www.amazon.com/Timing-Pulley-20Teeth-Tensioner-Lukcase/dp/B07MF6TDHF" target="_blank">GT2 Belts + 16T Pulleys</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a> <span class="changed-badge">★ OUR CHOICE</span></td>
+                        <td>$65.00</td>
+                        <td>20×40mm profile selected for superior rigidity and vibration resistance over standard 2020 profiles. Supports the 1800mm extended axis.</td>
+                        <td><img src="images/2040.png" alt="2040 Extrusion" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+                    <tr class="changed">
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×4)</a> <span class="changed-badge">★ OUR CHOICE</span></td>
+                        <td>$8.99</td>
+                        <td>Installed at max/min travel limits of X and Y axes. Enable precise homing ("Machine Zero") and act as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+                </table>
+                <div class="tip-box">
+                    <strong>💡 WHAT MAKES OUR BUILD UNIQUE:</strong> Unlike other builds that rely on an external PC connected via USB, our CLE system embeds a <strong>BMAX Mini PC (8GB RAM / 128GB)</strong> directly into the machine, paired with a <strong>7-inch capacitive touch screen</strong>. This makes the engraver fully standalone — no external computer needed during operation. Control is handled entirely through our custom <strong>CLE Laser Control software</strong>.
+                </div>
+                <div class="build-note">⭐ AL-MANSOUR UNIVERSITY COLLEGE — Computer Engineering Dept. | CNC Laser Engraver (CLE) Graduation Project 2026</div>
+            </div>
+        </div>
+
+        <!-- ===== BUDGET BUILDS ===== -->
+        <div class="budget-section">
+            <div class="section-header" data-aos="fade-up">
+                <h2><span class="budget-icon">💰</span> BUDGET BUILDS <span class="budget-badge budget">$100-200</span></h2>
+                <p>Perfect for beginners, hobbyists, and learning the basics</p>
+            </div>
+
+            <!-- BUILD 1 -->
+            <div class="build-card" data-aos="fade-up">
+                <div class="build-header">
+                    <h3>💰 BUILD 1: BUDGET STARTER KIT <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge budget">BUDGET</span></h3>
+                    <span class="build-total">~$120-135</span>
+                </div>
+                <div class="build-image">
+                    <div class="build-image-placeholder">Budget Starter Kit</div>
+                    <img src="images/build1.jpg" alt="Budget Starter Kit" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
+                </div>
+                <table class="build-table">
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
+                    <tr>
+                        <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6" target="_blank">Arduino Uno R3</a> + <a href="https://www.amazon.com/Shield-Development-Stepper-Driver-Printer/dp/B09SWXPCF2" target="_blank">CNC Shield</a></td>
                         <td>$31.02</td>
                         <td>Standard controller setup</td>
@@ -396,14 +429,14 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">A4988 (x3) with Heatsinks</a></td>
-                        <td>$9.99</td>
+                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">A4988 (×3) with Heatsinks</a></td>
+                        <td>$11.99</td>
                         <td>Basic but reliable</td>
                         <td><img src="images/A4988.png" alt="A4988" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 Economy (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 Economy (×3)</a></td>
                         <td>$29.99</td>
                         <td>1.2A, basic model</td>
                         <td><img src="images/STEPPERMOTOR17.png" alt="NEMA 17" class="component-img" onclick="openModal(this.src)"></td>
@@ -424,19 +457,24 @@
                     </tr>
                     <tr>
                         <td>🛤️ Frame + Hardware</td>
-                        <td><a href="https://www.amazon.com/Aluminum-Extrusion-Extruded-European-Kwweeoo/dp/B0C6G9MPS3" target="_blank">2020 Aluminum Frame Kit</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
+                        <td><a href="https://www.amazon.com/Aluminum-Extrusion-Extruded-European-Kwweeoo/dp/B0C6G9MPS3" target="_blank">2020 Aluminum Frame Kit</a> + <a href="https://www.amazon.com/Timing-Pulley-20Teeth-Tensioner-Lukcase/dp/B07MF6TDHF" target="_blank">GT2 Belts + 16T Pulleys</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
                         <td>$35.00</td>
                         <td>Basic frame with all hardware included</td>
                         <td><img src="images/2020.png" alt="2020 Frame" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
+                                    <tr>
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×3)</a></td>
+                        <td>$8.99</td>
+                        <td>Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
                 </table>
-                <div class="warning-box">
-                    <strong>⚠️ NOTE:</strong> Budget build uses smaller power supply (5A vs 10A). Good for learning, but upgrade PSU if doing longer engravings.
-                </div>
+                <div class="warning-box"><strong>⚠️ NOTE:</strong> Budget build uses smaller power supply (5A vs 10A). Good for learning, but upgrade PSU if doing longer engravings.</div>
                 <div class="build-note">✅ BEST FOR: Absolute beginners, learning the basics, testing if laser engraving is for you</div>
             </div>
 
-            <!-- BUILD 2: DIY DESKTOP LASER ENGRAVER -->
+            <!-- BUILD 2 -->
             <div class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3>🖥️ BUILD 2: DIY DESKTOP LASER ENGRAVER <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge budget">BUDGET</span></h3>
@@ -444,16 +482,10 @@
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder">DIY Desktop Laser Engraver</div>
-                    <img src="images/build2.jpg" alt="DIY Desktop Laser Engraver" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                    <img src="images/build2.jpg" alt="DIY Desktop Laser Engraver" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
-                    <tr>
-                        <th>Type</th>
-                        <th>Component</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
                     <tr>
                         <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6" target="_blank">Arduino Uno R3</a> + <a href="https://www.amazon.com/Shield-Development-Stepper-Driver-Printer/dp/B09SWXPCF2" target="_blank">CNC Shield V3</a></td>
@@ -463,16 +495,16 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">A4988 (x3)</a></td>
+                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">A4988 (×3)</a></td>
                         <td>$11.99</td>
                         <td>Plug directly into CNC Shield. 12V compatible.</td>
                         <td><img src="images/A4988.png" alt="A4988" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 (×3)</a></td>
                         <td>$35.99</td>
-                        <td>1.5A, 42mm body - standard for laser engravers.</td>
+                        <td>1.5A, 42mm body — standard for laser engravers.</td>
                         <td><img src="images/STEPPERMOTOR17.png" alt="NEMA 17" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
@@ -503,10 +535,15 @@
                         <td>Complete frame kit with belts and hardware</td>
                         <td><img src="images/2020.png" alt="2020 Extrusion" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
+                                    <tr>
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×3)</a></td>
+                        <td>$8.99</td>
+                        <td>Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
                 </table>
-                <div class="warning-box">
-                    <strong>⚠️ CRITICAL:</strong> This combo uses ONE 12V PSU. You MUST use the buck converter to power Arduino (5V).
-                </div>
+                <div class="warning-box"><strong>⚠️ CRITICAL:</strong> This combo uses ONE 12V PSU. You MUST use the buck converter to power Arduino (5V).</div>
                 <div class="build-note">✅ BEST FOR: Hobbyists who want a single power supply with better cutting power</div>
             </div>
         </div>
@@ -518,7 +555,7 @@
                 <p>Better components, more features, higher quality results</p>
             </div>
 
-            <!-- BUILD 3: DUAL PSU SAFE SETUP -->
+            <!-- BUILD 3 -->
             <div class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3>🔋 BUILD 3: DUAL PSU SAFE SETUP <span class="voltage-badge">5V + 12V</span> <span class="budget-badge mid">MID-RANGE</span></h3>
@@ -526,16 +563,10 @@
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder">Dual PSU Safe Setup</div>
-                    <img src="images/build3.jpg" alt="Dual PSU Safe Setup" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                    <img src="images/build3.jpg" alt="Dual PSU Safe Setup" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
-                    <tr>
-                        <th>Type</th>
-                        <th>Component</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
                     <tr>
                         <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6" target="_blank">Arduino Uno R3</a> + <a href="https://www.amazon.com/Shield-Development-Stepper-Driver-Printer/dp/B09SWXPCF2" target="_blank">CNC Shield V3</a></td>
@@ -545,14 +576,14 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">A4988 (x3)</a></td>
+                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">A4988 (×3)</a></td>
                         <td>$11.99</td>
                         <td>On CNC shield, powered by 12V PSU.</td>
                         <td><img src="images/A4988.png" alt="A4988" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 (×3)</a></td>
                         <td>$35.99</td>
                         <td>Powered by 12V PSU via drivers.</td>
                         <td><img src="images/STEPPERMOTOR17.png" alt="NEMA 17" class="component-img" onclick="openModal(this.src)"></td>
@@ -585,14 +616,19 @@
                         <td>Complete frame kit with belts and hardware</td>
                         <td><img src="images/2020.png" alt="2020 Extrusion" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
+                                    <tr>
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×3)</a></td>
+                        <td>$8.99</td>
+                        <td>Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
                 </table>
-                <div class="tip-box">
-                    <strong>💡 TIP:</strong> This is the SAFEST setup. Two separate PSUs: 5V for Arduino, 12V for motors/laser. Connect the grounds together.
-                </div>
+                <div class="tip-box"><strong>💡 TIP:</strong> This is the SAFEST setup. Two separate PSUs: 5V for Arduino, 12V for motors/laser. Connect the grounds together.</div>
                 <div class="build-note">✅ BEST FOR: Beginners who want zero risk of frying their Arduino, and longer engraving sessions</div>
             </div>
 
-            <!-- BUILD 4: COMPACT DESKTOP ENGRAVER -->
+            <!-- BUILD 4 -->
             <div class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3>📦 BUILD 4: COMPACT DESKTOP ENGRAVER <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge mid">MID-RANGE</span></h3>
@@ -600,16 +636,10 @@
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder">Compact Desktop Engraver</div>
-                    <img src="images/build4.jpg" alt="Compact Desktop Engraver" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                    <img src="images/build4.jpg" alt="Compact Desktop Engraver" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
-                    <tr>
-                        <th>Type</th>
-                        <th>Component</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
                     <tr>
                         <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6" target="_blank">Arduino Uno R3</a> + <a href="https://www.amazon.com/Shield-Development-Stepper-Driver-Printer/dp/B09SWXPCF2" target="_blank">CNC Shield V3</a></td>
@@ -619,14 +649,14 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/BIGTREETECH-TMC2209-Stepper-Stepstick-Motherboard/dp/B07ZPYKL46/ref=sr_1_6?dib=eyJ2IjoiMSJ9.D5Uiq1Utq6DYX9gnwyMNksGNNnE4h5o1QLZxxzPpTnda9gKIUBT0NjAWgg8LgVHxcLw-fCx5iRpZCaQ52KIrWio5nuBlv_3INekkZ1KA8vVbiQcwuWvqaHyOHy0ldDKk3wG9e8k3nv0voHgUO6KfTvF90AEcMqY0vhgrR2aCBACQsqffmiiTdn0is3OcyFYap19OmioN197RPDiPn1AkZYKembzOuuSWXW4IzFSCS8I.RSkZNz21_SCZZpu531w8i4KD15rxLj62f2KUBKZVGR8&dib_tag=se&keywords=tmc2209&qid=1771221869&sr=8-6&th=1" target="_blank">TMC2209 Silent Drivers (x3)</a></td>
+                        <td><a href="https://www.amazon.com/BIGTREETECH-TMC2209-Stepper-Stepstick-Motherboard/dp/B07ZPYKL46" target="_blank">TMC2209 Silent Drivers (×3)</a></td>
                         <td>$15.99</td>
                         <td>Silent operation, better cooling</td>
                         <td><img src="images/TMC2209.png" alt="TMC2209" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 High Torque (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 High Torque (×3)</a></td>
                         <td>$42.99</td>
                         <td>Higher torque for better precision</td>
                         <td><img src="images/STEPPERMOTOR17.png" alt="NEMA 17" class="component-img" onclick="openModal(this.src)"></td>
@@ -647,23 +677,23 @@
                     </tr>
                     <tr>
                         <td>🛤️ Frame + Hardware</td>
-                        <td><a href="https://www.amazon.com/Aluminum-Extrusion-Extruded-European-Kwweeoo/dp/B0C6G9MPS3" target="_blank">2020 Aluminum Kit</a> + <a href="https://www.amazon.com/iMeistek-3mm-Diameter-Length-Models/dp/B0CSD9WXGX" target="_blank">Linear Rods</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
+                        <td><a href="https://www.amazon.com/Aluminum-Extrusion-Extruded-European-Kwweeoo/dp/B0C6G9MPS3" target="_blank">2020 Aluminum Kit</a> + Linear Rods + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
                         <td>$55.00</td>
                         <td>Frame with linear rods for smoother motion</td>
                         <td><img src="images/ROD.png" alt="Linear Rods" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🛑 Endstops</td>
-                        <td><a href="https://www.amazon.co.uk/Bolsen-Optical-Endstop-Control-Printers/dp/B07HQG9YD9" target="_blank">Optical Endstops (x3)</a></td>
+                        <td><a href="https://www.amazon.co.uk/Bolsen-Optical-Endstop-Control-Printers/dp/B07HQG9YD9" target="_blank">Optical Endstops (×3)</a></td>
                         <td>$11.45</td>
                         <td>Precise homing for consistent results</td>
-                        <td><img src="images/ENDSTOP.png" alt="Endstop" class="component-img" onclick="openModal(this.src)"></td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                 </table>
                 <div class="build-note">✅ BEST FOR: Users wanting quieter operation, smoother motion, and better cut quality with air assist</div>
             </div>
 
-            <!-- BUILD 5: HIGH SPEED BELT DRIVEN LASER -->
+            <!-- BUILD 5 -->
             <div class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3>⚡ BUILD 5: HIGH SPEED BELT DRIVEN LASER <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge mid">MID-RANGE</span></h3>
@@ -671,16 +701,10 @@
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder">High Speed Belt Driven Laser</div>
-                    <img src="images/build5.jpg" alt="High Speed Belt Driven Laser" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                    <img src="images/build5.jpg" alt="High Speed Belt Driven Laser" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
-                    <tr>
-                        <th>Type</th>
-                        <th>Component</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
                     <tr>
                         <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6" target="_blank">Arduino Uno R3</a> + <a href="https://www.amazon.com/Shield-Development-Stepper-Driver-Printer/dp/B09SWXPCF2" target="_blank">CNC Shield V3</a></td>
@@ -690,14 +714,14 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/Printer-StepStick-DRV8825-Stepper-Carrier/dp/B07Z44Z9NW" target="_blank">DRV8825 (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Printer-StepStick-DRV8825-Stepper-Carrier/dp/B07Z44Z9NW" target="_blank">DRV8825 (×3)</a></td>
                         <td>$11.99</td>
                         <td>Higher voltage drivers for faster speeds</td>
                         <td><img src="images/DRV8825.png" alt="DRV8825" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 High Speed (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 High Speed (×3)</a></td>
                         <td>$42.99</td>
                         <td>Low inductance motors for faster acceleration</td>
                         <td><img src="images/STEPPERMOTOR17.png" alt="NEMA 17" class="component-img" onclick="openModal(this.src)"></td>
@@ -718,22 +742,27 @@
                     </tr>
                     <tr>
                         <td>🛤️ Frame + Motion</td>
-                        <td><a href="https://www.amazon.com/Aluminum-Extrusion-Extruded-European-Kwweeoo/dp/B0C6G9MPS3" target="_blank">2020 Aluminum Frame</a> + <a href="https://www.amazon.com/PAGOW-Printer-Timing-Closed-Rubber/dp/B088M3V865" target="_blank">GT2 Belts</a> + <a href="https://www.amazon.com/Genuine-E3D-Pulley-Tooth-M-GT2-PULLEY-16T/dp/B07B6BYDCL" target="_blank">16T Pulleys</a></td>
+                        <td><a href="https://www.amazon.com/Aluminum-Extrusion-Extruded-European-Kwweeoo/dp/B0C6G9MPS3" target="_blank">2020 Aluminum Frame</a> + GT2 Belts + 16T Pulleys</td>
                         <td>$65.00</td>
                         <td>Lightweight CoreXY configuration for high speed</td>
                         <td><img src="images/2020.png" alt="2020 Frame" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
-                        <td>🧵 Cable Management</td>
+                        <td>🧵 Cable Mgmt</td>
                         <td><a href="https://www.amazon.co.uk/Befenybay-Flexible-Enclosed-Internal-18mmX25mm/dp/B07SC9B79Q" target="_blank">Cable Drag Chain</a></td>
                         <td>$15.27</td>
                         <td>Protects wires during high speed movement</td>
                         <td><img src="images/CABLE.png" alt="Cable Chain" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
+                                    <tr>
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×3)</a></td>
+                        <td>$8.99</td>
+                        <td>Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
                 </table>
-                <div class="tip-box">
-                    <strong>⚡ HIGH SPEED SETUP:</strong> CoreXY belt configuration allows faster acceleration than leadscrew systems. 24V gives better torque at high speeds.
-                </div>
+                <div class="tip-box"><strong>⚡ HIGH SPEED SETUP:</strong> CoreXY belt configuration allows faster acceleration than leadscrew systems. 24V gives better torque at high speeds.</div>
                 <div class="build-note">✅ BEST FOR: Users who want faster engraving speeds and are building a lightweight gantry system</div>
             </div>
         </div>
@@ -745,7 +774,7 @@
                 <p>Professional grade components, larger format, maximum power</p>
             </div>
 
-            <!-- BUILD 6: PROFESSIONAL WIFI LASER CONTROLLER -->
+            <!-- BUILD 6 — modified to match our project, keeping MKS -->
             <div class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3>📱 BUILD 6: WIFI LASER ENGRAVER <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge high">HIGH-END</span></h3>
@@ -753,16 +782,10 @@
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder">Professional WiFi Laser Engraver</div>
-                    <img src="images/build6.jpg" alt="Professional WiFi Laser Engraver" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                    <img src="images/build6.jpg" alt="Professional WiFi Laser Engraver" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
-                    <tr>
-                        <th>Type</th>
-                        <th>Component</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
                     <tr>
                         <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Firehoo-Makerbase-Offline-Controller-Engraving/dp/B0DY3YRHK7" target="_blank">Makerbase MKS DLC32 V2.1 + LCD</a></td>
@@ -772,14 +795,14 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/Printer-StepStick-DRV8825-Stepper-Carrier/dp/B07Z44Z9NW" target="_blank">DRV8825 (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Printer-StepStick-DRV8825-Stepper-Carrier/dp/B07Z44Z9NW" target="_blank">DRV8825 (×3)</a></td>
                         <td>$11.99</td>
                         <td>24V recommended. Works perfectly with DLC32.</td>
                         <td><img src="images/DRV8825.png" alt="DRV8825" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Stepper-1-26Nm-178-4oz-4-Lead-Nema23/dp/B0FLW2FX9M" target="_blank">NEMA 23 (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Stepper-1-26Nm-178-4oz-4-Lead-Nema23/dp/B0FLW2FX9M" target="_blank">NEMA 23 (×3)</a></td>
                         <td>$79.99</td>
                         <td>High torque for heavy gantries or large format lasers.</td>
                         <td><img src="images/STEPPERMOTOR23.png" alt="NEMA 23" class="component-img" onclick="openModal(this.src)"></td>
@@ -800,19 +823,24 @@
                     </tr>
                     <tr>
                         <td>🛤️ Frame + Hardware</td>
-                        <td><a href="https://www.amazon.com/SeekLiny-Aluminum-Extrusion-400mm-Industrial/dp/B0CN6N8TG3" target="_blank">2040 Aluminum Extrusion Kit</a> + <a href="https://www.amazon.co.uk/ReliaBot-150mm-Copper-Thread-Printer/dp/B07C8P1DWX" target="_blank">Lead Screws</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
+                        <td><a href="https://www.amazon.com/SeekLiny-Aluminum-Extrusion-400mm-Industrial/dp/B0CN6N8TG3" target="_blank">2040 Aluminum Extrusion Kit</a> + Lead Screws + <a href="https://www.amazon.com/Timing-Pulley-20Teeth-Tensioner-Lukcase/dp/B07MF6TDHF" target="_blank">GT2 Belts + 16T Pulleys</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
                         <td>$65.00</td>
                         <td>Heavy duty frame with lead screws for Z-axis</td>
                         <td><img src="images/2040.png" alt="2040 Extrusion" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
+                                    <tr>
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×3)</a></td>
+                        <td>$8.99</td>
+                        <td>Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
                 </table>
-                <div class="tip-box">
-                    <strong>📱 WIFI + TOUCHSCREEN:</strong> Control your laser from phone or computer. No PC needed!
-                </div>
+                <div class="tip-box"><strong>📱 WIFI + TOUCHSCREEN:</strong> Control your laser from phone or computer. No PC needed!</div>
                 <div class="build-note">✅ BEST FOR: Professionals, makers who want wireless control and dedicated laser firmware.</div>
             </div>
 
-            <!-- BUILD 7: LARGE FORMAT LASER -->
+            <!-- BUILD 7 -->
             <div class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3>📐 BUILD 7: LARGE FORMAT LASER <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge high">HIGH-END</span></h3>
@@ -820,16 +848,10 @@
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder">Large Format Laser System</div>
-                    <img src="images/build7.jpg" alt="Large Format Laser System" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                    <img src="images/build7.jpg" alt="Large Format Laser System" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
-                    <tr>
-                        <th>Type</th>
-                        <th>Component</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
                     <tr>
                         <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Firehoo-Makerbase-Offline-Controller-Engraving/dp/B0DY3YRHK7" target="_blank">MKS DLC32 V2.1 + 7" TFT</a></td>
@@ -839,15 +861,15 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/Digital-Microstep-Stepper-Controller-2-phase/dp/B08GCFNQF2/ref=sr_1_1?crid=2WZPSJM9ZYQOR&dib=eyJ2IjoiMSJ9.dxc2upZkgNZbX1aXj86OrvbqkoKMt2srighQupmsYqqJQXByb-jubkTQ27Y_-GF4OeX-FUbmiEkl3NUzp3HBDN1_NlQkJQ_0Qme0jLjLONptPYys2LkD_kDbB5cQ1t_P2U_oX-Y-72y0rSNd3GRiKwWJK-SzlALDu_aWMSOjkFB18TEPZ2qAlVi_rDYiVa7A9o8Lwg09LU3Gtra_3U-JEBD_Xa8_8Ndk7MV3Sk-aK7k.e0aOPOGvdPWh-YcJ2baZzIH3z4bkjD1xS5ouWks8iZk&dib_tag=se&keywords=DM542T+Digital+Drivers+%28x3%29&qid=1771222445&sprefix=dm542t+digital+drivers+x3+%2Caps%2C338&sr=8-1" target="_blank">DM542T Digital Drivers (x3)</a></td>
+                        <td><a href="https://www.amazon.com/Digital-Microstep-Stepper-Controller-2-phase/dp/B08GCFNQF2" target="_blank">DM542T Digital Drivers (×3)</a></td>
                         <td>$45.99</td>
                         <td>Professional digital drivers with higher current capacity</td>
                         <td><img src="images/DM542T.png" alt="DM542T" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Stepper-1-26Nm-178-4oz-4-Lead-Nema23/dp/B0FLW2FX9M" target="_blank">NEMA 23 High Torque (x3)</a></td>
-                        <td>$89.99</td>
+                        <td><a href="https://www.amazon.com/Stepper-1-26Nm-178-4oz-4-Lead-Nema23/dp/B0FLW2FX9M" target="_blank">NEMA 23 High Torque (×3)</a></td>
+                        <td>$79.99</td>
                         <td>3A, 3Nm torque for large gantry</td>
                         <td><img src="images/STEPPERMOTOR23.png" alt="NEMA 23" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
@@ -860,30 +882,37 @@
                     </tr>
                     <tr>
                         <td>🔫 Laser</td>
-                        <td><a href="https://www.amazon.com/LASER-TREE-Accuracy-Engraving-Suitable/dp/B0F9FGQ9XC/ref=sr_1_1?dib=eyJ2IjoiMSJ9.0WoWgNZ0CULpULLonWD3QAvzb1ddOdALX3s0cybM49ht7W0sjVMF3OzO8aN_ArRHXlAawouHt3pR532D6LSdCjpbEJRvdCG0x4dcnHl_WkExUBVadO_ngRmajbEbzen-Cc_F7o1S_hp5XLEkSuFsOu-Z2cthcLn3HxnAP9DlTcKqAAwKorWb15-BCGuV7d4p9ARVROo8qHbOM-6gkwTijJBtJ8eQuWdt-7NCzRJTlU99fiZrqmnHrtm4-DdCJVUi5KV043F2Y3ea8N68LumeeYO_QIr5O6XWEe8cQ-flXak.AOfPhj_Kz-6ynQ1azNAMXo2kR3n0y0-p64VIT84rY58&dib_tag=se&keywords=20w+laser+module&qid=1771222771&sr=8-1" target="_blank">20W Professional Laser</a></td>
+                        <td><a href="https://www.amazon.com/LASER-TREE-Accuracy-Engraving-Suitable/dp/B0F9FGQ9XC" target="_blank">20W Professional Laser</a></td>
                         <td>$350.00</td>
                         <td>Cuts 8mm wood, engraves metal, professional grade</td>
                         <td><img src="images/LASER20W.png" alt="20W Laser" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🛤️ Frame + Hardware</td>
-                        <td><a href="https://www.amazon.com/SeekLiny-Aluminum-Extrusion-400mm-Industrial/dp/B0CN6N8TG3" target="_blank">2040 Heavy Duty Extrusion</a> + <a href="https://www.amazon.com/Hiwin-Linear-Rail-Guide-Block/dp/B07DFR2P7V" target="_blank">Linear Rails</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
+                        <td><a href="https://www.amazon.com/SeekLiny-Aluminum-Extrusion-400mm-Industrial/dp/B0CN6N8TG3" target="_blank">2040 Heavy Duty Extrusion</a> + Linear Rails + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
                         <td>$95.00</td>
                         <td>Professional linear rail system for large format</td>
                         <td><img src="images/2040.png" alt="2040 Frame" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>❄️ Cooling</td>
-                        <td><a href="https://www.amazon.co.uk/Ventilator-40x40x20mm-21dBA-Sunon-EB40202S2-999/dp/B00MNJD8BE" target="_blank">Dual 80mm Fans</a> + <a href="https://www.amazon.co.uk/XUGERIP-Heatsink-Aluminum-Transistors-Regulators/dp/B0FDB11QVK" target="_blank">Heatsinks</a></td>
+                        <td>Dual 80mm Fans + Heatsinks</td>
                         <td>$24.99</td>
                         <td>Active cooling for drivers and laser</td>
                         <td><img src="images/FAN.png" alt="Cooling Fan" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
+                                    <tr>
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×3)</a></td>
+                        <td>$8.99</td>
+                        <td>Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                 </table>
                 <div class="build-note">✅ BEST FOR: Professional workshops, cutting large materials, production work</div>
             </div>
 
-            <!-- BUILD 8: ROTARY ENGRAVING SYSTEM -->
+            <!-- BUILD 8 -->
             <div class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3>🥃 BUILD 8: ROTARY ENGRAVING SYSTEM <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge high">HIGH-END</span></h3>
@@ -891,16 +920,10 @@
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder">Rotary Engraving System</div>
-                    <img src="images/build8.jpg" alt="Rotary Engraving System" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'">
+                    <img src="images/build8.jpg" alt="Rotary Engraving System" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
                 <table class="build-table">
-                    <tr>
-                        <th>Type</th>
-                        <th>Component</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
+                    <tr><th>Type</th><th>Component</th><th>Price</th><th>Description</th><th>Image</th></tr>
                     <tr>
                         <td>🎛️ Controller</td>
                         <td><a href="https://www.amazon.com/Firehoo-Makerbase-Offline-Controller-Engraving/dp/B0DY3YRHK7" target="_blank">MKS DLC32 with Rotary Support</a></td>
@@ -910,14 +933,14 @@
                     </tr>
                     <tr>
                         <td>⚙️ Drivers</td>
-                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">TMC2209 (x4)</a></td>
+                        <td><a href="https://www.amazon.com/BIGTREETECH-Printer-Stepstick-TMC2209-Heatsink/dp/B07YW7BM68" target="_blank">TMC2209 (×4)</a></td>
                         <td>$19.99</td>
                         <td>4th driver for rotary axis, silent operation</td>
                         <td><img src="images/TMC2209.png" alt="TMC2209" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Motors</td>
-                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 (x4)</a></td>
+                        <td><a href="https://www.amazon.com/Usongshine-Stepper-17HS4401S-17HS4401-Engraver/dp/B0C2VGWGSG" target="_blank">NEMA 17 (×4)</a></td>
                         <td>$47.99</td>
                         <td>4 motors for X, Y, Z, and rotary axis</td>
                         <td><img src="images/STEPPERMOTOR17.png" alt="NEMA 17" class="component-img" onclick="openModal(this.src)"></td>
@@ -938,27 +961,31 @@
                     </tr>
                     <tr>
                         <td>🛤️ Frame + Hardware</td>
-                        <td><a href="https://www.amazon.com/SeekLiny-Aluminum-Extrusion-400mm-Industrial/dp/B0CN6N8TG3" target="_blank">2040 Extended Frame</a> + <a href="https://www.amazon.com/mxuteuk-Assortment-Machine-Projects-Electronics/dp/B0G1YF7QZ9" target="_blank">Hardware Kit</a></td>
+                        <td><a href="https://www.amazon.com/SeekLiny-Aluminum-Extrusion-400mm-Industrial/dp/B0CN6N8TG3" target="_blank">2040 Extended Frame</a> + <a href="https://www.amazon.com/Timing-Pulley-20Teeth-Tensioner-Lukcase/dp/B07MF6TDHF" target="_blank">GT2 Belts + 16T Pulleys</a> + Hardware Kit</td>
                         <td>$65.00</td>
                         <td>Longer frame to accommodate rotary attachment</td>
                         <td><img src="images/2040.png" alt="2040 Frame" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
                     <tr>
                         <td>🔄 Rotary</td>
-                        <td><a href="https://www.amazon.nl/-/en/Creality-Engraving-Multifunctional-Adjustable-Cylindrical/dp/B0FG34XKVX/ref=sr_1_7?crid=ABL9M4B21Y8A&dib=eyJ2IjoiMSJ9.Pl-qjp1w_J3RnePYVnFlHLg46r7IsTasBLdSTUO-LQ4HA-78PSyTUomlySZq7EatrdCgMwr8LAfIlSlWyOP6lka0Yvtv1F-QesYg0h8rmuQCtmh8CBfp3UJQtSUU5slLNuyKgx3OS0Wbe0gPwSkagdbLYRR54rskO3egKTPaX42VQR_4xkEngTWGSuiiMyuxMZr5BnJj2XQ_mEfe-82DknfuhJQaBns60JJS0EF0X0YRL00tkqorpCGAEAan5MUeOl5jrUWKOR8Fcc5JAHyXVJ-Yiqpz1jwKjh3HFGRa5eg.eJZTEMu6HPc0hZ2EJ-kXGh6L9F0YzmRPz0Cf3bSy8Zs&dib_tag=se&keywords=Roller+Rotary+Attachment&qid=1771222939&sprefix=roller+rotary+attachment%2Caps%2C338&sr=8-7" target="_blank">Roller Rotary Attachment</a></td>
+                        <td>Roller Rotary Attachment</td>
                         <td>$45.00</td>
                         <td>For engraving cups, bottles, glasses, cylinders</td>
                         <td><img src="images/ROTARY.png" alt="Rotary Attachment" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
+                                    <tr>
+                        <td>🛑 Limit Switches</td>
+                        <td><a href="https://www.amazon.com/Endstop-Limit-Mechanical-Switch-Printer/dp/B0CN2Q1FX7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Kq3JBKf8P0N9l3q-UjV4SBTsiZ_npRxcttavZAapqoQ8Fp05pFJ9bA94ljQteVQKhVV7gGhSy_Q5zw_9MGel-si3HbWGNDysxZ85qBKbiZmVRz3ZTXp7J-UmfkJC2GZS_VkkdeQIIp08zjVRpXDswytfWaP_4bwqtKzm0A8_P8FpKb1vMLdcQ_LMhUdAuM_10qHwAxw6RH8221VjWJNIipXTGTkLTnseIJagNzqYQ0k.riB9zpYwcn7mnbnTQjzkDA-uaK3Jj9bWZiG-9kJobho&dib_tag=se&keywords=mechanical+endstop+switch&qid=1774081511&sr=8-4" target="_blank">Mechanical End Stop Switch (×3)</a></td>
+                        <td>$8.99</td>
+                        <td>Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
+                        <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
+                    </tr>
                 </table>
-                <div class="tip-box">
-                    <strong>🔄 4TH AXIS:</strong> This build includes a rotary attachment for engraving cylindrical objects. Perfect for personalized cups and bottles.
-                </div>
+                <div class="tip-box"><strong>🔄 4TH AXIS:</strong> This build includes a rotary attachment for engraving cylindrical objects. Perfect for personalized cups and bottles.</div>
                 <div class="build-note">✅ BEST FOR: Engraving cylindrical objects, cups, bottles, glasses, and curved surfaces</div>
             </div>
         </div>
 
-        <!-- FINAL VOLTAGE SUMMARY -->
         <div class="warning-box" style="margin-top: 50px;">
             <strong>🔋 VOLTAGE COMPATIBILITY SUMMARY:</strong><br>
             • <span style="color: #ff8888;">Arduino Uno + CNC Shield:</span> NEVER power Arduino through CNC Shield! Use buck converter (12V/24V → 5V) OR separate 5V PSU.<br>
@@ -969,39 +996,19 @@
         </div>
     </section>
 
-    <!-- HOW IT WORKS SECTION -->
     <section id="how-it-works" class="how-it-works">
         <h1><span style="color: red;">How</span> <span style="color: yellow;">It</span> <span style="color: blue;">Works</span></h1>
         <div class="steps">
-            <a href="materials/laser.html" class="step">
-                <h2>1. Laser Module</h2>
-                <p>The laser module emits a focused light beam that engraves or cuts the surface of your chosen material.</p>
-            </a>
-            <a href="materials/stepper.html" class="step">
-                <h2>2. Stepper Motors</h2>
-                <p>Stepper motors move the laser along the X, Y, and Z axes with precision.</p>
-            </a>
-            <a href="materials/control.html" class="step">
-                <h2>3. Control Board</h2>
-                <p>The control board interprets commands from software and controls the laser and motors.</p>
-            </a>
-            <a href="materials/software.html" class="step">
-                <h2>4. Software</h2>
-                <p>LaserGRBL or LightBurn converts images into G-code for the machine.</p>
-            </a>
-            <a href="materials/power.html" class="step">
-                <h2>5. Power Supply</h2>
-                <p>Provides correct voltage and current to run everything smoothly.</p>
-            </a>
-            <a href="materials/switch.html" class="step">
-                <h2>6. Limit Switch</h2>
-                <p>Defines boundaries, enables homing, and protects the machine.</p>
-            </a>
+            <a href="materials/laser.html" class="step"><h2>1. Laser Module</h2><p>The laser module emits a focused light beam that engraves or cuts the surface of your chosen material.</p></a>
+            <a href="materials/stepper.html" class="step"><h2>2. Stepper Motors</h2><p>Stepper motors move the laser along the X, Y, and Z axes with precision.</p></a>
+            <a href="materials/control.html" class="step"><h2>3. Control Board</h2><p>The control board interprets commands from software and controls the laser and motors.</p></a>
+            <a href="materials/software.html" class="step"><h2>4. Software</h2><p>CLE Laser Control (or LaserGRBL / LightBurn) converts images into G-code for the machine.</p></a>
+            <a href="materials/power.html" class="step"><h2>5. Power Supply</h2><p>Provides correct voltage and current to run everything smoothly.</p></a>
+            <a href="materials/switch.html" class="step"><h2>6. Limit Switch</h2><p>Defines boundaries, enables homing, and protects the machine.</p></a>
         </div>
     </section>
 </div>
 
-<!-- Image Modal -->
 <div id="imageModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); backdrop-filter:blur(5px); cursor:pointer;">
     <span style="position:absolute; top:20px; right:40px; color:white; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
     <img id="modalImage" style="margin:auto; display:block; max-width:90%; max-height:90%; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); border:3px solid #ffcc66; border-radius:10px;">
@@ -1009,61 +1016,30 @@
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-    AOS.init({
-        duration: 1000,
-        once: false,
-        mirror: false,
-    });
+    AOS.init({ duration: 1000, once: false, mirror: false });
 
-    // Mobile menu
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.createElement('div');
         menuToggle.className = 'menu-toggle';
         menuToggle.innerHTML = '☰';
         document.querySelector('.navbar').appendChild(menuToggle);
-
         const navMenu = document.querySelector('.menu');
-
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-
-        const navLinks = document.querySelectorAll('.menu ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-            });
+        menuToggle.addEventListener('click', function() { navMenu.classList.toggle('active'); });
+        document.querySelectorAll('.menu ul li a').forEach(link => {
+            link.addEventListener('click', function() { navMenu.classList.remove('active'); });
         });
     });
 
-    // Image Modal functionality
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('#imageModal span');
 
-    window.openModal = function(src) {
-        modal.style.display = 'block';
-        modalImg.src = src;
-    }
-
-    // Close modal when clicking X
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    // Close modal when clicking outside image
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal || e.target === closeBtn) {
-            modal.style.display = 'none';
-        }
-    });
-
-    // Close modal with ESC key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-        }
-    });
+    window.openModal = function(src) { modal.style.display = 'block'; modalImg.src = src; }
+    closeBtn.addEventListener('click', function() { modal.style.display = 'none'; });
+    modal.addEventListener('click', function(e) { if (e.target === modal || e.target === closeBtn) modal.style.display = 'none'; });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.style.display === 'block') modal.style.display = 'none'; });
 </script>
+<link rel="stylesheet" href="lang.css">
+<script src="lang.js"></script>
 </body>
 </html>

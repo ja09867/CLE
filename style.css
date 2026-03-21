@@ -112,7 +112,7 @@ ul li a:hover::after{
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-    padding-bottom: 1850px;
+    padding-bottom: 1900px;
 }
 .About{
     width: 90%;
