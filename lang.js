@@ -3,7 +3,7 @@
   const LANGS = {
     en: { label: "EN", name: "English", flag: "https://flagcdn.com/w40/gb.png",  dir: "ltr", rtl: false },
     ar: { label: "AR", name: "العربية", flag: "https://flagcdn.com/w40/iq.png",  dir: "rtl", rtl: true  },
-    ku: { label: "KU", name: "کوردی",   flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Flag_of_Kurdistan.svg/320px-Flag_of_Kurdistan.svg.png", dir: "rtl", rtl: true },
+    ku: { label: "KU", name: "کوردی",   flag: "images/flag-kurdistan.png", dir: "rtl", rtl: true },
   };
 
   /* Keys with data-i18n-html use innerHTML (safe for colored spans) */
