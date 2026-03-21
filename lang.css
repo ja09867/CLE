@@ -117,52 +117,104 @@ body.lang-rtl {
   text-align: right;
 }
 
-/* Flip navbar: logo goes right, links go left */
-body.lang-rtl .navbar {
-  flex-direction: row-reverse;
+/* Desktop-only RTL menu layout (above 992px) */
+@media (min-width: 993px) {
+  body.lang-rtl .navbar {
+    flex-direction: row-reverse;
+  }
+
+  body.lang-rtl .icon {
+    order: 2;
+    flex-shrink: 0;
+    width: 300px;
+  }
+
+  body.lang-rtl .menu {
+    order: 1;
+    width: calc(100% - 360px);
+    display: flex;
+    align-items: center;
+  }
+
+  body.lang-rtl .menu ul {
+    float: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  body.lang-rtl .menu ul li {
+    margin: 0;
+    margin-top: 0;
+  }
 }
 
-/* Icon stays right, fixed size, doesn't shrink or overflow */
-body.lang-rtl .icon {
-  order: 2;
-  flex-shrink: 0;
-  width: 300px;
-}
+/* ==============================
+   RTL Mobile Menu Fix
+   ============================== */
 
-/* Menu fills the rest of the space on the left */
-body.lang-rtl .menu {
-  order: 1;
-  width: calc(100% - 360px);
-  display: flex;
-  align-items: center;
-}
+/* On desktop, RTL menu stays full-width flex row — no changes needed */
 
-/* Links go right-to-left, spread across left side */
-body.lang-rtl .menu ul {
-  float: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  margin-top: 0;
-  padding: 0;
-}
-
-body.lang-rtl .menu ul li {
-  margin: 0;
-  margin-top: 0;
-}
-
+/* On mobile (hamburger active), override the LTR slide-in-from-right
+   so the panel slides in from the LEFT instead */
 @media (max-width: 992px) {
-  body.lang-rtl .icon { width: 300px; }
-  body.lang-rtl .menu { width: calc(100% - 300px); }
+
+  /* Keep icon width the same */
+  body.lang-rtl .icon {
+    width: 300px;
+    float: right;
+  }
+
+  /* Reset the flex layout override — let mobile styles take over */
+  body.lang-rtl .menu {
+    width: 70%;
+    /* Override: slide from LEFT instead of right */
+    right: auto;
+    left: 0;
+    /* Reset flex overrides from desktop RTL rules */
+    display: none;
+    flex-direction: unset;
+    align-items: unset;
+  }
+
+  body.lang-rtl .menu.active {
+    display: block;
+    right: auto;
+    left: 0;
+  }
+
+  body.lang-rtl .menu ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  /* Move hamburger toggle to LEFT side in RTL */
   body.lang-rtl .menu-toggle {
     right: auto;
     left: 20px;
+    position: absolute;
+  }
+}
+
+@media (max-width: 704px) {
+  body.lang-rtl .icon {
+    float: right;
+  }
+  body.lang-rtl .menu {
+    right: auto;
+    left: 0;
   }
   body.lang-rtl .menu.active {
     right: auto;
     left: 0;
+  }
+  body.lang-rtl .menu-toggle {
+    right: auto;
+    left: 20px;
   }
 }
