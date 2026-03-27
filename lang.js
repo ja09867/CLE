@@ -156,6 +156,43 @@
       ku: '<span style="color:red;">چۆن</span> <span style="color:yellow;">کار</span> <span style="color:blue;">دەکات</span>',
     },
 
+    /* ── NovaGrave / CLE Laser Control page HTML keys ── */
+    ng_h2_trailer: {
+      en: '<span style="color: red;">See It </span><span style="color: yellow;">In Action</span>',
+      ar: '<span style="color: red;">شاهده </span><span style="color: yellow;">في العمل</span>',
+      ku: '<span style="color: red;">ببینە </span><span style="color: yellow;">لە کاردا</span>',
+    },
+    ng_h2_solves: {
+      en: 'What <span style="color: red;">CLE</span> <span style="color: yellow;">Solves</span>',
+      ar: 'ما الذي يحله <span style="color: red;">CLE</span>',
+      ku: '<span style="color: red;">CLE</span> <span style="color: yellow;">چی چارەسەر دەکات</span>',
+    },
+    ng_h2_features: {
+      en: '<span style="color: red;">Key </span><span style="color: yellow;">Features</span>',
+      ar: '<span style="color: red;">الميزات </span><span style="color: yellow;">الرئيسية</span>',
+      ku: '<span style="color: red;">تایبەتمەندییە </span><span style="color: yellow;">سەرەکیەکان</span>',
+    },
+    ng_h2_better: {
+      en: '<span style="color: red;">Why CLE Is </span><span style="color: yellow;">Better</span>',
+      ar: '<span style="color: red;">لماذا CLE </span><span style="color: yellow;">أفضل</span>',
+      ku: '<span style="color: red;">بۆچی CLE </span><span style="color: yellow;">باشتره</span>',
+    },
+    ng_h2_tech: {
+      en: '<span style="color: red;">Technology </span><span style="color: yellow;">Stack</span>',
+      ar: '<span style="color: red;">مكدس </span><span style="color: yellow;">التقنيات</span>',
+      ku: '<span style="color: red;">ستاکی </span><span style="color: yellow;">تەکنەلۆژیا</span>',
+    },
+    ng_h2_sysreq: {
+      en: '<span style="color: red;">System </span><span style="color: yellow;">Requirements</span>',
+      ar: '<span style="color: red;">متطلبات </span><span style="color: yellow;">النظام</span>',
+      ku: '<span style="color: red;">پێداویستییەکانی </span><span style="color: yellow;">سیستەم</span>',
+    },
+    ng_h2_download: {
+      en: '<span style="color: red;">Download </span><span style="color: yellow;">CLE Laser Control</span>',
+      ar: '<span style="color: red;">تحميل </span><span style="color: yellow;">CLE Laser Control</span>',
+      ku: '<span style="color: red;">داگرتنی </span><span style="color: yellow;">CLE Laser Control</span>',
+    },
+
     /* ═══════════════════════════════════════════
        DETAIL PAGES — HTML keys (data-i18n-html)
     ═══════════════════════════════════════════ */
@@ -700,6 +737,25 @@
     cmp_free:   { en: "Free & Open Source",      ar: "مجاني ومفتوح المصدر",   ku: "بەخۆرایی و سەرچاوە-کراوە" },
     cmp_layer:  { en: "Layer Manager",           ar: "مدير الطبقات",           ku: "بەڕێوەبەری چینەکان" },
     cmp_path:   { en: "Path Optimizer",          ar: "محسّن المسار",           ku: "باشکردنی ڕێگا" },
+
+    ng_th_feature:   { en: "Feature",    ar: "الميزة",     ku: "تایبەتمەندی" },
+    ng_th_lasergrbl: { en: "LaserGRBL",  ar: "LaserGRBL",  ku: "LaserGRBL" },
+    ng_th_lightburn: { en: "LightBurn",  ar: "LightBurn",  ku: "LightBurn" },
+
+    ng_req_windows:      { en: "Windows",                              ar: "ويندوز",                          ku: "Windows" },
+    ng_req_linux:        { en: "Linux",                                ar: "لينكس",                           ku: "Linux" },
+    ng_req_os:           { en: "Operating System",                     ar: "نظام التشغيل",                    ku: "سیستەمی کارکردن" },
+    ng_req_mem:          { en: "Memory",                               ar: "الذاكرة",                         ku: "حافیزە" },
+    ng_req_storage:      { en: "Storage",                              ar: "التخزين",                         ku: "هەڵگرتن" },
+    ng_req_conn:         { en: "Connectivity",                         ar: "الاتصال",                         ku: "پەیوەندی" },
+    ng_req_wine:         { en: "Wine",                                 ar: "Wine",                            ku: "Wine" },
+    ng_req_win_os:       { en: "Windows 10 / 11 (64-bit)",             ar: "ويندوز 10 / 11 (64 بت)",          ku: "Windows 10 / 11 (64-بیت)" },
+    ng_req_mem_val:      { en: "4GB RAM minimum",                      ar: "4 جيجابايت RAM كحد أدنى",         ku: "4GB RAM کەمترین" },
+    ng_req_win_storage:  { en: "500MB available space",                ar: "500 ميجابايت مساحة متاحة",        ku: "500MB بوشایی بەردەست" },
+    ng_req_conn_val:     { en: "USB port for laser machine",           ar: "منفذ USB لجهاز الليزر",           ku: "پۆرتی USB بۆ ئامێری لەیزەر" },
+    ng_req_linux_os:     { en: "Ubuntu 20.04 or newer",                ar: "أوبونتو 20.04 أو أحدث",           ku: "Ubuntu 20.04 یان نوێتر" },
+    ng_req_linux_storage:{ en: "2GB available space",                  ar: "2 جيجابايت مساحة متاحة",          ku: "2GB بوشایی بەردەست" },
+    ng_req_wine_val:     { en: "Installed automatically by installer", ar: "يُثبَّت تلقائياً بواسطة المثبِّت", ku: "بە خۆکارییەوە لەلایەن نصبکەرەوە دادەنرێت" },
 
     /* ── Materials page plain-text keys ── */
     mat_subtitle: {
