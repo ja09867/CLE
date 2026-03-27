@@ -637,6 +637,28 @@
       ar: '<strong>الشعاع المتماسك</strong> يخرج، مركزاً على المادة.',
       ku: '<strong>تیرەی کۆهیرینت</strong> دەردەچێت، فۆکەس لەسەر ماددەکە.',
     },
+
+    /* ── HTML description cells (contain <span> color tags) ── */
+    desc_b0_controller: {
+      en: '<span style="color:#00ff00;">✅ DEDICATED LASER CONTROLLER!</span> 32-bit ESP32, WiFi, GRBL firmware, offline TFT touchscreen interface.',
+      ar: '<span style="color:#00ff00;">✅ متحكم ليزر مخصص!</span> 32-بت ESP32، WiFi، برنامج GRBL، واجهة شاشة TFT دون اتصال.',
+      ku: '<span style="color:#00ff00;">✅ کۆنترۆڵکەری لەیزەری تایبەت!</span> 32-بیتی ESP32، WiFi، فێرمویێری GRBL، ڕووکاری شاشەی TFT بێ ئینتەرنێت.',
+    },
+    desc_b2_buck: {
+      en: '<span style="color: #ff8888;">⚠️ REQUIRED!</span> Steps down 12V to 5V for Arduino.',
+      ar: '<span style="color: #ff8888;">⚠️ مطلوب!</span> يخفض 12 فولت إلى 5 فولت للأردوينو.',
+      ku: '<span style="color: #ff8888;">⚠️ پێویستە!</span> 12V دابەزێنێت بۆ 5V بۆ ئاردوینۆ.',
+    },
+    desc_b3_arduino: {
+      en: '<span style="color: #00ff00;">✅ SAFEST OPTION!</span> Dedicated 5V supply for Arduino.',
+      ar: '<span style="color: #00ff00;">✅ الخيار الأكثر أماناً!</span> مصدر 5 فولت مخصص للأردوينو.',
+      ku: '<span style="color: #00ff00;">✅ پارێزراوترین هەڵبژاردن!</span> سەرچاوەی 5V-ی تایبەت بۆ ئاردوینۆ.',
+    },
+    desc_b6_controller: {
+      en: '<span style="color: #00ff00;">✅ DEDICATED LASER CONTROLLER!</span> 32-bit ESP32, WiFi, GRBL, TFT touchscreen.',
+      ar: '<span style="color: #00ff00;">✅ متحكم ليزر مخصص!</span> 32-بت ESP32، WiFi، GRBL، شاشة لمس TFT.',
+      ku: '<span style="color: #00ff00;">✅ کۆنترۆڵکەری لەیزەری تایبەت!</span> 32-بیتی ESP32، WiFi، GRBL، شاشەی تاچی TFT.',
+    },
   };
 
   /* Keys with data-i18n use textContent (plain text only) */
@@ -788,6 +810,21 @@
     mat_th_price:     { en: "Price",       ar: "السعر",    ku: "نرخ" },
     mat_th_desc:      { en: "Description", ar: "الوصف",    ku: "وەسف" },
     mat_th_img:       { en: "Image",       ar: "الصورة",   ku: "وێنە" },
+
+    /* ── Component type column labels ── */
+    mat_type_controller:    { en: "🎛️ Controller",       ar: "🎛️ المتحكم",          ku: "🎛️ کۆنترۆڵکەر" },
+    mat_type_drivers:       { en: "⚙️ Drivers",          ar: "⚙️ المشغلات",         ku: "⚙️ درایڤەرەکان" },
+    mat_type_motors:        { en: "🔄 Motors",           ar: "🔄 المحركات",          ku: "🔄 موتەرەکان" },
+    mat_type_power:         { en: "🔋 Power",            ar: "🔋 الطاقة",            ku: "🔋 وزە" },
+    mat_type_motor_power:   { en: "🔋 Motor Power",      ar: "🔋 طاقة المحركات",     ku: "🔋 وزەی موتەر" },
+    mat_type_arduino_power: { en: "⚡ Arduino Power",    ar: "⚡ طاقة أردوينو",      ku: "⚡ وزەی ئاردوینۆ" },
+    mat_type_laser:         { en: "🔫 Laser",            ar: "🔫 الليزر",            ku: "🔫 لەیزەر" },
+    mat_type_frame:         { en: "🛤️ Frame",            ar: "🛤️ الإطار",           ku: "🛤️ چارچۆ" },
+    mat_type_frame_hw:      { en: "🛤️ Frame + Hardware", ar: "🛤️ الإطار + المعدات", ku: "🛤️ چارچۆ + ئامێرەکان" },
+    mat_type_frame_motion:  { en: "🛤️ Frame + Motion",  ar: "🛤️ الإطار + الحركة",  ku: "🛤️ چارچۆ + جووڵە" },
+    mat_type_limit:         { en: "🛑 Limit Switches",   ar: "🛑 مفاتيح الحد",       ku: "🛑 سوییچەکانی سنوور" },
+    mat_type_rotary:        { en: "🔄 Rotary",           ar: "🔄 دوار",              ku: "🔄 خولاو" },
+    mat_comp_rotary:        { en: "Roller Rotary Attachment", ar: "ملحق الدوران بالبكرة", ku: "پێوەستکراوی خولاندنی ڕۆلەر" },
     mat_b0_placeholder: {
       en: "CLE Laser Engraver — Our Build",
       ar: "محفر ليزر CLE — بناؤنا",
@@ -886,11 +923,6 @@
     },
 
     /* ── Table description cells ── */
-    desc_b0_controller: {
-      en: '<span style="color:#00ff00;">✅ DEDICATED LASER CONTROLLER!</span> 32-bit ESP32, WiFi, GRBL firmware, offline TFT touchscreen interface.',
-      ar: '<span style="color:#00ff00;">✅ متحكم ليزر مخصص!</span> 32-بت ESP32، WiFi، برنامج GRBL، واجهة شاشة TFT دون اتصال.',
-      ku: '<span style="color:#00ff00;">✅ کۆنترۆڵکەری لەیزەری تایبەت!</span> 32-بیتی ESP32، WiFi، فێرمویێری GRBL، ڕووکاری شاشەی TFT بێ ئینتەرنێت.',
-    },
     desc_b0_drivers: {
       en: "Basic but reliable stepper drivers integrated with the MKS DLC32 board to control the NEMA 17 motors.",
       ar: "مشغلات خطوية أساسية لكنها موثوقة، مدمجة مع لوحة MKS DLC32 للتحكم في محركات NEMA 17.",
@@ -981,11 +1013,6 @@
       ar: "يشغل CNC Shield والمحركات والليزر.",
       ku: "CNC Shield + موتەرەکان + لەیزەر وزەی پێدەدات.",
     },
-    desc_b2_buck: {
-      en: '<span style="color: #ff8888;">⚠️ REQUIRED!</span> Steps down 12V to 5V for Arduino.',
-      ar: '<span style="color: #ff8888;">⚠️ مطلوب!</span> يخفض 12 فولت إلى 5 فولت للأردوينو.',
-      ku: '<span style="color: #ff8888;">⚠️ پێویستە!</span> 12V دابەزێنێت بۆ 5V بۆ ئاردوینۆ.',
-    },
     desc_b2_laser: {
       en: "Cuts 3mm wood, engraves acrylic/leather. 12V input.",
       ar: "يقطع خشباً بسماكة 3 مم، يحفر الأكريليك والجلد. مدخل 12 فولت.",
@@ -1015,11 +1042,6 @@
       en: "For CNC Shield, motors, and laser.",
       ar: "لـ CNC Shield والمحركات والليزر.",
       ku: "بۆ CNC Shield، موتەرەکان، و لەیزەر.",
-    },
-    desc_b3_arduino: {
-      en: '<span style="color: #00ff00;">✅ SAFEST OPTION!</span> Dedicated 5V supply for Arduino.',
-      ar: '<span style="color: #00ff00;">✅ الخيار الأكثر أماناً!</span> مصدر 5 فولت مخصص للأردوينو.',
-      ku: '<span style="color: #00ff00;">✅ پارێزراوترین هەڵبژاردن!</span> سەرچاوەی 5V-ی تایبەت بۆ ئاردوینۆ.',
     },
     desc_b3_laser: {
       en: "Powered by 12V PSU.",
@@ -1090,11 +1112,6 @@
       en: "Protects wires during high speed movement",
       ar: "يحمي الأسلاك أثناء الحركة بسرعة عالية",
       ku: "تەلەکان لەکاتی جووڵەی خێرا دەپارێزێت",
-    },
-    desc_b6_controller: {
-      en: '<span style="color: #00ff00;">✅ DEDICATED LASER CONTROLLER!</span> 32-bit ESP32, WiFi, GRBL, TFT touchscreen.',
-      ar: '<span style="color: #00ff00;">✅ متحكم ليزر مخصص!</span> 32-بت ESP32، WiFi، GRBL، شاشة لمس TFT.',
-      ku: '<span style="color: #00ff00;">✅ کۆنترۆڵکەری لەیزەری تایبەت!</span> 32-بیتی ESP32، WiFi، GRBL، شاشەی تاچی TFT.',
     },
     desc_b6_drivers: {
       en: "24V recommended. Works perfectly with DLC32.",
