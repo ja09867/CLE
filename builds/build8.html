@@ -7,12 +7,12 @@
 <link rel="icon" href="../images/favicon.png" type="image/png" sizes="512x512">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <style>
-    html { height: 100%; }
-    body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url("../images/istockphoto-178981530-612x612.jpg") center/cover fixed no-repeat; }
-    .sub-main-1 { min-height: 100vh !important; height: 100vh !important; overflow: hidden !important; padding-bottom: 0 !important; background: transparent !important; }
-    html { height: 100%; }
-    body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url("../images/istockphoto-178981530-612x612.jpg") center/cover fixed no-repeat; }
-    .sub-main-1 { min-height: 100vh !important; height: 100vh !important; overflow: hidden !important; padding-bottom: 0 !important; background: transparent !important; }
+    html { min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100%; overflow-x: hidden; background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url("../images/istockphoto-178981530-612x612.jpg") center/cover fixed no-repeat; }
+    .sub-main-1 { min-height: 100vh !important; height: 100vh !important; padding-bottom: 0 !important; background: transparent !important; }
+    html { min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100%; overflow-x: hidden; background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url("../images/istockphoto-178981530-612x612.jpg") center/cover fixed no-repeat; }
+    .sub-main-1 { min-height: 100vh !important; height: 100vh !important; padding-bottom: 0 !important; background: transparent !important; }
     .sub-main-1 {
         min-height: auto !important;
         height: auto !important;
@@ -127,6 +127,8 @@
         transition: background 0.3s;
     }
     .back-link-bottom a:hover { background: rgba(255,204,102,0.3); }
+    html, body { height: auto !important; min-height: 100%; }
+    .sub-main-1 { overflow: visible !important; height: auto !important; min-height: 100vh !important; }
 </style>
 </head>
 <body>
@@ -188,5 +190,11 @@
 </script>
 <link rel="stylesheet" href="../lang.css">
 <script src="../lang.js"></script>
+<style>
+html { height: auto !important; min-height: 100% !important; overflow-y: auto !important; }
+@media (max-width: 640px) { .build-page-content { padding-bottom: 80px !important; } }
+body { height: auto !important; min-height: 100vh !important; overflow-y: auto !important; }
+.sub-main-1 { height: auto !important; min-height: 100vh !important; overflow: visible !important; }
+</style>
 </body>
 </html>
