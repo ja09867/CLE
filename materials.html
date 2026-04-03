@@ -281,13 +281,29 @@
 
         @media (max-width: 992px) {
             .build-header { flex-direction: column; align-items: flex-start; }
-            .build-table td { display: block; width: 100% !important; padding: 10px; }
-            .build-table tr { display: block; margin-bottom: 20px; border-bottom: 2px solid rgba(255,204,102,0.3); }
         }
 
         @media (max-width: 768px) {
             .build-card { padding: 20px 15px; }
             .section-header h2 { font-size: 1.8rem; }
+
+            /* Simple horizontal scroll — works with any language/direction */
+            .table-scroll-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                border-radius: 10px;
+            }
+            .build-table {
+                min-width: 560px;
+                font-size: 0.82rem;
+            }
+            .build-table th, .build-table td {
+                padding: 10px 8px;
+            }
+            .build-table .component-img {
+                width: 48px;
+                height: 48px;
+            }
         }
     </style>
 </head>
@@ -336,7 +352,7 @@
                     <div class="build-image-placeholder" style="color: #00b4ff;" data-i18n="mat_b0_placeholder">CLE Laser Engraver — Our Build</div>
                     <img src="images/ourbuild.jpg" alt="Our CLE Build" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr>
                         <th data-i18n="mat_th_type">Type</th>
                         <th data-i18n="mat_th_component">Component</th>
@@ -394,7 +410,7 @@
                         <td dir="auto" data-i18n="desc_b0_switches">Installed at max/min travel limits of X and Y axes. Enable precise homing ("Machine Zero") and act as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="tip-box" data-i18n-html="mat_b0_tip">
                     <strong>💡 WHAT MAKES OUR BUILD UNIQUE:</strong> Unlike other builds that rely on an external PC connected via USB, our CLE system embeds a <strong>BMAX Mini PC (8GB RAM / 128GB)</strong> directly into the machine, paired with a <strong>7-inch capacitive touch screen</strong>. This makes the engraver fully standalone — no external computer needed during operation. Control is handled entirely through our custom <strong>CLE Laser Control software</strong>.
                 </div>
@@ -419,7 +435,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b1_placeholder">Budget Starter Kit</div>
                     <img src="images/build1.jpg" alt="Budget Starter Kit" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -470,7 +486,7 @@
                         <td dir="auto" data-i18n="desc_shared_switch">Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="warning-box" data-i18n-html="mat_b1_warning"><strong>⚠️ NOTE:</strong> Budget build uses smaller power supply (5A vs 10A). Good for learning, but upgrade PSU if doing longer engravings.</div>
                 <div class="build-note" data-i18n="mat_b1_note">✅ BEST FOR: Absolute beginners, learning the basics, testing if laser engraving is for you</div>
             </div>
@@ -485,7 +501,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b2_placeholder">DIY Desktop Laser Engraver</div>
                     <img src="images/build2.jpg" alt="DIY Desktop Laser Engraver" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -543,7 +559,7 @@
                         <td dir="auto" data-i18n="desc_shared_switch">Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="warning-box" data-i18n-html="mat_b2_warning"><strong>⚠️ CRITICAL:</strong> This combo uses ONE 12V PSU. You MUST use the buck converter to power Arduino (5V).</div>
                 <div class="build-note" data-i18n="mat_b2_note">✅ BEST FOR: Hobbyists who want a single power supply with better cutting power</div>
             </div>
@@ -566,7 +582,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b3_placeholder">Dual PSU Safe Setup</div>
                     <img src="images/build3.jpg" alt="Dual PSU Safe Setup" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -624,7 +640,7 @@
                         <td dir="auto" data-i18n="desc_shared_switch">Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="tip-box" data-i18n-html="mat_b3_tip"><strong>💡 TIP:</strong> This is the SAFEST setup. Two separate PSUs: 5V for Arduino, 12V for motors/laser. Connect the grounds together.</div>
                 <div class="build-note" data-i18n="mat_b3_note">✅ BEST FOR: Beginners who want zero risk of frying their Arduino, and longer engraving sessions</div>
             </div>
@@ -639,7 +655,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b4_placeholder">Compact Desktop Engraver</div>
                     <img src="images/build4.jpg" alt="Compact Desktop Engraver" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -690,7 +706,7 @@
                         <td dir="auto" data-i18n="desc_b4_switches">Precise homing for consistent results</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="build-note" data-i18n="mat_b4_note">✅ BEST FOR: Users wanting quieter operation, smoother motion, and better cut quality with air assist</div>
             </div>
 
@@ -704,7 +720,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b5_placeholder">High Speed Belt Driven Laser</div>
                     <img src="images/build5.jpg" alt="High Speed Belt Driven Laser" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -762,7 +778,7 @@
                         <td dir="auto" data-i18n="desc_shared_switch">Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="tip-box" data-i18n-html="mat_b5_tip"><strong>⚡ HIGH SPEED SETUP:</strong> CoreXY belt configuration allows faster acceleration than leadscrew systems. 24V gives better torque at high speeds.</div>
                 <div class="build-note" data-i18n="mat_b5_note">✅ BEST FOR: Users who want faster engraving speeds and are building a lightweight gantry system</div>
             </div>
@@ -785,7 +801,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b6_placeholder">Professional WiFi Laser Engraver</div>
                     <img src="images/build6.jpg" alt="Professional WiFi Laser Engraver" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -836,7 +852,7 @@
                         <td dir="auto" data-i18n="desc_shared_switch">Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="tip-box" data-i18n-html="mat_b6_tip"><strong>📱 WIFI + TOUCHSCREEN:</strong> Control your laser from phone or computer. No PC needed!</div>
                 <div class="build-note" data-i18n="mat_b6_note">✅ BEST FOR: Professionals, makers who want wireless control and dedicated laser firmware.</div>
             </div>
@@ -851,7 +867,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b7_placeholder">Large Format Laser System</div>
                     <img src="images/build7.jpg" alt="Large Format Laser System" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -909,7 +925,7 @@
                         <td dir="auto" data-i18n="desc_shared_switch">Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="build-note" data-i18n="mat_b7_note">✅ BEST FOR: Professional workshops, cutting large materials, production work</div>
             </div>
 
@@ -923,7 +939,7 @@
                     <div class="build-image-placeholder" data-i18n="mat_b8_placeholder">Rotary Engraving System</div>
                     <img src="images/build8.jpg" alt="Rotary Engraving System" style="width: 100%; height: 100%; object-fit: contain; position: absolute; background: #111; top: 0; left: 0;" onerror="this.style.display='none'">
                 </div>
-                <table class="build-table">
+                <div class="table-scroll-wrapper"><table class="build-table">
                     <tr><th data-i18n="mat_th_type">Type</th><th data-i18n="mat_th_component">Component</th><th data-i18n="mat_th_price">Price</th><th data-i18n="mat_th_desc">Description</th><th data-i18n="mat_th_img">Image</th></tr>
                     <tr>
                         <td data-i18n="mat_type_controller">🎛️ Controller</td>
@@ -981,7 +997,7 @@
                         <td dir="auto" data-i18n="desc_shared_switch">Installed at travel limits of X and Y axes. Enables precise homing and acts as hardware fail-safe to stop motors instantly.</td>
                         <td><img src="images/SWITCH.png" alt="Mechanical End Stop Switch" class="component-img" onclick="openModal(this.src)"></td>
                     </tr>
-                </table>
+                </table></div>
                 <div class="tip-box" data-i18n-html="mat_b8_tip"><strong>🔄 4TH AXIS:</strong> This build includes a rotary attachment for engraving cylindrical objects. Perfect for personalized cups and bottles.</div>
                 <div class="build-note" data-i18n="mat_b8_note">✅ BEST FOR: Engraving cylindrical objects, cups, bottles, glasses, and curved surfaces</div>
             </div>
