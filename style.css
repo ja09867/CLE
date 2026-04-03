@@ -208,7 +208,12 @@ ul li a:hover::after{
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-    padding-bottom: 5550px;
+    padding-bottom: 0;
+}
+.build-page-content ~ * .sub-main-1,
+body:has(.build-page-content) .sub-main-1 {
+    min-height: auto;
+    padding-bottom: 0;
 }
 /* MATERIALS SECTION */
 #materials {
@@ -1996,287 +2001,99 @@ text-decoration: none;
   color: #f5f5f5;
 text-decoration: none;
     }}
-@media (max-width: 320px) {
-        .main{
-        height: 1000px;}
-    .menu{
-   display: none;
-}
-    ul{
-   display: none;
-}
+/* ===== MOBILE NAVBAR FIX =====
+   Add this block to the END of style.css
+   (replacing or after the existing 320px block)
+*/
+
+@media (max-width: 350px) {
+
+    /* Show hamburger, hide inline menu */
+    .menu-toggle {
+        display: block !important;
+        position: absolute;
+        top: 28px;
+        right: 18px;
+        font-size: 26px;
+        color: white;
+        cursor: pointer;
+        z-index: 1100;
+        background: none;
+        border: none;
+        line-height: 1;
+    }
+
+    /* Logo sizing */
     .icon {
-    background-image: url("images/logo4_320.png");
-    width: 250px;  /* Smallest size */
-}
-      .menu-toggle {
-        font-size: 20px;
-        top: 35px;
-    right: 11px;}
- .sub-main{
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url("images/opt-lasers-7NvkRlTzLZE-unsplash-1200x800.png");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
-    padding-bottom: 2450px;
-       .icon {
-    background-image: url("images/logo4_320.png");
-           width: 240px;}
-        .menu-toggle {
-        font-size: 20px;
-        top: 35px;
-    right: 33px;}
-}
-.About{
-    width: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-.About h1{
-    font-size: 62px;
-}
-.About p{
-    font-size: 14px;
-    color: white;
-}
-.info{
-    width: 90%;
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-.info h1{
-    font-size: 62px;
-}
-.info p{
-    font-size: 14px;
-    color: white;
-}
-.hero1 {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    border: 1px solid slategray;
-    margin-top: 50px;
-    padding: 19px 34px;
-    font-size: 20px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-}
-.hero1:hover{
-    border: 1px solid slategray;
-    background-color: slategray;
-    transition: 1s;
-}
-.team-section {
-    position: absolute;
-    top: 240%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-  color: white;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  border-radius: 15px;
-}
-.team-section h2 {
-  font-size: 40px;
-  color: yellow;
-  margin-bottom: 20px;
-}
-.team {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-}
-.member {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-  width: 250px;
-  backdrop-filter: blur(8px);
-}
-.advisor {
-  margin-top: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 15px;
-  backdrop-filter: blur(8px);
-}
+        width: 220px !important;
+        height: 60px !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        padding-bottom: 0 !important;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
 
-.sub-main-1{
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url("images/istockphoto-178981530-612x612.jpg");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 500vh;
-    padding-bottom: 6500px;
-}
-#materials {
-    position: absolute;
-    top: 520%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-  padding: 60px 20px;
-  text-align: center;
-  color: white;
-  width: 90%;
-  margin: 0 auto;
-}
+    /* Navbar height */
+    .navbar {
+        height: 70px !important;
+        align-items: center;
+    }
 
-#materials h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
+    /* Hide the menu by default */
+    .menu {
+        display: none !important;
+        position: fixed !important;
+        top: 70px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(0, 0, 0, 0.95) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        z-index: 1050 !important;
+        padding: 10px 0 20px !important;
+        border-top: 1px solid rgba(255,204,102,0.3) !important;
+    }
 
-/* Material category container */
-.material-item {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 25px;
-  margin-bottom: 70px;
-text-decoration: none;
-}
+    /* Show when .active toggled by JS */
+    .menu.active {
+        display: block !important;
+    }
 
-.material-item h3 {
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: lightskyblue;
-}
+    /* Stack menu items vertically */
+    .menu ul {
+        float: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 0 !important;
+    }
 
-/* Sub-items container */
-.sub-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
+    .menu ul li {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    }
 
-/* Single material card */
-.sub-item {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
-  width: 250px;
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+    .menu ul li a {
+        display: block !important;
+        padding: 16px 20px !important;
+        font-size: 16px !important;
+        color: #ffcc66 !important;
+        letter-spacing: 1px !important;
+    }
 
-.sub-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-text-decoration: none;
+    .menu ul li a:hover {
+        background: rgba(255,204,102,0.1) !important;
+        color: white !important;
+    }
 }
-
-/* Hover effect: zoom and shadow */
-.sub-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 180, 255, 0.5);
-}
-
-.sub-item:hover img {
-  transform: scale(1.08);
-}
-
-/* Material name Amazon link */
-.sub-item h4 {
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-.sub-item h4 a {
-  color: #ffcc66;
-  text-decoration: none;
-  transition: color 0.3s, text-decoration 0.3s;
-}
-
-.sub-item h4 a:hover {
-  color: #00b4ff;
-  text-decoration: underline;
-}
-
-.sub-item p {
-  font-size: 0.9rem;
-  color: #ddd;
-  margin-top: 5px;
-}
-/* HOW IT WORKS SECTION */
-.how-it-works {
-  padding: 100px 50px;
-  background: linear-gradient(to top, rgba(0,0,0,0.6)50%,rgba(0,0,0,0.6)50%), url("images/istockphoto-178981530-612x612.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: white;
-  text-align: center;
-}
-
-.how-it-works h1 {
-  font-size: 60px;
-  margin-bottom: 30px;
-}
-
-.steps {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.step {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
-text-decoration: none;
-}
-
-.step:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.step img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.step h2 {
-  margin: 15px 0 10px;
-  color: #FFD700;
-    text-decoration: none;
-}
-
-.step p {
-  font-size: 16px;
-  color: #f5f5f5;
-text-decoration: none;
-    }}
-/* ===== MOBILE CRITICAL FIXES ===== */
-/* Fix 1: background-attachment:fixed breaks on mobile WebKit (causes white strip) */
-/* Fix 2: Prevent horizontal overflow that pushes page wider than viewport */
 @media (max-width: 992px) {
     body {
         overflow-x: hidden;
