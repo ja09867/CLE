@@ -1458,6 +1458,23 @@
     sw_p_stages: { en: 'The process works in several stages:', ar: 'تعمل العملية في عدة مراحل:', ku: 'پرۆسەکە لە چەند قۆناغدا کار دەکات:' },
     pow_p_wire:  { en: 'Proper wiring and current rating selection are essential. Never exceed voltage ratings of any connected module.', ar: 'التوصيل الصحيح واختيار تقدير التيار المناسب أمران ضروريان. لا تتجاوز أبداً تقديرات الجهد لأي وحدة متصلة.', ku: 'تەلی دروست و هەڵبژاردنی نرخی جریانی گونجاو گرینگن. هەرگیز نرخەکانی هەڵتاوی هیچ مۆدیولێکی پەیوەستکراو تێپەڕ مەکە.' },
 
+    /* ── Build detail page keys ── */
+    build_watch_videos: { en: "Watch these videos to learn how to assemble this build", ar: "شاهد هذه الفيديوهات لتعلم كيفية تجميع هذا البناء", ku: "ئەم ڤیدیۆیانە ببینە بۆ فێربوونی چۆنیەتی ئامادەکردنی ئەم بینایە" },
+    build_assembly:     { en: "🔧 Assembly Guide", ar: "🔧 دليل التجميع", ku: "🔧 ڕێنمایی ئامادەکردن" },
+    build_config:       { en: "⚙️ Configuration & Setup", ar: "⚙️ الإعداد والتكوين", ku: "⚙️ ڕێکخستن و دامەزراندن" },
+    build_back:         { en: "← Back to All Builds", ar: "← العودة إلى جميع البناءات", ku: "← گەڕانەوە بۆ هەموو بینەکان" },
+
+    /* ── Build page title translations ── */
+    build0_title: { en: "⭐ OUR BUILD: CLE Graduation Project", ar: "⭐ بناؤنا: مشروع تخرج CLE", ku: "⭐ بینامان: پرۆژەی مەزوونبوونی CLE" },
+    build1_title: { en: "💰 BUILD 1: Budget Starter Kit", ar: "💰 البناء 1: طقم بداية اقتصادي", ku: "💰 بینای 1: کیتی دەستپێکردنی بودجەیی" },
+    build2_title: { en: "🖥️ BUILD 2: DIY Desktop Laser Engraver", ar: "🖥️ البناء 2: محفر ليزر مكتبي DIY", ku: "🖥️ بینای 2: حەکپێکەری لەیزەری مێزەکتەبی DIY" },
+    build3_title: { en: "🔋 BUILD 3: Dual PSU Safe Setup", ar: "🔋 البناء 3: إعداد آمن بمصدرين للطاقة", ku: "🔋 بینای 3: دامەزراندنی دوو PSU پارێزراو" },
+    build4_title: { en: "📦 BUILD 4: Compact Desktop Engraver", ar: "📦 البناء 4: محفر مكتبي مدمج", ku: "📦 بینای 4: حەکپێکەری مێزەکتەبی کۆمپاکت" },
+    build5_title: { en: "⚡ BUILD 5: High Speed Belt Driven Laser", ar: "⚡ البناء 5: ليزر عالي السرعة بالسير", ku: "⚡ بینای 5: لەیزەری بەرزخێرایی بە بێڵت" },
+    build6_title: { en: "📱 BUILD 6: WiFi Laser Engraver", ar: "📱 البناء 6: محفر ليزر بالواي فاي", ku: "📱 بینای 6: حەکپێکەری لەیزەری WiFi" },
+    build7_title: { en: "📐 BUILD 7: Large Format Laser", ar: "📐 البناء 7: ليزر ذو تنسيق كبير", ku: "📐 بینای 7: لەیزەری فۆرماتی گەورە" },
+    build8_title: { en: "🥃 BUILD 8: Rotary Engraving System", ar: "🥃 البناء 8: نظام الحفر الدوار", ku: "🥃 بینای 8: سیستەمی حەکپێکردنی خولاندنی" },
+
 
   };
 

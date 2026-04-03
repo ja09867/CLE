@@ -305,6 +305,35 @@
                 height: 48px;
             }
         }
+
+        /* Watch Videos button on build cards */
+        .watch-videos-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,204,102,0.15);
+            border: 1px solid #ffcc66;
+            color: #ffcc66;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .watch-videos-btn:hover {
+            background: #ffcc66;
+            color: black;
+        }
+        .build-card[onclick] {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .build-card[onclick]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,204,102,0.2);
+        }
     </style>
 </head>
 <body>
@@ -343,10 +372,11 @@
                 <p data-i18n="mat_our_p">The exact components used in our CNC Laser Engraver graduation project</p>
             </div>
 
-            <div class="build-card our-build" data-aos="fade-up">
+            <div onclick="window.location='builds/build0.html'" style="cursor:pointer;" class="build-card our-build" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b0_h3">⭐ OUR BUILD: CLE GRADUATION PROJECT <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge our">CLE PROJECT</span></h3>
                     <span class="build-total" style="background: linear-gradient(90deg,#00b4ff,#ffcc66); color: black;">Al-Mansour University</span>
+                    <a class="watch-videos-btn" href="builds/build0.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image" style="border-color: #00b4ff;">
                     <div class="build-image-placeholder" style="color: #00b4ff;" data-i18n="mat_b0_placeholder">CLE Laser Engraver — Our Build</div>
@@ -426,10 +456,11 @@
             </div>
 
             <!-- BUILD 1 -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build1.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b1_h3">💰 BUILD 1: BUDGET STARTER KIT <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge budget">BUDGET</span></h3>
                     <span class="build-total">~$120-135</span>
+                    <a class="watch-videos-btn" href="builds/build1.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b1_placeholder">Budget Starter Kit</div>
@@ -492,10 +523,11 @@
             </div>
 
             <!-- BUILD 2 -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build2.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b2_h3">🖥️ BUILD 2: DIY DESKTOP LASER ENGRAVER <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge budget">BUDGET</span></h3>
                     <span class="build-total">~$175-190</span>
+                    <a class="watch-videos-btn" href="builds/build2.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b2_placeholder">DIY Desktop Laser Engraver</div>
@@ -573,10 +605,11 @@
             </div>
 
             <!-- BUILD 3 -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build3.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b3_h3">🔋 BUILD 3: DUAL PSU SAFE SETUP <span class="voltage-badge">5V + 12V</span> <span class="budget-badge mid">MID-RANGE</span></h3>
                     <span class="build-total">~$195-210</span>
+                    <a class="watch-videos-btn" href="builds/build3.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b3_placeholder">Dual PSU Safe Setup</div>
@@ -646,10 +679,11 @@
             </div>
 
             <!-- BUILD 4 -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build4.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b4_h3">📦 BUILD 4: COMPACT DESKTOP ENGRAVER <span class="voltage-badge">12V SYSTEM</span> <span class="budget-badge mid">MID-RANGE</span></h3>
                     <span class="build-total">~$220-240</span>
+                    <a class="watch-videos-btn" href="builds/build4.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b4_placeholder">Compact Desktop Engraver</div>
@@ -711,10 +745,11 @@
             </div>
 
             <!-- BUILD 5 -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build5.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b5_h3">⚡ BUILD 5: HIGH SPEED BELT DRIVEN LASER <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge mid">MID-RANGE</span></h3>
                     <span class="build-total">~$320-350</span>
+                    <a class="watch-videos-btn" href="builds/build5.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b5_placeholder">High Speed Belt Driven Laser</div>
@@ -792,10 +827,11 @@
             </div>
 
             <!-- BUILD 6 — modified to match our project, keeping MKS -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build6.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b6_h3">📱 BUILD 6: WIFI LASER ENGRAVER <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge high">HIGH-END</span></h3>
                     <span class="build-total">~$500-530</span>
+                    <a class="watch-videos-btn" href="builds/build6.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b6_placeholder">Professional WiFi Laser Engraver</div>
@@ -858,10 +894,11 @@
             </div>
 
             <!-- BUILD 7 -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build7.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b7_h3">📐 BUILD 7: LARGE FORMAT LASER <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge high">HIGH-END</span></h3>
                     <span class="build-total">~$650-700</span>
+                    <a class="watch-videos-btn" href="builds/build7.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b7_placeholder">Large Format Laser System</div>
@@ -930,10 +967,11 @@
             </div>
 
             <!-- BUILD 8 -->
-            <div class="build-card" data-aos="fade-up">
+            <div onclick="window.location='builds/build8.html'" style="cursor:pointer;" class="build-card" data-aos="fade-up">
                 <div class="build-header">
                     <h3 data-i18n-html="mat_b8_h3">🥃 BUILD 8: ROTARY ENGRAVING SYSTEM <span class="voltage-badge">24V SYSTEM</span> <span class="budget-badge high">HIGH-END</span></h3>
                     <span class="build-total">~$580-620</span>
+                    <a class="watch-videos-btn" href="builds/build8.html" onclick="event.stopPropagation()">📹 Watch Videos →</a>
                 </div>
                 <div class="build-image">
                     <div class="build-image-placeholder" data-i18n="mat_b8_placeholder">Rotary Engraving System</div>

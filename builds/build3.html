@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>BUILD 3: Dual PSU Safe Setup - CLE</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/favicon.png" type="image/png" sizes="512x512">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+    html { height: 100%; }
+    body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url("../images/istockphoto-178981530-612x612.jpg") center/cover fixed no-repeat; }
+    .sub-main-1 { min-height: 100vh !important; height: 100vh !important; overflow: hidden !important; padding-bottom: 0 !important; background: transparent !important; }
+    html { height: 100%; }
+    body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url("../images/istockphoto-178981530-612x612.jpg") center/cover fixed no-repeat; }
+    .sub-main-1 { min-height: 100vh !important; height: 100vh !important; overflow: hidden !important; padding-bottom: 0 !important; background: transparent !important; }
+    .sub-main-1 {
+        min-height: auto !important;
+        height: auto !important;
+    }
+    .build-page-content {
+        padding: 90px 20px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        width: 90%;
+    }
+    .build-page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 25px;
+        border-radius: 50px;
+        background: linear-gradient(90deg, rgba(255,204,102,0.1), rgba(0,180,255,0.1), rgba(255,204,102,0.1));
+        border: 1px solid rgba(255,204,102,0.3);
+    }
+    .build-page-title h1 {
+        font-size: 2rem;
+        color: #ffcc66;
+        margin-bottom: 8px;
+    }
+    .build-page-title p {
+        color: #ccc;
+        font-size: 1rem;
+    }
+    .videos-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 10px;
+    }
+    @media (max-width: 640px) {
+        .videos-grid { grid-template-columns: 1fr; }
+        .build-page-title h1 { font-size: 1.4rem; }
+    }
+    .video-card {
+        background: rgba(20, 20, 30, 0.95);
+        border: 1px solid rgba(255,204,102,0.2);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    }
+    .video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0,180,255,0.2);
+    }
+
+    .video-thumb {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        background: #000;
+        display: block;
+    }
+    .video-thumb img {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: opacity 0.3s;
+    }
+    .video-thumb:hover img { opacity: 0.75; }
+    .play-btn {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 64px; height: 64px;
+        background: rgba(255,0,0,0.85);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        pointer-events: none;
+        transition: background 0.3s;
+    }
+    .video-thumb:hover .play-btn { background: rgba(255,0,0,1); }
+    .play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
+
+    .video-label {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+        color: #ccc;
+        border-top: 1px solid rgba(255,255,255,0.07);
+        text-align: center;
+    }
+    .placeholder-box {
+        background: rgba(255,204,102,0.08);
+        border: 2px dashed rgba(255,204,102,0.4);
+        border-radius: 16px;
+        padding: 40px 20px;
+        text-align: center;
+        color: #ffcc66;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    .placeholder-box p { margin-top: 10px; color: #aaa; font-size: 0.85rem; }
+    .back-link-bottom {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .back-link-bottom a {
+        display: inline-block;
+        color: white;
+        background: rgba(255,204,102,0.15);
+        border: 1px solid #ffcc66;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+    .back-link-bottom a:hover { background: rgba(255,204,102,0.3); }
+</style>
+</head>
+<body>
+<div class="sub-main-1">
+    <div class="navbar">
+        <div class="icon"><h2 class="logo"></h2></div>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html" data-i18n="nav_home">HOME</a></li>
+                <li><a href="../about.html" data-i18n="nav_about">ABOUT</a></li>
+                <li><a href="../materials.html" data-i18n="nav_materials">MATERIALS</a></li>
+                <li><a href="../NovaGrave.html" data-i18n="nav_software">CLE Laser Control</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="build-page-content">
+        <div class="build-page-title" data-aos="fade-up">
+            <h1 data-i18n="build3_title">🔋 BUILD 3: Dual PSU Safe Setup</h1>
+            <p data-i18n="build_watch_videos">Watch these videos to learn how to assemble this build</p>
+        </div>
+        <div class="videos-grid">
+            <div class="video-card" data-aos="fade-up">
+                <a class="video-thumb" href="https://www.youtube.com/watch?v=NyUJvcocJpA" target="_blank" rel="noopener">
+                    <img src="https://img.youtube.com/vi/NyUJvcocJpA/hqdefault.jpg" alt="Assembly Guide">
+                    <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </a>
+                <div class="video-label" data-i18n="build_assembly">🔧 Assembly Guide</div>
+            </div>
+            <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+                <a class="video-thumb" href="https://www.youtube.com/watch?v=zUb8tiFCwmk" target="_blank" rel="noopener">
+                    <img src="https://img.youtube.com/vi/zUb8tiFCwmk/hqdefault.jpg" alt="Configuration & Setup">
+                    <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </a>
+                <div class="video-label" data-i18n="build_config">⚙️ Configuration & Setup</div>
+            </div>
+        </div>
+
+        <div class="back-link-bottom" data-aos="fade-up">
+            <a href="../materials.html" data-i18n="build_back">← Back to All Builds</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: false, mirror: false });
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.createElement('div');
+        menuToggle.className = 'menu-toggle';
+        menuToggle.innerHTML = '☰';
+        document.querySelector('.navbar').appendChild(menuToggle);
+        const navMenu = document.querySelector('.menu');
+        menuToggle.addEventListener('click', function() { navMenu.classList.toggle('active'); });
+        document.querySelectorAll('.menu ul li a').forEach(link => {
+            link.addEventListener('click', function() { navMenu.classList.remove('active'); });
+        });
+    });
+</script>
+<link rel="stylesheet" href="../lang.css">
+<script src="../lang.js"></script>
+</body>
+</html>
