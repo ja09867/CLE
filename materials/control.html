@@ -1,179 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="../images/favicon.png" type="image/png" sizes="512x512">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Driver Board - Detailed Technical Overview</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    body {
-      background: #0a0a0a;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .details-section {
-      padding: 80px 8%;
-      max-width: 900px;
-      margin: auto;
-      line-height: 1.8;
-    }
-    .details-section h1 {
-      font-size: 2.8rem;
-      text-align: center;
-      color: #00b3ff;
-      margin-bottom: 30px;
-    }
-    .details-section h2 {
-      color: #00b3ff;
-      margin-top: 40px;
-      font-size: 1.6rem;
-    }
-    .details-section p, ul li {
-      font-size: 1.05rem;
-      color: #ddd;
-    }
-    ul { padding-left: 20px; margin-bottom: 20px; }
-    ul li { margin-bottom: 8px; color: #ccc; }
-    .back-btn {
-      display: block;
-      width: fit-content;
-      min-width: 220px;
-      margin: 40px auto 0;
-      padding: 16px 36px;
-      background: #00b3ff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      transition: background 0.3s, transform 0.3s;
-      text-align: center;
-      cursor: pointer;
-      font-size: 1.1rem;
-      box-sizing: border-box;
-    }
-    @media (max-width: 600px) {
-      .back-btn {
-        width: 90%;
-        min-width: unset;
-        max-width: 400px;
-        padding: 16px 20px;
-        font-size: 1rem;
-      }
-    }
-    .back-btn:hover { background: #008fd4; transform: translateY(-3px); }
-  </style>
-  <link rel="stylesheet" href="../lang.css">
+    <meta charset="UTF-8">
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="512x512">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLE - Control Board Subsystem</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        header {
+            background: linear-gradient(90deg, #00b3ff, #2563eb);
+            padding: 30px 0;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        nav { display: flex; justify-content: center; background: #111; padding: 12px 0; border-bottom: 1px solid #333; }
+        nav a { display: none; }
+
+        section {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #00b3ff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 5px solid #00b3ff;
+            padding-left: 10px;
+        }
+
+        h3 {
+            color: #7ad3ff;
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p { margin-bottom: 15px; color: #d0d0d0; }
+
+        ul, ol { margin-left: 25px; margin-bottom: 20px; }
+        li { margin-bottom: 8px; color: #ccc; }
+
+        .main-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease;
+            background: #0d1a1f;
+            color: #00b3ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            border: 1px dashed #00b3ff;
+            padding: 20px 0;
+        }
+
+        .main-img:hover { transform: scale(1.02); }
+
+        pre {
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #aaffdd;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid #00b3ff;
+            margin-bottom: 20px;
+        }
+
+        .math {
+            background: #0d1a1f;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            color: #ffd966;
+            border: 1px dashed #00b3ff;
+            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+
+        .table-specs {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .table-specs td, .table-specs th {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .table-specs th {
+            background: #0d2b3e;
+            color: #00b3ff;
+        }
+
+        .resource-links {
+            background: #0d1a1f;
+            border-left: 6px solid #00b3ff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .resource-links h3 {
+            color: #ffd966;
+            margin-top: 0;
+            border-bottom: 1px solid #00b3ff;
+            padding-bottom: 12px;
+        }
+
+        .resource-links ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .resource-links li {
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .resource-links li:last-child { border-bottom: none; }
+
+        .resource-title {
+            color: #7ad3ff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .resource-link {
+            color: #00b3ff;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+            transition: 0.3s;
+        }
+
+        .resource-link:hover { color: #fff; text-decoration: underline; }
+
+        .resource-desc { color: #aaa; font-size: 0.95rem; margin-top: 5px; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+            color: #888;
+        }
+
+        .svg-placeholder {
+            background: #0d1a1f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .back-to-materials-container {
+            max-width: 1000px;
+            margin: 60px auto 40px;
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #00b3ff 0%, #2563eb 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 16px 42px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0, 179, 255, 0.3);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-btn:before {
+            content: "←";
+            margin-right: 12px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #00b3ff 100%);
+            box-shadow: 0 12px 28px rgba(0, 179, 255, 0.5);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .back-btn:hover:before { transform: translateX(-6px); }
+        .back-btn:active { transform: translateY(0); box-shadow: 0 8px 20px rgba(0, 179, 255, 0.4); }
+
+        @media (max-width: 600px) {
+            .back-btn { padding: 14px 32px; font-size: 1rem; width: 100%; }
+        }
+    </style>
+    <link rel="stylesheet" href="../lang.css">
 </head>
 <body>
-  <section class="details-section" data-aos="fade-up">
-    <h1 data-i18n="ctrl_h1">Driver Board</h1>
 
-    <h2 data-i18n="ctrl_h2_intro">Introduction</h2>
-    <p data-i18n-html="ctrl_p_intro">
-      A <strong>driver board</strong> is an electronic module that controls motors and other actuators in CNC, 3D printers, and laser machines.
-      It serves as an interface between the controller (e.g., MKS board) and the high-current devices, allowing precise control of motion without overloading the controller.
-    </p>
+<header>
+    <h1 data-i18n="ctrl_h1">Control Board Subsystem – Arduino, CNC Shield & MKS DLC32</h1>
+</header>
 
-    <h2 data-i18n="ctrl_h2_types">Types of Driver Boards</h2>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">How It Works</a>
+    <a href="#">Electronics</a>
+</nav>
+
+<!-- ============= SECTION 1: WHAT IS A CONTROL BOARD ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_1">1. What Is a Control Board?</h2>
+    <div class="svg-placeholder">
+        <svg width="100%" height="200" viewBox="0 0 700 200" style="background: #0d1a1f;">
+            <!-- PC/Software -->
+            <rect x="20" y="60" width="130" height="80" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="8"/>
+            <text x="85" y="95" fill="#ffffff" font-family="Poppins" text-anchor="middle" font-size="12">SOFTWARE</text>
+            <text x="85" y="115" fill="#7ad3ff" font-family="Poppins" text-anchor="middle" font-size="10">G-code via USB</text>
+            <!-- Arrow -->
+            <line x1="150" y1="100" x2="195" y2="100" stroke="#00b3ff" stroke-width="2"/>
+            <polygon points="195,95 205,100 195,105" fill="#00b3ff"/>
+            <!-- Control Board -->
+            <rect x="205" y="50" width="160" height="100" fill="#1e3a5f" stroke="#ffd966" stroke-width="2" rx="8"/>
+            <text x="285" y="90" fill="#ffd966" font-family="Poppins" text-anchor="middle" font-size="12">CONTROL BOARD</text>
+            <text x="285" y="110" fill="#7ad3ff" font-family="Poppins" text-anchor="middle" font-size="10">Arduino / MKS DLC32</text>
+            <text x="285" y="128" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">GRBL Firmware</text>
+            <!-- Arrow -->
+            <line x1="365" y1="100" x2="410" y2="100" stroke="#00b3ff" stroke-width="2"/>
+            <polygon points="410,95 420,100 410,105" fill="#00b3ff"/>
+            <!-- Drivers -->
+            <rect x="420" y="60" width="120" height="80" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="8"/>
+            <text x="480" y="95" fill="#ffffff" font-family="Poppins" text-anchor="middle" font-size="12">DRIVERS</text>
+            <text x="480" y="113" fill="#7ad3ff" font-family="Poppins" text-anchor="middle" font-size="10">A4988 / TMC2209</text>
+            <!-- Arrow -->
+            <line x1="540" y1="100" x2="585" y2="100" stroke="#00b3ff" stroke-width="2"/>
+            <polygon points="585,95 595,100 585,105" fill="#00b3ff"/>
+            <!-- Motors -->
+            <rect x="595" y="60" width="90" height="80" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="8"/>
+            <text x="640" y="95" fill="#ffffff" font-family="Poppins" text-anchor="middle" font-size="11">MOTORS</text>
+            <text x="640" y="113" fill="#7ad3ff" font-family="Poppins" text-anchor="middle" font-size="10">+ LASER</text>
+            <text x="350" y="175" fill="#888" font-family="Poppins" text-anchor="middle" font-size="11">Control Board: the brain of the CNC system</text>
+        </svg>
+    </div>
+    <p data-i18n="ctrl_p_1">A <strong>control board</strong> is the brain of the CNC laser engraver. It receives G-code commands from software (via USB, Wi-Fi, or SD card), interprets them using embedded firmware (GRBL), and generates precise electrical signals — STEP, DIR, PWM — that drive motors and the laser module.</p>
+    <p data-i18n="ctrl_p_1b">Two control board setups are common in DIY laser engravers: the classic <strong>Arduino Uno + CNC Shield</strong> (budget builds) and the modern <strong>MKS DLC32 V2</strong> (dedicated laser controller, used in our CLE build).</p>
+</section>
+
+<!-- ============= SECTION 2: ARDUINO UNO + CNC SHIELD ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_2">2. Arduino Uno R3 + CNC Shield V3</h2>
+    <div class="svg-placeholder">
+        <svg width="100%" height="240" viewBox="0 0 700 240" style="background: #0d1a1f;">
+            <!-- Arduino Board -->
+            <rect x="30" y="30" width="200" height="140" fill="#1a2e1a" stroke="#00ff88" stroke-width="2" rx="8"/>
+            <text x="130" y="60" fill="#00ff88" font-family="Poppins" text-anchor="middle" font-size="13" font-weight="bold">ARDUINO UNO R3</text>
+            <text x="130" y="82" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">ATmega328P @ 16 MHz</text>
+            <text x="130" y="100" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">32 KB Flash, 2 KB SRAM</text>
+            <text x="130" y="118" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="10">USB → Serial (CH340)</text>
+            <text x="130" y="136" fill="#7ad3ff" font-family="Courier New" text-anchor="middle" font-size="10">PWM: D11 (Laser TTL)</text>
+            <text x="130" y="154" fill="#ff9999" font-family="Courier New" text-anchor="middle" font-size="9">⚠ 5V logic only</text>
+
+            <!-- CNC Shield stacked on top -->
+            <rect x="260" y="30" width="200" height="140" fill="#1a1a2e" stroke="#00b3ff" stroke-width="2" rx="8"/>
+            <text x="360" y="60" fill="#00b3ff" font-family="Poppins" text-anchor="middle" font-size="13" font-weight="bold">CNC SHIELD V3</text>
+            <text x="360" y="82" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">Slots: X, Y, Z + Clone</text>
+            <text x="360" y="100" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">Accepts: A4988, DRV8825</text>
+            <text x="360" y="118" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="10">Vmot: 12–24V (separate)</text>
+            <text x="360" y="136" fill="#7ad3ff" font-family="Courier New" text-anchor="middle" font-size="10">Spindle/Laser: D11 PWM</text>
+            <text x="360" y="154" fill="#ff9999" font-family="Courier New" text-anchor="middle" font-size="9">⚠ No 5V on Vmot rail!</text>
+
+            <!-- Connection arrow -->
+            <line x1="230" y1="100" x2="260" y2="100" stroke="#ffd966" stroke-width="2" stroke-dasharray="4 3"/>
+            <text x="245" y="90" fill="#ffd966" font-family="Poppins" text-anchor="middle" font-size="9">stacks</text>
+
+            <!-- Driver slots -->
+            <rect x="490" y="50" width="80" height="40" fill="#2b1a1a" stroke="#ffaa44" stroke-width="1.5" rx="5"/>
+            <text x="530" y="66" fill="#ffaa44" font-family="Courier New" text-anchor="middle" font-size="10">A4988 ×3</text>
+            <text x="530" y="82" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">X / Y / Z</text>
+            <line x1="460" y1="75" x2="490" y2="75" stroke="#00b3ff" stroke-width="1.5"/>
+
+            <rect x="490" y="110" width="80" height="40" fill="#1a1a2e" stroke="#00b3ff" stroke-width="1.5" rx="5"/>
+            <text x="530" y="126" fill="#7ad3ff" font-family="Courier New" text-anchor="middle" font-size="10">Buck Conv.</text>
+            <text x="530" y="142" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">12V → 5V</text>
+            <line x1="460" y1="130" x2="490" y2="130" stroke="#ffd966" stroke-width="1.5"/>
+
+            <text x="350" y="210" fill="#888" font-family="Poppins" text-anchor="middle" font-size="11">Arduino Uno stacks under CNC Shield V3 — never power Arduino via Vmot rail</text>
+        </svg>
+    </div>
+    <p data-i18n="ctrl_p_2">The <strong>Arduino Uno R3</strong> is an 8-bit AVR microcontroller board (ATmega328P, 16 MHz) that runs the GRBL firmware. It communicates with the PC over USB-Serial and outputs STEP/DIR pulses to the CNC Shield, plus a 1 kHz PWM signal on pin D11 to control the laser.</p>
+    <p data-i18n="ctrl_p_2b">The <strong>CNC Shield V3</strong> is a plug-in expansion board that snaps directly onto the Arduino headers. It breaks out four stepper driver slots (X, Y, Z, and a clone channel), a spindle/laser PWM terminal, limit switch inputs, and separate motor power (Vmot) — isolating the high-current motor supply from the Arduino's 5V logic.</p>
+
+    <h3 data-i18n="ctrl_h3_warning">⚠ Critical Voltage Warning</h3>
+    <p data-i18n="ctrl_p_warning">The Arduino is powered at 5V. The CNC Shield motor rail (Vmot) is connected directly to 12V or 24V. <strong>Never connect the Vmot rail to the Arduino's VCC.</strong> The Arduino must be powered via USB or its barrel jack independently, or through a buck converter (12V → 5V) wired to the Arduino's 5V pin.</p>
+    <div class="math">
+        V<sub>mot</sub> = 12–24 V (motor supply)  ≠  V<sub>Arduino</sub> = 5 V (logic supply)<br>
+        Use Buck Converter: 12 V → 5 V, I ≥ 1 A → Arduino 5V pin
+    </div>
+
+    <h3 data-i18n="ctrl_h3_grbl_uno">GRBL on Arduino Uno</h3>
+    <p data-i18n="ctrl_p_grbl_uno">GRBL is open-source CNC firmware flashed onto the Arduino's flash memory (32 KB). It parses G-code, runs a real-time motion planner, and drives three stepper axes simultaneously. Key settings:</p>
+    <pre>
+$100=80   ; X steps/mm
+$101=80   ; Y steps/mm
+$102=400  ; Z steps/mm
+$32=1     ; Laser mode ON (power scales with speed)
+$30=1000  ; Max spindle speed (S1000 = 100% laser power)
+    </pre>
+
+    <h3 data-i18n="ctrl_h3_limits_uno">Limitations of Arduino + CNC Shield</h3>
     <ul>
-      <li data-i18n-html="ctrl_li_stepper"><strong>Stepper Motor Drivers:</strong> Control stepper motors using pulse signals; examples include A4988, TMC2208, TMC2130.</li>
-      <li data-i18n-html="ctrl_li_servo"><strong>Servo Drivers:</strong> Provide PWM signals to control servo motors.</li>
-      <li data-i18n-html="ctrl_li_laser"><strong>Laser Drivers:</strong> Regulate power to laser modules using PWM or analog signals.</li>
-      <li data-i18n-html="ctrl_li_shield"><strong>Motor Shield Boards:</strong> Combine multiple drivers with logic circuits for complex systems.</li>
+        <li data-i18n-html="ctrl_li_lim1"><strong>8-bit processor:</strong> Limited motion planning buffer and slower step rates vs. 32-bit boards.</li>
+        <li data-i18n-html="ctrl_li_lim2"><strong>No Wi-Fi / Bluetooth:</strong> Must stay connected to a PC over USB during operation.</li>
+        <li data-i18n-html="ctrl_li_lim3"><strong>No offline control:</strong> Cannot run from SD card without extra hardware.</li>
+        <li data-i18n-html="ctrl_li_lim4"><strong>No dedicated laser firmware:</strong> GRBL on Arduino treats the laser as a spindle — functional but not optimized.</li>
+        <li data-i18n-html="ctrl_li_lim5"><strong>Voltage danger:</strong> Accidental connection of Vmot to logic rail destroys the board instantly.</li>
     </ul>
+</section>
 
-    <h2 data-i18n="ctrl_h2_work">Working Principle</h2>
-    <p data-i18n-html="ctrl_p_work">
-      Driver boards receive low-power control signals from the MKS board and convert them into higher-current outputs suitable for motors:
-    </p>
+<!-- ============= SECTION 3: MKS DLC32 ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_3">3. MKS DLC32 V2.1 – Dedicated Laser Controller</h2>
+    <div class="svg-placeholder">
+        <svg width="100%" height="260" viewBox="0 0 700 260" style="background: #0d1a1f;">
+            <!-- Main board -->
+            <rect x="30" y="20" width="640" height="200" fill="#0d1a2e" stroke="#ffd966" stroke-width="2" rx="10"/>
+            <text x="350" y="50" fill="#ffd966" font-family="Poppins" text-anchor="middle" font-size="14" font-weight="bold">MKS DLC32 V2.1</text>
+
+            <!-- ESP32 core -->
+            <rect x="50" y="65" width="150" height="90" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="6"/>
+            <text x="125" y="92" fill="#00b3ff" font-family="Poppins" text-anchor="middle" font-size="11" font-weight="bold">ESP32 Core</text>
+            <text x="125" y="110" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">Dual-core 240 MHz</text>
+            <text x="125" y="126" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">Wi-Fi + Bluetooth</text>
+            <text x="125" y="142" fill="#7ad3ff" font-family="Courier New" text-anchor="middle" font-size="9">FluidNC / GRBL-ESP32</text>
+
+            <!-- Stepper driver slots -->
+            <rect x="230" y="65" width="130" height="90" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="6"/>
+            <text x="295" y="88" fill="#00b3ff" font-family="Poppins" text-anchor="middle" font-size="11" font-weight="bold">Driver Slots</text>
+            <text x="295" y="106" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">3× (X / Y / Z)</text>
+            <text x="295" y="122" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">A4988 / TMC2208</text>
+            <text x="295" y="138" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">TMC2209 / DRV8825</text>
+            <text x="295" y="154" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="9">24V safe on Vmot</text>
+
+            <!-- Power regulation -->
+            <rect x="390" y="65" width="130" height="90" fill="#1e3a5f" stroke="#00ff88" stroke-width="2" rx="6"/>
+            <text x="455" y="88" fill="#00ff88" font-family="Poppins" text-anchor="middle" font-size="11" font-weight="bold">Power Regulation</text>
+            <text x="455" y="106" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">Input: 12–24V DC</text>
+            <text x="455" y="122" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">Built-in 5V / 3.3V</text>
+            <text x="455" y="138" fill="#00ff88" font-family="Courier New" text-anchor="middle" font-size="9">✅ No buck converter</text>
+            <text x="455" y="154" fill="#00ff88" font-family="Courier New" text-anchor="middle" font-size="9">✅ Safe 24V input</text>
+
+            <!-- Interfaces -->
+            <rect x="540" y="65" width="110" height="90" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="6"/>
+            <text x="595" y="88" fill="#00b3ff" font-family="Poppins" text-anchor="middle" font-size="11" font-weight="bold">Interfaces</text>
+            <text x="595" y="106" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">USB-C</text>
+            <text x="595" y="122" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">MicroSD</text>
+            <text x="595" y="138" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">TFT Touch (TS35-R)</text>
+            <text x="595" y="154" fill="#7ad3ff" font-family="Courier New" text-anchor="middle" font-size="9">Laser PWM + TTL</text>
+
+            <text x="350" y="235" fill="#888" font-family="Poppins" text-anchor="middle" font-size="11">MKS DLC32: ESP32-based, built-in regulation, Wi-Fi, TFT support — used in our CLE build</text>
+        </svg>
+    </div>
+    <p data-i18n="ctrl_p_3">The <strong>MKS DLC32 V2.1</strong> is a 32-bit ESP32-based controller purpose-built for laser engravers. Unlike the Arduino + CNC Shield combo, it integrates everything on one board: the microcontroller, motor driver sockets, power regulation, laser PWM output, and interfaces for USB-C, SD card, and a TFT touchscreen.</p>
+    <p data-i18n="ctrl_p_3b">It runs <strong>FluidNC</strong> (or GRBL-ESP32), a 32-bit port of GRBL optimized for the ESP32's dual-core 240 MHz processor. This gives it a far larger motion planning buffer, smoother step generation, and wireless G-code streaming over Wi-Fi.</p>
+
+    <h3 data-i18n="ctrl_h3_specs">MKS DLC32 V2.1 Hardware Specifications</h3>
+    <table class="table-specs">
+        <tr>
+            <th data-i18n="ctrl_th_param">Parameter</th>
+            <th data-i18n="ctrl_th_value">Value</th>
+        </tr>
+        <tr><td data-i18n="ctrl_td_cpu">Microcontroller</td><td>ESP32 Dual-Core, 240 MHz (Xtensa LX6)</td></tr>
+        <tr><td data-i18n="ctrl_td_flash">Flash / RAM</td><td>4 MB Flash, 520 KB SRAM</td></tr>
+        <tr><td data-i18n="ctrl_td_wireless">Wireless</td><td>Wi-Fi 802.11 b/g/n + Bluetooth 4.2</td></tr>
+        <tr><td data-i18n="ctrl_td_vin">Input Voltage</td><td>12–24 V DC (built-in regulation)</td></tr>
+        <tr><td data-i18n="ctrl_td_logic">Logic Level</td><td>3.3 V (STEP/DIR/EN outputs)</td></tr>
+        <tr><td data-i18n="ctrl_td_drivers">Driver Slots</td><td>3× (X, Y, Z) — A4988 / TMC2208 / TMC2209 / DRV8825</td></tr>
+        <tr><td data-i18n="ctrl_td_laser">Laser Output</td><td>PWM + TTL (0–5 V, 1 kHz, dedicated laser port)</td></tr>
+        <tr><td data-i18n="ctrl_td_limits">Limit Switch Inputs</td><td>3× (X-min, Y-min, Z-min) + Probe</td></tr>
+        <tr><td data-i18n="ctrl_td_tft">TFT Connector</td><td>TS35-R (3.5" SPI capacitive touch)</td></tr>
+        <tr><td data-i18n="ctrl_td_usb">USB Interface</td><td>USB-C (CH340 Serial-USB bridge)</td></tr>
+        <tr><td data-i18n="ctrl_td_sd">SD Card</td><td>MicroSD (SPI) for offline G-code</td></tr>
+        <tr><td data-i18n="ctrl_td_fw">Firmware</td><td>FluidNC (GRBL-ESP32)</td></tr>
+    </table>
+
+    <h3 data-i18n="ctrl_h3_adv">Why MKS DLC32 Was Chosen for Our CLE Build</h3>
     <ul>
-      <li data-i18n-html="ctrl_li_w1"><strong>Microstepping:</strong> Divides each full step into smaller increments for smooth motion.</li>
-      <li data-i18n-html="ctrl_li_w2"><strong>Current Limiting:</strong> Prevents motors from overheating.</li>
-      <li data-i18n-html="ctrl_li_w3"><strong>Overvoltage & Thermal Protection:</strong> Protects both the board and the motor.</li>
-      <li data-i18n-html="ctrl_li_w4"><strong>PWM Control:</strong> Adjusts power to modules like lasers or fans precisely.</li>
+        <li data-i18n-html="ctrl_li_adv1"><strong>Safe 24V input:</strong> Built-in onboard regulation supplies clean 5V and 3.3V — no external buck converter needed.</li>
+        <li data-i18n-html="ctrl_li_adv2"><strong>Dedicated laser port:</strong> Separate PWM + TTL laser output prevents interference with motor signals.</li>
+        <li data-i18n-html="ctrl_li_adv3"><strong>32-bit ESP32:</strong> Larger step buffer, smoother acceleration, and better look-ahead than 8-bit Arduino.</li>
+        <li data-i18n-html="ctrl_li_adv4"><strong>Wi-Fi streaming:</strong> CLE Laser Control software can stream G-code wirelessly — no USB tether required during operation.</li>
+        <li data-i18n-html="ctrl_li_adv5"><strong>TFT touchscreen support:</strong> Direct connection to the TS35-R 3.5" display for offline standalone operation.</li>
+        <li data-i18n-html="ctrl_li_adv6"><strong>SD card offline mode:</strong> Runs G-code directly from MicroSD without any PC connected.</li>
     </ul>
+</section>
 
-    <h2 data-i18n="ctrl_h2_comp">Main Components</h2>
+<!-- ============= SECTION 4: STEP/DIR SIGNAL PROTOCOL ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_4">4. STEP / DIR / EN Signal Protocol</h2>
+    <div class="svg-placeholder">
+        <svg width="100%" height="200" viewBox="0 0 700 200" style="background: #0d1a1f;">
+            <!-- Timeline base -->
+            <line x1="30" y1="170" x2="680" y2="170" stroke="#444" stroke-width="1"/>
+            <text x="355" y="188" fill="#888" font-family="Courier New" text-anchor="middle" font-size="10">Time →</text>
+
+            <!-- STEP signal -->
+            <text x="20" y="55" fill="#00b3ff" font-family="Courier New" font-size="11" text-anchor="end">STEP</text>
+            <polyline points="40,60 40,30 80,30 80,60 120,60 120,30 160,30 160,60 200,60 200,30 240,30 240,60 280,60 280,30 320,30 320,60 360,60 360,30 400,30 400,60" fill="none" stroke="#00b3ff" stroke-width="2"/>
+            <text x="420" y="50" fill="#7ad3ff" font-family="Courier New" font-size="9">1 pulse = 1 microstep</text>
+
+            <!-- DIR signal -->
+            <text x="20" y="105" fill="#ffd966" font-family="Courier New" font-size="11" text-anchor="end">DIR</text>
+            <polyline points="40,100 40,80 300,80 300,100 680,100" fill="none" stroke="#ffd966" stroke-width="2"/>
+            <text x="170" y="74" fill="#ffd966" font-family="Courier New" font-size="9">HIGH = forward</text>
+            <text x="490" y="94" fill="#ffd966" font-family="Courier New" font-size="9">LOW = reverse</text>
+
+            <!-- EN signal -->
+            <text x="20" y="145" fill="#00ff88" font-family="Courier New" font-size="11" text-anchor="end">EN</text>
+            <polyline points="40,130 40,150 680,150" fill="none" stroke="#00ff88" stroke-width="2"/>
+            <text x="350" y="145" fill="#00ff88" font-family="Courier New" font-size="9">LOW = driver enabled (active low)</text>
+        </svg>
+    </div>
+    <p data-i18n="ctrl_p_4">The control board communicates with each stepper driver using three digital signals:</p>
     <ul>
-      <li data-i18n-html="ctrl_li_c1"><strong>Control Input Pins:</strong> STEP, DIR, EN, PWM, etc.</li>
-      <li data-i18n-html="ctrl_li_c2"><strong>Power Stage:</strong> MOSFETs or transistors handle high current output.</li>
-      <li data-i18n-html="ctrl_li_c3"><strong>Logic Controller:</strong> Decodes controller signals into motor-driving sequences.</li>
-      <li data-i18n-html="ctrl_li_c4"><strong>Microcontroller/ICs:</strong> Implement microstepping, current sensing, and protection features.</li>
-      <li data-i18n-html="ctrl_li_c5"><strong>Heat Sink & Cooling:</strong> Prevent overheating during prolonged operation.</li>
-      <li data-i18n-html="ctrl_li_c6"><strong>Connectors:</strong> For motors, power, and controller signals.</li>
+        <li data-i18n-html="ctrl_li_step"><strong>STEP:</strong> Each rising edge advances the motor by one microstep. Step frequency = motor speed. Higher frequency = faster rotation.</li>
+        <li data-i18n-html="ctrl_li_dir"><strong>DIR:</strong> Logic level sets rotation direction. HIGH = forward, LOW = reverse. Must be stable before the STEP edge.</li>
+        <li data-i18n-html="ctrl_li_en"><strong>EN (Enable):</strong> Active LOW. When pulled LOW, the driver energizes the motor coils. When HIGH (or floating), the driver is disabled and the motor freewheels.</li>
     </ul>
+    <div class="math">
+        Motor speed (RPM) = (f<sub>STEP</sub> × 60) / (steps/rev × microstep_divisor)<br>
+        Example: 4000 Hz, 200 steps/rev, 1/16 → RPM = (4000 × 60) / (200 × 16) = 75 RPM
+    </div>
+</section>
 
-    <h2 data-i18n="ctrl_h2_elec">Electrical Characteristics</h2>
+<!-- ============= SECTION 5: MICROSTEPPING ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_5">5. Microstepping – Resolution vs. Torque</h2>
+    <div class="svg-placeholder">
+        <svg width="100%" height="180" viewBox="0 0 700 180" style="background: #0d1a1f;">
+            <text x="350" y="30" fill="#ffffff" font-family="Poppins" text-anchor="middle" font-size="13">Microstepping: Sinusoidal Current Decomposition</text>
+            <!-- Phase A -->
+            <text x="60" y="60" fill="#00b3ff" font-family="Courier New" font-size="10">Phase A</text>
+            <polyline points="80,110 110,70 140,50 170,70 200,110 230,150 260,165 290,150 320,110" fill="none" stroke="#00b3ff" stroke-width="2"/>
+            <!-- Phase B (offset 90°) -->
+            <text x="340" y="60" fill="#ffd966" font-family="Courier New" font-size="10">Phase B</text>
+            <polyline points="360,90 390,60 420,50 450,60 480,90 510,120 540,135 570,120 600,90" fill="none" stroke="#ffd966" stroke-width="2"/>
+            <text x="350" y="160" fill="#888" font-family="Poppins" text-anchor="middle" font-size="10">Smaller microstep = finer sinusoidal approximation = smoother motion, less torque ripple</text>
+        </svg>
+    </div>
+    <p data-i18n="ctrl_p_5">A full-step NEMA 17 motor moves 1.8° per step (200 steps/revolution). Microstepping divides each full step by driving the two motor phases with sinusoidal current ratios, producing intermediate rotor positions. The CNC shield jumpers (MS1/MS2/MS3 pins) or driver UART configuration set the divisor.</p>
+    <table class="table-specs">
+        <tr>
+            <th data-i18n="ctrl_th_mode">Mode</th>
+            <th data-i18n="ctrl_th_divisor">Divisor</th>
+            <th data-i18n="ctrl_th_steps_rev">Steps/Rev</th>
+            <th data-i18n="ctrl_th_angle">Step Angle</th>
+            <th data-i18n="ctrl_th_res">Linear Res. (2mm lead, 16T pulley)</th>
+        </tr>
+        <tr><td data-i18n="ctrl_td_full">Full Step</td><td>1</td><td>200</td><td>1.800°</td><td>0.100 mm/step</td></tr>
+        <tr><td data-i18n="ctrl_td_half">Half Step</td><td>2</td><td>400</td><td>0.900°</td><td>0.050 mm/step</td></tr>
+        <tr><td data-i18n="ctrl_td_8th">1/8 Step</td><td>8</td><td>1600</td><td>0.225°</td><td>0.0125 mm/step</td></tr>
+        <tr><td data-i18n="ctrl_td_16th">1/16 Step</td><td>16</td><td>3200</td><td>0.1125°</td><td>0.00625 mm/step</td></tr>
+        <tr><td data-i18n="ctrl_td_32nd">1/32 Step (TMC)</td><td>32</td><td>6400</td><td>0.05625°</td><td>0.003125 mm/step</td></tr>
+    </table>
+    <div class="math">
+        Steps/mm = (Steps/rev × Microstep divisor) / (Belt pitch × Pulley teeth)<br>
+        Example: (200 × 16) / (2mm × 16T) = 3200 / 32 = 100 steps/mm → $100=100
+    </div>
+    <p data-i18n="ctrl_p_5b">Higher microstepping gives finer resolution and smoother motion, but reduces peak torque (since each microstep delivers less current per phase) and requires higher STEP frequency for the same speed.</p>
+</section>
+
+<!-- ============= SECTION 6: LASER PWM CONTROL ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_6">6. Laser PWM Control – From G-code to Photons</h2>
+    <div class="svg-placeholder">
+        <svg width="100%" height="160" viewBox="0 0 700 160" style="background: #0d1a1f;">
+            <text x="350" y="30" fill="#ffffff" font-family="Poppins" text-anchor="middle" font-size="12">PWM Duty Cycle vs. Laser Power</text>
+            <!-- Duty cycle bar: 0% -->
+            <rect x="50" y="50" width="100" height="20" fill="#1e3a5f" stroke="#444" rx="3"/>
+            <rect x="50" y="50" width="5" height="20" fill="#00b3ff" rx="3"/>
+            <text x="100" y="88" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">S0 → 0%</text>
+            <!-- 25% -->
+            <rect x="175" y="50" width="100" height="20" fill="#1e3a5f" stroke="#444" rx="3"/>
+            <rect x="175" y="50" width="25" height="20" fill="#00b3ff" rx="3"/>
+            <text x="225" y="88" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">S250 → 25%</text>
+            <!-- 50% -->
+            <rect x="300" y="50" width="100" height="20" fill="#1e3a5f" stroke="#444" rx="3"/>
+            <rect x="300" y="50" width="50" height="20" fill="#00b3ff" rx="3"/>
+            <text x="350" y="88" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">S500 → 50%</text>
+            <!-- 80% -->
+            <rect x="425" y="50" width="100" height="20" fill="#1e3a5f" stroke="#444" rx="3"/>
+            <rect x="425" y="50" width="80" height="20" fill="#ffd966" rx="3"/>
+            <text x="475" y="88" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">S800 → 80%</text>
+            <!-- 100% -->
+            <rect x="550" y="50" width="100" height="20" fill="#1e3a5f" stroke="#444" rx="3"/>
+            <rect x="550" y="50" width="100" height="20" fill="#ff4444" rx="3"/>
+            <text x="600" y="88" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="10">S1000 → 100%</text>
+
+            <text x="350" y="130" fill="#888" font-family="Poppins" text-anchor="middle" font-size="10">G-code S-word (0–1000) maps linearly to PWM duty cycle on the laser pin</text>
+        </svg>
+    </div>
+    <p data-i18n="ctrl_p_6">The control board outputs a <strong>PWM signal</strong> (Pulse-Width Modulation) on its dedicated laser pin to control laser power. The G-code <code>M3 S&lt;value&gt;</code> sets the power, where S ranges from 0 (off) to 1000 (full power by default in GRBL).</p>
+    <div class="math">
+        Duty Cycle D = S / S<sub>max</sub>  (S<sub>max</sub> = $30, default 1000)<br>
+        OCR1A = ⌊ 255 × S / 1000 ⌉   (Arduino 8-bit timer register)<br>
+        MKS DLC32: 16-bit PWM → finer resolution, same mapping
+    </div>
+    <pre>
+M3 S0      → Laser OFF   (D = 0%)
+M3 S500    → 50% power   (D = 50%)
+M3 S1000   → Full power  (D = 100%)
+M5         → Laser OFF + spindle disable
+    </pre>
+    <p data-i18n="ctrl_p_6b">With laser mode enabled (<code>$32=1</code>), GRBL also applies <strong>velocity compensation</strong>: the actual PWM duty is scaled proportionally to the current feed rate vs. the programmed feed rate. This ensures constant energy per millimeter even when the head decelerates around corners — preventing over-burning.</p>
+    <div class="math">
+        P<sub>actual</sub> = P<sub>programmed</sub> × (v<sub>current</sub> / v<sub>programmed</sub>)
+    </div>
+</section>
+
+<!-- ============= SECTION 7: GRBL CONFIGURATION ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_7">7. GRBL / FluidNC Configuration Parameters</h2>
+    <p data-i18n="ctrl_p_7">GRBL stores its configuration in non-volatile EEPROM (Arduino) or NVS flash (ESP32/MKS). Settings are accessed via the <code>$$</code> command and modified with <code>$N=value</code>. The most critical parameters for a laser engraver:</p>
+    <table class="table-specs">
+        <tr>
+            <th data-i18n="ctrl_th_setting">Setting</th>
+            <th data-i18n="ctrl_th_name">Name</th>
+            <th data-i18n="ctrl_th_typical">Typical Value</th>
+            <th data-i18n="ctrl_th_effect">Effect</th>
+        </tr>
+        <tr><td>$100</td><td data-i18n="ctrl_td_xsteps">X steps/mm</td><td>80–100</td><td data-i18n="ctrl_td_xeff">Steps per mm of X travel</td></tr>
+        <tr><td>$101</td><td data-i18n="ctrl_td_ysteps">Y steps/mm</td><td>80–100</td><td data-i18n="ctrl_td_yeff">Steps per mm of Y travel</td></tr>
+        <tr><td>$110</td><td data-i18n="ctrl_td_xmax">X max feed (mm/min)</td><td>5000–10000</td><td data-i18n="ctrl_td_xmeff">Maximum X travel speed</td></tr>
+        <tr><td>$120</td><td data-i18n="ctrl_td_xacc">X acceleration (mm/s²)</td><td>500–2000</td><td data-i18n="ctrl_td_xaeff">Ramp-up rate; too high causes missed steps</td></tr>
+        <tr><td>$30</td><td data-i18n="ctrl_td_smax">Spindle max RPM</td><td>1000</td><td data-i18n="ctrl_td_smeff">S1000 = 100% laser power</td></tr>
+        <tr><td>$32</td><td data-i18n="ctrl_td_lmode">Laser mode</td><td>1</td><td data-i18n="ctrl_td_lmeff">Enables velocity compensation for laser</td></tr>
+        <tr><td>$20</td><td data-i18n="ctrl_td_softlim">Soft limits</td><td>1</td><td data-i18n="ctrl_td_sleff">Stops motion before hitting frame boundaries</td></tr>
+        <tr><td>$21</td><td data-i18n="ctrl_td_hardlim">Hard limits</td><td>1</td><td data-i18n="ctrl_td_hleff">Triggers emergency stop on limit switch contact</td></tr>
+        <tr><td>$22</td><td data-i18n="ctrl_td_homing">Homing cycle</td><td>1</td><td data-i18n="ctrl_td_homeff">Enables $H home command using limit switches</td></tr>
+    </table>
+
+    <h3 data-i18n="ctrl_h3_homing">Homing Sequence</h3>
+    <p data-i18n="ctrl_p_homing">When <code>$H</code> is sent, GRBL moves the machine toward its limit switches at homing speed (<code>$25</code>), backs off, then approaches slowly (<code>$27</code> pull-off distance). This establishes <strong>Machine Zero (MPos 0,0,0)</strong> — the absolute reference for all subsequent moves.</p>
+    <pre>
+$H          ; Run homing cycle
+G28         ; Move to pre-defined home position
+G92 X0 Y0   ; Set current position as Work Zero
+    </pre>
+</section>
+
+<!-- ============= SECTION 8: SIGNAL FLOW ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_8">8. Complete Signal Flow: G-code → Motor + Laser</h2>
+    <div class="svg-placeholder">
+        <svg width="100%" height="300" viewBox="0 0 700 300" style="background: #0d1a1f;">
+            <!-- Software -->
+            <rect x="20" y="20" width="120" height="70" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="8"/>
+            <text x="80" y="50" fill="#fff" font-family="Poppins" text-anchor="middle" font-size="11">CLE SOFTWARE</text>
+            <text x="80" y="67" fill="#7ad3ff" font-family="Courier New" text-anchor="middle" font-size="9">G1 X50 F3000</text>
+            <text x="80" y="82" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="9">M3 S800</text>
+
+            <!-- Arrow 1 -->
+            <line x1="140" y1="55" x2="175" y2="55" stroke="#00b3ff" stroke-width="2"/>
+            <polygon points="175,50 185,55 175,60" fill="#00b3ff"/>
+
+            <!-- Control Board -->
+            <rect x="185" y="20" width="140" height="70" fill="#1e3a5f" stroke="#ffd966" stroke-width="2" rx="8"/>
+            <text x="255" y="48" fill="#ffd966" font-family="Poppins" text-anchor="middle" font-size="11">MKS DLC32</text>
+            <text x="255" y="65" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">GRBL Motion Planner</text>
+            <text x="255" y="80" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">Trapezoid Accel.</text>
+
+            <!-- Arrow 2 → STEP/DIR -->
+            <line x1="325" y1="55" x2="360" y2="55" stroke="#00b3ff" stroke-width="2"/>
+            <polygon points="360,50 370,55 360,60" fill="#00b3ff"/>
+
+            <!-- Stepper Driver -->
+            <rect x="370" y="20" width="130" height="70" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="8"/>
+            <text x="435" y="48" fill="#00b3ff" font-family="Poppins" text-anchor="middle" font-size="11">STEP DRIVER</text>
+            <text x="435" y="65" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">A4988 / TMC2209</text>
+            <text x="435" y="80" fill="#ffd966" font-family="Courier New" text-anchor="middle" font-size="9">H-bridge coil driver</text>
+
+            <!-- Arrow 3 → Motor -->
+            <line x1="500" y1="55" x2="540" y2="55" stroke="#00b3ff" stroke-width="2"/>
+            <polygon points="540,50 550,55 540,60" fill="#00b3ff"/>
+
+            <!-- Motor -->
+            <rect x="550" y="20" width="120" height="70" fill="#1e3a5f" stroke="#00b3ff" stroke-width="2" rx="8"/>
+            <text x="610" y="48" fill="#fff" font-family="Poppins" text-anchor="middle" font-size="11">NEMA 17</text>
+            <text x="610" y="65" fill="#7ad3ff" font-family="Courier New" text-anchor="middle" font-size="9">Rotates axis belt</text>
+            <text x="610" y="80" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">X / Y movement</text>
+
+            <!-- PWM branch -->
+            <line x1="255" y1="90" x2="255" y2="130" stroke="#ffd966" stroke-width="2" stroke-dasharray="4 3"/>
+            <line x1="255" y1="130" x2="370" y2="130" stroke="#ffd966" stroke-width="2"/>
+            <polygon points="370,125 380,130 370,135" fill="#ffd966"/>
+
+            <!-- Laser Driver -->
+            <rect x="380" y="110" width="120" height="60" fill="#2b1a1a" stroke="#ffd966" stroke-width="2" rx="8"/>
+            <text x="440" y="137" fill="#ffd966" font-family="Poppins" text-anchor="middle" font-size="11">LASER DRIVER</text>
+            <text x="440" y="155" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">PWM → I_LD current</text>
+
+            <!-- Arrow → Laser -->
+            <line x1="500" y1="140" x2="540" y2="140" stroke="#ffd966" stroke-width="2"/>
+            <polygon points="540,135 550,140 540,145" fill="#ffd966"/>
+
+            <!-- Laser module -->
+            <rect x="550" y="110" width="120" height="60" fill="#2b1a1a" stroke="#ffd966" stroke-width="2" rx="8"/>
+            <text x="610" y="137" fill="#ffd966" font-family="Poppins" text-anchor="middle" font-size="11">LASER MODULE</text>
+            <text x="610" y="155" fill="#aaa" font-family="Courier New" text-anchor="middle" font-size="9">445 nm coherent beam</text>
+
+            <!-- Limit switch feedback -->
+            <line x1="610" y1="90" x2="610" y2="210" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="610" y1="210" x2="255" y2="210" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="255" y1="210" x2="255" y2="90" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text x="430" y="230" fill="#00ff88" font-family="Courier New" text-anchor="middle" font-size="9">Limit switch feedback → Emergency stop / Homing</text>
+
+            <text x="350" y="275" fill="#888" font-family="Poppins" text-anchor="middle" font-size="11">Two parallel paths: STEP/DIR → motor axis | PWM → laser power</text>
+        </svg>
+    </div>
+    <p data-i18n="ctrl_p_8">The control board runs two parallel signal paths simultaneously. The <strong>motion path</strong> sends STEP/DIR pulses to the stepper drivers at the rate required to achieve the commanded feed rate, while the <strong>laser path</strong> outputs a PWM signal whose duty cycle encodes the commanded power (S-word), scaled by velocity compensation.</p>
+    <ol>
+        <li data-i18n-html="ctrl_li_flow1"><strong>G-code received</strong> (USB / Wi-Fi / SD): e.g., <code>G1 X50 F3000 M3 S800</code></li>
+        <li data-i18n-html="ctrl_li_flow2"><strong>Motion planner</strong> computes trapezoidal velocity profile — ramp up, cruise, ramp down.</li>
+        <li data-i18n-html="ctrl_li_flow3"><strong>Step timer ISR</strong> fires at computed frequency: outputs STEP pulse to X/Y driver.</li>
+        <li data-i18n-html="ctrl_li_flow4"><strong>PWM timer</strong> outputs duty = (S/1000) × (v/v_req) to laser pin simultaneously.</li>
+        <li data-i18n-html="ctrl_li_flow5"><strong>Laser driver</strong> converts PWM to laser diode current (I<sub>LD</sub> = K × V<sub>PWM</sub>).</li>
+        <li data-i18n-html="ctrl_li_flow6"><strong>Limit switch inputs</strong> (hardware interrupt) can trigger emergency stop at any time.</li>
+    </ol>
+</section>
+
+<!-- ============= SECTION 9: ARDUINO VS MKS COMPARISON ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_9">9. Arduino + CNC Shield vs. MKS DLC32 — Comparison</h2>
+    <table class="table-specs">
+        <tr>
+            <th data-i18n="ctrl_th_feature">Feature</th>
+            <th data-i18n="ctrl_th_arduino">Arduino Uno + CNC Shield</th>
+            <th data-i18n="ctrl_th_mks">MKS DLC32 V2.1</th>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_cpu2">CPU</td>
+            <td data-i18n="ctrl_td_cpu_a">ATmega328P — 8-bit, 16 MHz</td>
+            <td data-i18n="ctrl_td_cpu_m">ESP32 — 32-bit dual-core, 240 MHz</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_fw2">Firmware</td>
+            <td data-i18n="ctrl_td_fw_a">GRBL 1.1 (AVR)</td>
+            <td data-i18n="ctrl_td_fw_m">FluidNC / GRBL-ESP32</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_wireless2">Wireless</td>
+            <td data-i18n="ctrl_td_wl_a">None</td>
+            <td data-i18n="ctrl_td_wl_m">Wi-Fi + Bluetooth built-in</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_voltage2">Voltage Safety</td>
+            <td data-i18n="ctrl_td_vs_a">⚠ Manual buck converter required</td>
+            <td data-i18n="ctrl_td_vs_m">✅ Built-in 5V/3.3V regulation</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_offline">Offline Operation</td>
+            <td data-i18n="ctrl_td_off_a">Requires PC connected via USB</td>
+            <td data-i18n="ctrl_td_off_m">SD card + TFT touchscreen</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_laser2">Laser Output</td>
+            <td data-i18n="ctrl_td_las_a">Spindle pin D11 (shared)</td>
+            <td data-i18n="ctrl_td_las_m">Dedicated laser PWM + TTL port</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_buffer">Step Buffer</td>
+            <td data-i18n="ctrl_td_buf_a">16 blocks (limited)</td>
+            <td data-i18n="ctrl_td_buf_m">128+ blocks (smooth arcs)</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_cost">Approximate Cost</td>
+            <td data-i18n="ctrl_td_cost_a">~$31 (Uno + Shield + drivers)</td>
+            <td data-i18n="ctrl_td_cost_m">~$62 (all-in-one)</td>
+        </tr>
+        <tr>
+            <td data-i18n="ctrl_td_best">Best For</td>
+            <td data-i18n="ctrl_td_best_a">Budget builds, learning GRBL basics</td>
+            <td data-i18n="ctrl_td_best_m">Production builds, standalone operation</td>
+        </tr>
+    </table>
+</section>
+
+<!-- ============= SECTION 10: PROTECTION & MAINTENANCE ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_10">10. Protection Features & Maintenance</h2>
+    <h3 data-i18n="ctrl_h3_prot">Built-in Protections</h3>
     <ul>
-      <li data-i18n="ctrl_li_e1">Input Voltage: Typically 12–24V DC, depending on driver type.</li>
-      <li data-i18n="ctrl_li_e2">Current Output: Configurable per motor, often 0.5–2.5A per phase.</li>
-      <li data-i18n="ctrl_li_e3">Microstepping Resolution: Full, half, 1/8, 1/16, up to 1/256 steps.</li>
-      <li data-i18n="ctrl_li_e4">Protection Features: Overcurrent, thermal shutdown, undervoltage lockout.</li>
+        <li data-i18n-html="ctrl_li_p1"><strong>Thermal shutdown:</strong> A4988/TMC drivers cut output when die temperature exceeds ~150°C.</li>
+        <li data-i18n-html="ctrl_li_p2"><strong>Overcurrent protection:</strong> Current limit set via Vref trimmer (A4988) or UART register (TMC2209).</li>
+        <li data-i18n-html="ctrl_li_p3"><strong>Undervoltage lockout (UVLO):</strong> Driver disables output if Vmot falls below minimum operating voltage.</li>
+        <li data-i18n-html="ctrl_li_p4"><strong>Hard limit switches:</strong> Hardware interrupt halts all motion immediately on contact.</li>
+        <li data-i18n-html="ctrl_li_p5"><strong>Soft limits (GRBL $20=1):</strong> Firmware prevents motion beyond defined workspace boundaries without hardware contact.</li>
     </ul>
-    <h2 data-i18n="ctrl_h2_apps">Applications</h2>
+    <h3 data-i18n="ctrl_h3_maint">Maintenance Checklist</h3>
     <ul>
-      <li data-i18n="ctrl_li_a1">Controlling stepper motors in CNC, 3D printers, and laser engravers</li>
-      <li data-i18n="ctrl_li_a2">Driving servo motors for robotics or precision motion</li>
-      <li data-i18n="ctrl_li_a3">Regulating laser modules and fans</li>
-      <li data-i18n="ctrl_li_a4">Automation systems requiring precise movement or speed control</li>
+        <li data-i18n="ctrl_li_m1">Verify Vref on A4988 drivers: use formula I<sub>max</sub> = Vref / (8 × R<sub>sense</sub>); set per motor spec.</li>
+        <li data-i18n="ctrl_li_m2">Check heat sinks are firmly attached to driver ICs; re-apply thermal tape if loose.</li>
+        <li data-i18n="ctrl_li_m3">Inspect all STEP/DIR/EN wiring harnesses for fraying or intermittent contact.</li>
+        <li data-i18n="ctrl_li_m4">Re-run homing cycle after any mechanical adjustment to re-establish machine zero.</li>
+        <li data-i18n="ctrl_li_m5">After firmware update, verify all $ settings — EEPROM may reset to defaults.</li>
     </ul>
+    <div class="math">
+        A4988 current limit: I<sub>max</sub> = V<sub>ref</sub> / (8 × R<sub>sense</sub>)<br>
+        R<sub>sense</sub> = 0.068 Ω (standard A4988) → I<sub>max</sub> = V<sub>ref</sub> / 0.544<br>
+        For I = 1.5A → V<sub>ref</sub> = 1.5 × 0.544 = 0.816 V
+    </div>
+</section>
 
-    <h2 data-i18n="ctrl_h2_adv">Advantages</h2>
-    <ul>
-      <li data-i18n="ctrl_li_adv1">Precise control of motor movement</li>
-      <li data-i18n="ctrl_li_adv2">Microstepping allows smooth motion</li>
-      <li data-i18n="ctrl_li_adv3">Protects motors from overcurrent and overheating</li>
-      <li data-i18n="ctrl_li_adv4">Compact and easy to integrate into machines</li>
-    </ul>
+<!-- ============= LEARN MORE SECTION ============= -->
+<section>
+    <h2 data-i18n="ctrl_h2_res">📚 Further Learning Resources</h2>
+    <div class="resource-links">
+        <h3 data-i18n="ctrl_h3_res">🔧 If you want to learn more about control boards and GRBL, check these out:</h3>
+        <ul>
+            <li>
+                <span class="resource-title" data-i18n="ctrl_res1_title">1. GRBL Official Wiki – Configuration & Laser Mode</span>
+                <a href="https://github.com/gnea/grbl/wiki" target="_blank" class="resource-link">https://github.com/gnea/grbl/wiki</a>
+                <div class="resource-desc" data-i18n="ctrl_res1_desc">The official GRBL documentation covering all $ settings, G-code support, laser mode ($32), homing, limit switches, and step/direction signal timing. Primary reference for all GRBL configuration.</div>
+            </li>
+            <li>
+                <span class="resource-title" data-i18n="ctrl_res2_title">2. FluidNC Documentation – ESP32 GRBL (MKS DLC32)</span>
+                <a href="https://github.com/bdring/FluidNC/wiki" target="_blank" class="resource-link">https://github.com/bdring/FluidNC/wiki</a>
+                <div class="resource-desc" data-i18n="ctrl_res2_desc">Full documentation for FluidNC — the GRBL-ESP32 port running on the MKS DLC32. Covers YAML configuration files, Wi-Fi setup, WebUI, SD card operation, and all machine parameters.</div>
+            </li>
+            <li>
+                <span class="resource-title" data-i18n="ctrl_res3_title">3. Makerbase MKS DLC32 GitHub Repository</span>
+                <a href="https://github.com/makerbase-mks/MKS-DLC32" target="_blank" class="resource-link">https://github.com/makerbase-mks/MKS-DLC32</a>
+                <div class="resource-desc" data-i18n="ctrl_res3_desc">Official hardware documentation, schematic, pinout diagrams, and firmware releases for the MKS DLC32 V2.1. Includes wiring guides for TFT screens, driver installation, and laser connection.</div>
+            </li>
+            <li>
+                <span class="resource-title" data-i18n="ctrl_res4_title">4. Pololu A4988 Stepper Motor Driver Carrier – Product Page</span>
+                <a href="https://www.pololu.com/product/1182" target="_blank" class="resource-link">https://www.pololu.com/product/1182</a>
+                <div class="resource-desc" data-i18n="ctrl_res4_desc">Detailed A4988 documentation including Vref current-setting procedure, microstepping truth table, timing diagrams for STEP/DIR signals, and thermal considerations. Essential reference for proper driver setup.</div>
+            </li>
+        </ul>
+        <p style="color: #7ad3ff; margin-top: 20px; border-top: 1px solid #00b3ff; padding-top: 15px;" data-i18n="ctrl_res_note">⭐ These resources cover firmware configuration, hardware schematics, and driver setup — from GRBL internals to physical wiring of the MKS DLC32.</p>
+    </div>
+</section>
 
-    <h2 data-i18n="ctrl_h2_lim">Limitations</h2>
-    <ul>
-      <li data-i18n="ctrl_li_lim1">Requires proper current and voltage configuration</li>
-      <li data-i18n="ctrl_li_lim2">High microstepping can reduce torque slightly</li>
-      <li data-i18n="ctrl_li_lim3">Heat dissipation is crucial for prolonged operation</li>
-      <li data-i18n="ctrl_li_lim4">Not all drivers support all motor types; check compatibility</li>
-    </ul>
+<!-- ============= BACK TO MATERIALS BUTTON ============= -->
+<div class="back-to-materials-container">
+    <a href="../materials.html" class="back-btn" data-i18n="ctrl_back">Back to Materials</a>
+</div>
 
-    <h2 data-i18n="ctrl_h2_conn">Connection with MKS Board</h2>
-    <p data-i18n="ctrl_p_conn">
-      Driver boards connect to the MKS board via control pins:
-    </p>
-    <ul>
-      <li data-i18n-html="ctrl_li_c_step"><strong>STEP:</strong> Pulse signal for stepping the motor</li>
-      <li data-i18n-html="ctrl_li_c_dir"><strong>DIR:</strong> Sets rotation direction</li>
-      <li data-i18n-html="ctrl_li_c_en"><strong>EN (Enable):</strong> Activates or disables the driver output</li>
-      <li data-i18n-html="ctrl_li_c_vmot"><strong>Vmot & GND:</strong> Power supply inputs for motor operation</li>
-      <li data-i18n-html="ctrl_li_c_pwm"><strong>PWM/TTL:</strong> Optional for controlling lasers or fans</li>
-    </ul>
-    <p data-i18n="ctrl_p_conn2">
-      Correct wiring ensures smooth, precise motion. Drivers should be configured for current limits matching motor specifications.
-    </p>
+<footer>
+    <p data-i18n="ctrl_footer">Graduation Project – Control Board Subsystem | Arduino Uno, CNC Shield V3, MKS DLC32 V2.1 | Al-Mansour University College 2026</p>
+</footer>
 
-    <h2 data-i18n="ctrl_h2_maint">Maintenance Tips</h2>
-    <ul>
-      <li data-i18n="ctrl_li_m1">Ensure drivers are properly cooled; check heat sinks and airflow.</li>
-      <li data-i18n="ctrl_li_m2">Inspect wiring and connectors for loose connections.</li>
-      <li data-i18n="ctrl_li_m3">Verify current settings regularly to avoid motor overheating.</li>
-      <li data-i18n="ctrl_li_m4">Check for abnormal noises, skipped steps, or overheating as signs of misconfiguration.</li>
-    </ul>
-
-    <h2 data-i18n="ctrl_h2_safe">Safety Precautions</h2>
-    <ul>
-      <li data-i18n="ctrl_li_s1">Always turn off power before making wiring changes.</li>
-      <li data-i18n="ctrl_li_s2">Never exceed rated voltage or current for the driver or motor.</li>
-      <li data-i18n="ctrl_li_s3">Keep the board away from conductive surfaces to avoid shorts.</li>
-      <li data-i18n="ctrl_li_s4">Ensure proper grounding and ventilation.</li>
-    </ul>
-
-    <a href="../materials.html" class="back-btn" data-i18n-html="back_to_materials">← Back to Materials</a>
-  </section>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800 });
-  </script>
-  <script src="../lang.js"></script>
+<script src="../lang.js"></script>
 </body>
 </html>
