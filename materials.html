@@ -1073,6 +1073,11 @@
 <script>
     AOS.init({ duration: 1000, once: false, mirror: false });
 
+    // Prevent build card navigation when clicking links or component images
+    document.querySelectorAll('.build-card a, .build-card .component-img, .build-card .build-image img').forEach(function(el) {
+        el.addEventListener('click', function(e) { e.stopPropagation(); });
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.createElement('div');
         menuToggle.className = 'menu-toggle';
