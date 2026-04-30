@@ -80,7 +80,12 @@
           <img src="images/dr.jpg">
         <p data-i18n="advisor_desc"><b>Dr. Haithem Kareem</b> – Will oversee and guide the project technically and ensured safety standards.</p>
       </div>
+      <div class="group-photo-section" style="text-align: center; padding: 60px 20px 40px;">
+          <img src="images/group_image.png" alt="Our Team" id="group-img" style="max-width: 700px; width: 90%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.4); cursor: zoom-in;">
+          <p data-i18n="thank_you" style="margin-top: 18px; font-size: 1.5rem; color: white; letter-spacing: 2px;">Thank you ❤️</p>
+      </div>
     </div>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
@@ -113,6 +118,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+</script>
+
+<!-- Lightbox — placed at body root so z-index is never trapped -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.93); z-index:2147483647; justify-content:center; align-items:center; cursor:zoom-out;">
+    <img src="images/group_image.png" alt="Our Team" style="max-width:95vw; max-height:95vh; border-radius:12px; box-shadow:0 0 60px rgba(255,255,255,0.1); display:block;">
+    <span id="lightbox-close" style="position:fixed; top:18px; right:28px; color:white; font-size:2.5rem; cursor:pointer; line-height:1; user-select:none;">&times;</span>
+</div>
+
+<script>
+(function() {
+    function openLightbox()  { document.getElementById('lightbox').style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    function closeLightbox() { document.getElementById('lightbox').style.display = 'none';  document.body.style.overflow = ''; }
+    document.addEventListener('DOMContentLoaded', function() {
+        var img = document.getElementById('group-img');
+        if (img) img.addEventListener('click', openLightbox);
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this || e.target.id === 'lightbox-close') closeLightbox();
+        });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+    });
+})();
 </script>
     </body>
 </html>

@@ -1484,6 +1484,7 @@
     build6_title: { en: "📱 BUILD 6: WiFi Laser Engraver", ar: "📱 البناء 6: محفر ليزر بالواي فاي", ku: "📱 بینای 6: حەکپێکەری لەیزەری WiFi" },
     build7_title: { en: "📐 BUILD 7: Large Format Laser", ar: "📐 البناء 7: ليزر ذو تنسيق كبير", ku: "📐 بینای 7: لەیزەری فۆرماتی گەورە" },
     build8_title: { en: "🥃 BUILD 8: Rotary Engraving System", ar: "🥃 البناء 8: نظام الحفر الدوار", ku: "🥃 بینای 8: سیستەمی حەکپێکردنی خولاندنی" },
+    thank_you: { en: "Thank you ❤️", ar: "شكراً لكم ❤️", ku: "سوپاس ❤️" },
 
 
   };

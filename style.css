@@ -112,7 +112,7 @@ ul li a:hover::after{
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-    padding-bottom: 1900px;
+    padding-bottom: 2200px;
 }
 .About{
     width: 90%;
@@ -605,7 +605,7 @@ ul li{
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    min-height: 2500px;
+    min-height: 2900px;
    }
 .About{
     width: 90%;
@@ -945,7 +945,7 @@ text-decoration: none;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    min-height: 2500px;
+    min-height: 100vh;
    }
 .About{
     width: 90%;
@@ -1209,7 +1209,7 @@ text-decoration: none;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-     padding-bottom: 2450px;}
+     padding-bottom: 2500px;}
 .About{
     width: 90%;
     position: absolute;
